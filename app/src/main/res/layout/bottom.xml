@@ -34,6 +34,32 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/id_tabButton_near"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/id_imgButton_near"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="#00FFFFFF"
+            android:clickable="false"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitCenter"
+            android:src="@drawable/near"></ImageButton>
+
+        <TextView
+            android:id="@+id/id_text_near"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="附近"></TextView>near
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/id_tabButton_notice"
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -84,4 +110,6 @@
             android:gravity="center_horizontal"
             android:text="我的"></TextView>
     </LinearLayout>
+
+
 </LinearLayout>

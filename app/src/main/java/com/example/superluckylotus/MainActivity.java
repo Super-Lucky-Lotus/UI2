@@ -17,16 +17,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private EarthFragment earthTabPage=new EarthFragment();
     private NoticeFragment noticeTabPage=new NoticeFragment();
     private MeFragment meTabPage=new MeFragment();
+    private NearFragment nearTabPage=new NearFragment();
 
     private FragmentManager fm;
 
     private LinearLayout mEarthTabButton;
     private LinearLayout mNoticeTabButton;
     private LinearLayout mMyTabButton;
+    private LinearLayout mNearTabButton;
 
     private ImageButton mEarthImageButton;
     private ImageButton mNoticeImageButton;
     private ImageButton mMyImageButton;
+    private ImageButton mNearImageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,16 +45,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
         mMyTabButton.setOnClickListener(this);
         mEarthTabButton.setOnClickListener(this);
         mNoticeTabButton.setOnClickListener(this);
+        mNearTabButton.setOnClickListener(this);
     }
 
     private void initView() {
         mEarthImageButton=(ImageButton)findViewById(R.id.id_imgButton_earth);
         mNoticeImageButton=(ImageButton)findViewById(R.id.id_imgButton_notice);
         mMyImageButton=(ImageButton)findViewById(R.id.id_imgButton_my);
+        mNearImageButton=(ImageButton)findViewById(R.id.id_imgButton_near);
 
         mEarthTabButton=(LinearLayout)findViewById(R.id.id_tabButton_earth);
         mNoticeTabButton=(LinearLayout)findViewById(R.id.id_tabButton_notice);
         mMyTabButton = (LinearLayout) findViewById(R.id.id_tabButton_my);
+        mNearTabButton=(LinearLayout)findViewById(R.id.id_tabButton_near);
 
     }
 
@@ -59,6 +65,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         fm=getFragmentManager();
         FragmentTransaction transaction=fm.beginTransaction();
         transaction.add(R.id.id_content,earthTabPage).addToBackStack(null).commitAllowingStateLoss();
+        transaction.add(R.id.id_content,nearTabPage).addToBackStack(null).commitAllowingStateLoss();
         transaction.add(R.id.id_content,noticeTabPage).addToBackStack(null).commitAllowingStateLoss();
         transaction.add(R.id.id_content,meTabPage).addToBackStack(null).commitAllowingStateLoss();
         transaction.commit();
@@ -66,6 +73,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     public  void  resetImg() {
         mEarthImageButton.setImageResource(R.drawable.earth);
+        mNearImageButton.setImageResource(R.drawable.near);
         mNoticeImageButton.setImageResource(R.drawable.notice);
         mMyImageButton.setImageResource(R.drawable.mine);
 
@@ -73,6 +81,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     private  void hideFragment(FragmentTransaction transaction) {
         transaction.hide(earthTabPage);
+        transaction.hide(nearTabPage);
         transaction.hide(meTabPage);
         transaction.hide(noticeTabPage);
 
@@ -88,10 +97,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 mEarthImageButton.setImageResource(R.drawable.earth_clicked);
                 break;
             case 1:
+                transaction.show(nearTabPage);
+                mEarthImageButton.setImageResource(R.drawable.near_clicked);
+                break;
+            case 2:
                 transaction.show(noticeTabPage);
                 mNoticeImageButton.setImageResource(R.drawable.notice_clicked);
                 break;
-            case 2:
+            case 3:
                 transaction.show(meTabPage);
                 mMyImageButton.setImageResource(R.drawable.my_clicked);
             default:
@@ -110,11 +123,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.id_tabButton_earth:
                 selectFragment(0);
                 break;
+            case R.id.id_tabButton_near:
+                selectFragment(2);
+                break;
             case R.id.id_tabButton_notice:
-                selectFragment(1);
+                selectFragment(2);
                 break;
             case R.id.id_tabButton_my:
-                selectFragment(2);
+                selectFragment(3);
                 break;
             default:
                 break;
