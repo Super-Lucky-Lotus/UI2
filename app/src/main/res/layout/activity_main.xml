@@ -18,6 +18,8 @@
         android:layout_weight="1">
 
         <include layout="@layout/main_upbutton" />
+
+        <include layout="@layout/fra_rightbutton"/>
     </FrameLayout>
 
     <include layout="@layout/bottom" />
