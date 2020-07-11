@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
                     intent = new Intent(LoginActivity.this,MainActivity.class);
                     break;
                 case R.id.btn_reg://MainActivity要改成reg的act
-                    intent = new Intent(LoginActivity.this,MainActivity.class);
+                    intent = new Intent(LoginActivity.this,RegisterActivity.class);
                     break;
                 case R.id.btn_skip:
                     intent = new Intent(LoginActivity.this,MainActivity.class);
