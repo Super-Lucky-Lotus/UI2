@@ -23,13 +23,13 @@ public class MainActivity extends AppCompatActivity  {
     private NearFragment nearFragment;
     private NoticeFragment noticeFragment;
 
-    private static final String[] FRAGMENT_TAG = {"tab_earth","tab_near", "tab_notice","tab_me"};
+    private static final String[] FRAGMENT_TAG = {"earth_tab","near_tab", "notice_tab","me_tab"};
 
-    private final int show_tab_car = 1;//附近
-    private final int show_tab_map = 0;//广场
-    private final int show_tab_find = 2;//消息
+    private final int show_tab_earth = 0;//附近
+    private final int show_tab_near = 1;//广场
+    private final int show_tab_notice = 2;//消息
     private final int show_tab_me = 3;//我的
-    private int mrIndex = show_tab_map;//默认选中地图
+    private int mrIndex = show_tab_earth;//默认选中地图
 
     private static final String PRV_SELINDEX = "PREV_SELINDEX";
     private int index = -100;// 记录当前的选项
@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity  {
             nearFragment = (NearFragment) fm.findFragmentByTag(FRAGMENT_TAG[1]);
             noticeFragment = (NoticeFragment) fm.findFragmentByTag(FRAGMENT_TAG[2]);
             meFragment = (MeFragment) fm.findFragmentByTag(FRAGMENT_TAG[3]);
+
+            //初始化
             initView();
         }
 
@@ -61,22 +63,22 @@ public class MainActivity extends AppCompatActivity  {
     private void initView() {
         //获得RadioGroup控件
         mTabRadioGroup=findViewById(R.id.tabs_rg);
-        setTabSelection(0);//初始页面为广场
+        setTabSelection(show_tab_earth);//初始页面为广场
         mTabRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
                 switch (checkedId){
                     case R.id.earth_tab:
-                        setTabSelection(0);
+                        setTabSelection(show_tab_earth);
                         break;
                     case R.id.near_tab:
-                        setTabSelection(1);
+                        setTabSelection(show_tab_near);
                         break;
                     case R.id.notice_tab:
-                        setTabSelection(2);
+                        setTabSelection(show_tab_notice);
                         break;
-                    case R.id.my_tab:
-                        setTabSelection(3);
+                    case R.id.me_tab:
+                        setTabSelection(show_tab_me);
                         break;
                     default:
                         break;
@@ -125,7 +127,7 @@ public class MainActivity extends AppCompatActivity  {
                 transaction.commit();
                 break;
             case 3:
-                mTabRadioGroup.check(R.id.my_tab);
+                mTabRadioGroup.check(R.id.me_tab);
                 if(meFragment==null){
                     meFragment=new MeFragment();
                     transaction.add(R.id.fragment_container,meFragment,FRAGMENT_TAG[index]);
