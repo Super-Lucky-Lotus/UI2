@@ -28,12 +28,12 @@ public class MainActivity extends AppCompatActivity  {
 
     private FragmentManager fm;
 
-    private Button earth_Btn;
+
     private Button near_Btn;
     private Button notice_Btn;
     private Button me_Btn;
     private Button shoot_Btn;
-
+    private Button earth_Btn;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
