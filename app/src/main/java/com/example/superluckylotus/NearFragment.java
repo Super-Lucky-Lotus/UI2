@@ -12,7 +12,7 @@ public class NearFragment extends Fragment {
 
 
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-            View view = inflater.inflate(R.layout.fragment_near,container,false);
+            View view = inflater.inflate(R.layout.fragment_near,null);
             return view;
         }
 }

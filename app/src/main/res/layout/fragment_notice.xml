@@ -1,35 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/notice_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F3F1F1">
 
     <LinearLayout
+        android:id="@+id/tab_notice"
         android:layout_width="match_parent"
         android:layout_height="120dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button4"
-            android:layout_width="0dp"
-            android:layout_marginRight="30dp"
-            android:layout_height="110dp"
-
-            android:layout_weight="1"
-            android:text="Button" />
-
-        <Button
-            android:id="@+id/button5"
+            android:id="@+id/fans_tab"
             android:layout_width="0dp"
             android:layout_height="110dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginRight="30dp"
             android:layout_weight="1"
-            android:text="Button" />
+            android:background="@drawable/fans" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/like_tab"
             android:layout_width="0dp"
             android:layout_height="110dp"
+            android:layout_marginRight="30dp"
             android:layout_weight="1"
-            android:text="Button" />
+            android:background="@drawable/likes" />
+
+        <Button
+            android:id="@+id/at_tab"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/at" />
+
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@id/tab_notice"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/line" />
+
+
 </RelativeLayout>

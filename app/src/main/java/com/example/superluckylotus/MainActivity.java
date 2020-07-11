@@ -53,6 +53,11 @@ public class MainActivity extends AppCompatActivity  {
 
     }
 
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt(PRV_SELINDEX, mrIndex);
+        super.onSaveInstanceState(outState);
+    }
+
     private void initView() {
         //获得RadioGroup控件
         mTabRadioGroup=findViewById(R.id.tabs_rg);
@@ -93,37 +98,41 @@ public class MainActivity extends AppCompatActivity  {
                 mTabRadioGroup.check(R.id.earth_tab);
                 if(earthFragment==null){
                     earthFragment=new EarthFragment();
-                    transaction.add(R.id.fragment_container,earthFragment).commitAllowingStateLoss();
+                    transaction.add(R.id.fragment_container,earthFragment,FRAGMENT_TAG[index]);
                 }else{
                     transaction.show(earthFragment);
                 }
+                transaction.commit();
                 break;
             case 1:
                 mTabRadioGroup.check(R.id.near_tab);
                 if(nearFragment==null){
                     nearFragment=new NearFragment();
-                    transaction.add(R.id.fragment_container,nearFragment).commitAllowingStateLoss();
+                    transaction.add(R.id.fragment_container,nearFragment,FRAGMENT_TAG[index]);
                 }else{
                     transaction.show(nearFragment);
                 }
+                transaction.commit();
                 break;
             case 2:
                 mTabRadioGroup.check(R.id.notice_tab);
                 if(noticeFragment==null){
                     noticeFragment=new NoticeFragment();
-                    transaction.add(R.id.fragment_container,noticeFragment).commitAllowingStateLoss();
+                    transaction.add(R.id.fragment_container,noticeFragment,FRAGMENT_TAG[index]);
                 }else{
                     transaction.show(noticeFragment);
                 }
+                transaction.commit();
                 break;
             case 3:
                 mTabRadioGroup.check(R.id.my_tab);
                 if(meFragment==null){
                     meFragment=new MeFragment();
-                    transaction.add(R.id.fragment_container,meFragment).commitAllowingStateLoss();
+                    transaction.add(R.id.fragment_container,meFragment,FRAGMENT_TAG[index]);
                 }else{
                     transaction.show(meFragment);
                 }
+                transaction.commit();
                 break;
         }
     }
@@ -143,6 +152,7 @@ public class MainActivity extends AppCompatActivity  {
         }
 
     }
+
 
 
 }
