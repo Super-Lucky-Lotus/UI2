@@ -1,26 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingLeft="10dp"
-    android:paddingTop="10dp"
-    android:paddingRight="10dp"
-    android:paddingBottom="10dp"
     tools:context=".MainActivity">
 
     <FrameLayout
-        android:id="@+id/id_content"
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tabs_rg" />
 
-        <include layout="@layout/fragment_earth"/>
-    </FrameLayout>
+    <RadioGroup
+        android:id="@+id/tabs_rg"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:background="#F3E0E0"
+        android:orientation="horizontal">
 
-    <include layout="@layout/bottom" />
+        <RadioButton
+            android:id="@+id/earth_tab"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/tab_earth_selector"
+            android:button="@null"
+            android:checked="true" />
 
+        <RadioButton
+            android:id="@+id/near_tab"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:background="@drawable/tab_near_selector"
+            android:button="@null" />
 
-</LinearLayout>
+        <View
+            android:layout_width="80dp"
+            android:layout_height="match_parent" />
+
+        <RadioButton
+            android:id="@+id/notice_tab"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:background="@drawable/tab_notice_selector"
+            android:button="@null" />
+
+        <RadioButton
+            android:id="@+id/my_tab"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/tab_my_selector"
+            android:button="@null" />
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/add_iv"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/add"
+         />
+</RelativeLayout>
