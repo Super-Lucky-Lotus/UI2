@@ -18,8 +18,7 @@
         android:layout_weight="1">
 
         <include layout="@layout/main_upbutton" />
-
-        <include layout="@layout/fra_rightbutton"/>
+        <include layout="@layout/fra_vedio"/>
     </FrameLayout>
 
     <include layout="@layout/bottom" />
