@@ -8,7 +8,7 @@
     tools:context=".ShootActivity">
 
     <ImageButton
-        android:id="@+id/imageButton9"
+        android:id="@+id/btn_music"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
@@ -30,11 +30,11 @@
         android:background="#00FFFFFF"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton7"
+        app:layout_constraintTop_toBottomOf="@+id/btn_change"
         app:srcCompat="@drawable/start" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/btn_back"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="4dp"
@@ -47,7 +47,7 @@
         app:srcCompat="@drawable/delete" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/btn_shoot"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginBottom="16dp"
@@ -60,7 +60,7 @@
         app:srcCompat="@drawable/shoot" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/btn_photo"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginEnd="24dp"
@@ -73,7 +73,7 @@
         app:srcCompat="@drawable/pictures" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/btn_change"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="28dp"
