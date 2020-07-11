@@ -23,6 +23,16 @@ public class MainActivity extends AppCompatActivity  {
     private NearFragment nearFragment;
     private NoticeFragment noticeFragment;
 
+    private static final String[] FRAGMENT_TAG = {"tab_earth","tab_near", "tab_notice","tab_me"};
+
+    private final int show_tab_car = 1;//附近
+    private final int show_tab_map = 0;//广场
+    private final int show_tab_find = 2;//消息
+    private final int show_tab_me = 3;//我的
+    private int mrIndex = show_tab_map;//默认选中地图
+
+    private static final String PRV_SELINDEX = "PREV_SELINDEX";
+    private int index = -100;// 记录当前的选项
     private FragmentManager fm;
 
     @Override
@@ -30,7 +40,17 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE); //没有标题栏
         setContentView(R.layout.activity_main);
-        initView();
+        //防止app闪退后fragment重叠
+        if (savedInstanceState != null) {
+            //读取上一次界面Save的时候tab选中的状态
+            mrIndex = savedInstanceState.getInt(PRV_SELINDEX, mrIndex);
+            earthFragment = (EarthFragment) fm.findFragmentByTag(FRAGMENT_TAG[0]);
+            nearFragment = (NearFragment) fm.findFragmentByTag(FRAGMENT_TAG[1]);
+            noticeFragment = (NoticeFragment) fm.findFragmentByTag(FRAGMENT_TAG[2]);
+            meFragment = (MeFragment) fm.findFragmentByTag(FRAGMENT_TAG[3]);
+            initView();
+        }
+
     }
 
     private void initView() {
@@ -62,9 +82,13 @@ public class MainActivity extends AppCompatActivity  {
 
 //根据传入的index参数来设置选中tab页
     private void setTabSelection(int id){
+        if(id==index){
+            return;
+        }
+        index=id;
         FragmentTransaction transaction=fm.beginTransaction();
         hideFragments(transaction);
-        switch(id){
+        switch(index){
             case 0:
                 mTabRadioGroup.check(R.id.earth_tab);
                 if(earthFragment==null){

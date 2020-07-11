@@ -14,7 +14,7 @@ import androidx.annotation.Nullable;
 public class NoticeFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_notice,null);
+        View view = inflater.inflate(R.layout.fragment_notice,container,false);
         return view;
     }
 }

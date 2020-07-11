@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 public class EarthFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_earth,null);
+        View view = inflater.inflate(R.layout.fragment_earth,container,false);
         return view;
     }
 }
