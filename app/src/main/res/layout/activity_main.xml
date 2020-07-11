@@ -50,14 +50,14 @@
 
         <RadioButton
             android:id="@+id/me_tab"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:background="@drawable/tab_my_selector"
             android:button="@null" />
     </RadioGroup>
 
-    <ImageView
-        android:id="@+id/add_iv"
+    <Button
+        android:id="@+id/btn_shoot"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_alignParentBottom="true"

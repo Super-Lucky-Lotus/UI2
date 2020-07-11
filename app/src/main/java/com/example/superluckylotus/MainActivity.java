@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import android.app.FragmentManager;
 
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.util.SparseArray;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity  {
     private EarthFragment earthFragment;
     private NearFragment nearFragment;
     private NoticeFragment noticeFragment;
+    private ShootActivity shootActivity;
 
     private FragmentManager fm;
 
@@ -30,12 +32,15 @@ public class MainActivity extends AppCompatActivity  {
     private Button near_Btn;
     private Button notice_Btn;
     private Button me_Btn;
+    private Button shoot_Btn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE); //没有标题栏
         setContentView(R.layout.activity_main);
+        shoot_Btn = (Button)findViewById(R.id.btn_shoot);
+        setListeners();
 
         //实例化EarthFragment
         earthFragment = new EarthFragment();
@@ -93,4 +98,22 @@ public class MainActivity extends AppCompatActivity  {
 
     }
 
+    private void setListeners(){
+        OnClick onClick = new OnClick();
+        shoot_Btn.setOnClickListener(onClick);
+    }
+
+    private class OnClick implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v){
+            Intent intent = null;
+            switch (v.getId()){
+                case R.id.btn_shoot:
+                    intent = new Intent(MainActivity.this,ShootActivity.class);
+                    break;
+            }
+            startActivity(intent);
+        }
+    }
 }
