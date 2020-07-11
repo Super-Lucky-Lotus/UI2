@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingLeft="16dp"
-    android:paddingTop="16dp"
-    android:paddingRight="16dp"
-    android:paddingBottom="16dp"
+    android:paddingLeft="10dp"
+    android:paddingTop="10dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="10dp"
     tools:context=".MainActivity">
 
     <FrameLayout
@@ -17,8 +17,7 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <include layout="@layout/main_upbutton" />
-        <include layout="@layout/fra_vedio"/>
+        <include layout="@layout/fragment_earth"/>
     </FrameLayout>
 
     <include layout="@layout/bottom" />

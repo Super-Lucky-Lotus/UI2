@@ -6,10 +6,8 @@
     tools:context=".EarthFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="广场"
-        android:textSize="36sp" />
+    <include layout="@layout/earth_upbutton" />
+
+    <include layout="@layout/fra_vedio"/>
 
 </FrameLayout>

@@ -3,7 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="70dp"
     android:baselineAligned="false"
     android:orientation="horizontal">
 
@@ -17,8 +17,8 @@
 
         <ImageButton
             android:id="@+id/id_imgButton_earth"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:background="#00FFFFFF"
             android:clickable="false"
             android:contentDescription="@string/app_name"
@@ -43,8 +43,8 @@
 
         <ImageButton
             android:id="@+id/id_imgButton_near"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:background="#00FFFFFF"
             android:clickable="false"
             android:contentDescription="@string/app_name"
@@ -69,8 +69,8 @@
 
         <ImageButton
             android:id="@+id/id_imgButton_notice"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:background="#00FFFFFF"
             android:clickable="false"
             android:contentDescription="@string/app_name"
@@ -95,8 +95,8 @@
 
         <ImageButton
             android:id="@+id/id_imgButton_my"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:background="#00FFFFFF"
             android:clickable="false"
             android:contentDescription="@string/app_name"
