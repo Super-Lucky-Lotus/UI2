@@ -1,6 +1,7 @@
 package com.example.superluckylotus;
 
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -56,20 +57,23 @@ public class LoginActivity extends AppCompatActivity {
 
     private class OnClick implements View.OnClickListener{
 
-        private String  username;
-        private String  password;
 
+        public Activity act;
+        public String username;
+        public String password;
         public OnClick(Context context) {
-            Activity act=(Activity)context;
-            EditText editText1 = (EditText) findViewById(R.id.input_name);
-            username = editText1.getText().toString();
-            EditText editText2 = (EditText) findViewById(R.id.input_psw);
-            password = editText2.getText().toString();
+            act=(Activity)context;
         }
 
 
         @Override
         public void onClick(View v){
+            EditText editText1 = (EditText) findViewById(R.id.name);
+            username = editText1.getText().toString();
+            EditText editText2 = (EditText) findViewById(R.id.psw);
+            password = editText2.getText().toString();
+            Log.v(TAG,"username:"+username);
+            Log.v(TAG,"password:"+username);
             Intent intent = null;
             switch (v.getId()){
                 case R.id.btn_login:

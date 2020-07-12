@@ -30,13 +30,13 @@
             android:text="名字"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
-        <TextView
-            android:id="@+id/tv_username"
+        <EditText
+            android:id="@+id/name"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="abcdef"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:ems="10"
+            android:inputType="textPersonName" />
 
     </LinearLayout>
 
@@ -55,13 +55,13 @@
             android:text="密码"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
-        <TextView
-            android:id="@+id/tv_password"
+        <EditText
+            android:id="@+id/psw"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="123456"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:ems="10"
+            android:inputType="textPassword" />
 
     </LinearLayout>
 
