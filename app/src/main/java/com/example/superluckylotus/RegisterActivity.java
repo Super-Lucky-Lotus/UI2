@@ -7,14 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-/**
- * @version: 1.0
- * @author: 黄诗雯
- * @className: ResgisterActivity
- * @packageName:com.example.superluckylotus
- * @description: 注册界面
- * @data: 2020.07.12 02:13
- **/
 public class RegisterActivity extends AppCompatActivity {
 
     Button mRegister;
