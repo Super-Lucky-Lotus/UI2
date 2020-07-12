@@ -11,7 +11,14 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 
 
-
+/**
+ * @version: 1.0
+ * @author: 黄诗雯
+ * @className: NoticeFragment
+ * @packageName:com.example.superluckylotus
+ * @description: 消息界面
+ * @data: 2020.07.11 16:30
+ **/
 public class NoticeFragment extends Fragment {
     private Button mFans;
     private Button mLikes;

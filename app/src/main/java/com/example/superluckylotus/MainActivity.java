@@ -17,6 +17,15 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
+/**
+ * @version: 1.0
+ * @author: 宋佳容
+ * @className: MainFragment
+ * @packageName:com.example.superluckylotus
+ * @description: 主界面
+ * @data: 2020.07.11 21:12
+ **/
+
 public class MainActivity extends AppCompatActivity  {
 
     private RadioGroup mTabRadioGroup;

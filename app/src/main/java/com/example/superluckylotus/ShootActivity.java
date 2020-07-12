@@ -10,6 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+/**
+ * @version: 1.0
+ * @author: 宋佳容
+ * @className: ShootActivity
+ * @packageName:com.example.superluckylotus
+ * @description: 拍摄界面
+ * @data: 2020.07.12 00:48
+ **/
 public class ShootActivity extends AppCompatActivity {
 
     private Button back_Btn;

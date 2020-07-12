@@ -12,6 +12,14 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * @version: 1.0
+ * @author: 宋佳容
+ * @className: LoginActivity
+ * @packageName:com.example.superluckylotus
+ * @description: 登录界面
+ * @data: 2020.07.12 01:18
+ **/
 public class LoginActivity extends AppCompatActivity {
 
     private Button login_Btn;

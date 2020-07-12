@@ -9,6 +9,14 @@ import android.view.ViewGroup;
 import androidx.annotation.Nullable;
 
 
+/**
+ * @version: 1.0
+ * @author: 黄诗雯
+ * @className: EarthFragment
+ * @packageName:com.example.superluckylotus
+ * @description: 广场界面
+ * @data: 2020.07.10 15:12
+ **/
 
 public class EarthFragment extends Fragment {
 

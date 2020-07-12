@@ -8,6 +8,14 @@ import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
 
+/**
+ * @version: 1.0
+ * @author: 黄诗雯
+ * @className: NearFragment
+ * @packageName:com.example.superluckylotus
+ * @description: 附近界面
+ * @data: 2020.07.11 22:14
+ **/
 public class NearFragment extends Fragment {
 
 

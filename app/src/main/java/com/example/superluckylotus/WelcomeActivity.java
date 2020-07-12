@@ -11,6 +11,14 @@ import java.util.Timer;
 import  android.content.Intent;
 import java.util.TimerTask;
 
+/**
+ * @version: 1.0
+ * @author: 黄诗雯
+ * @className: WelcomeActivity
+ * @packageName:com.example.superluckylotus
+ * @description: 欢迎界面
+ * @data: 2020.07.10 14:20
+ **/
 public class WelcomeActivity extends AppCompatActivity implements View.OnClickListener{
 
     private int reclen=5;//跳过倒计时提示5s

@@ -8,6 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+/**
+ * @version: 1.0
+ * @author: 黄诗雯
+ * @className: SettingActivity
+ * @packageName:com.example.superluckylotus
+ * @description: 设置界面
+ * @data: 2020.07.11 22:30
+ **/
 public class SettingActivity extends AppCompatActivity {
 
     ImageButton mBackBtn;

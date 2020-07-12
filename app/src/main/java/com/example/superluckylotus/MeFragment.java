@@ -14,6 +14,14 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 
 
+/**
+ * @version: 1.0
+ * @author: 黄诗雯
+ * @className: MeFragment
+ * @packageName:com.example.superluckylotus
+ * @description: 我的界面
+ * @data: 2020.07.12 00:18
+ **/
 
 public class MeFragment extends Fragment {
 
