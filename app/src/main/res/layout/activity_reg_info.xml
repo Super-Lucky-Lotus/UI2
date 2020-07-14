@@ -49,7 +49,7 @@
         android:id="@+id/editTextTextPersonName6"
         android:layout_width="240dp"
         android:layout_height="40dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/text"
         android:ems="10"
         android:hint="请输入简介"
@@ -58,7 +58,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.678"
         app:layout_constraintStart_toEndOf="@+id/tv_info"
-        app:layout_constraintTop_toBottomOf="@+id/et_birthday" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_birthday" />
 
     <TextView
         android:id="@+id/tv_info"
@@ -258,23 +258,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_username" />
 
-    <EditText
-        android:id="@+id/et_birthday"
-        android:layout_width="239dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="128dp"
-        android:background="@drawable/text"
-        android:ems="10"
-        android:hint="请输入生日"
-        android:inputType="date"
-        android:paddingLeft="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.686"
-        app:layout_constraintStart_toEndOf="@+id/tv_birthday"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        app:layout_constraintVertical_bias="0.131" />
-
     <Button
         android:id="@+id/btn_enter"
         android:layout_width="117dp"
@@ -287,5 +270,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_birthday"
+        android:layout_width="240dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/text"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="10dp"
+        android:text="请输入生日"
+        android:textColor="#B5B0B0"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintStart_toEndOf="@+id/tv_birthday"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -29,12 +30,14 @@ import java.util.Map;
 public class RegisterActivity extends AppCompatActivity {
 
     Button mRegister;
+    Button mback;
     private static final String TAG = "RegisterActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         mRegister=(Button)findViewById(R.id.btn_register);
+        mback=(Button)findViewById(R.id.backtologin) ;
         //setListeners(this);
         setListeners();
     }
@@ -42,6 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void setListeners(){
         RegisterActivity.OnClick onClick = new RegisterActivity.OnClick();
         mRegister.setOnClickListener(onClick);
+        mback.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener{
@@ -51,6 +55,9 @@ public class RegisterActivity extends AppCompatActivity {
             switch (v.getId()){
                 case R.id.btn_register:
                     intent = new Intent(RegisterActivity.this,Reg_infoActivity.class);
+                    break;
+                case R.id.backtologin:
+                    intent = new Intent(RegisterActivity.this,LoginActivity.class);
                     break;
             }
             startActivity(intent);
