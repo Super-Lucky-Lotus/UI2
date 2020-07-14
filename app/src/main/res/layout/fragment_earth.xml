@@ -8,6 +8,9 @@
     <!-- TODO: Update blank fragment layout -->
     <include layout="@layout/earth_upbutton" />
 
-    <include layout="@layout/fra_vedio"/>
+    <include layout="@layout/fra_vedio" />
+
+
+
 
 </FrameLayout>

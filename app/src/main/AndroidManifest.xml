@@ -13,15 +13,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChangeIntroductionActivity"
+        <activity android:name=".ChatActivity"></activity>
+        <activity
+            android:name=".NewFansActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".CommentActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".AtMeActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".GetLikesActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:name=".ChangeIntroductionActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".ChangeNameActivity"
+        <activity
+            android:name=".ChangeNameActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".ChangePasswordActivity"
+        <activity
+            android:name=".ChangePasswordActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".ChangePhotoActivity"
+        <activity
+            android:name=".ChangePhotoActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".Reg_infoActivity"
+        <activity
+            android:name=".Reg_infoActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".ShootActivity"
