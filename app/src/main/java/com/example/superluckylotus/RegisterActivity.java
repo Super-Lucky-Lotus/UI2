@@ -26,21 +26,50 @@ import java.util.Map;
 public class RegisterActivity extends AppCompatActivity {
 
     Button mRegister;
+    Button mBack;
     private static final String TAG = "RegisterActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         mRegister=(Button)findViewById(R.id.btn_register);
-        setListeners(this);
+        mBack=(Button)findViewById(R.id.backtologin);
+        //setListeners(this);
+        setListeners();
 
     }
-    private void setListeners(Context context){
+    /*private void setListeners(Context context){
         RegisterActivity.OnClick onClick = new RegisterActivity.OnClick(context);
         mRegister.setOnClickListener(onClick);
+    }*/
+
+    private void setListeners(){
+        RegisterActivity.OnClick onClick = new RegisterActivity.OnClick();
+        mRegister.setOnClickListener(onClick);
+        mBack.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v){
+            Intent intent = null;
+            switch (v.getId()){
+                case R.id.btn_register:
+                    intent = new Intent(RegisterActivity.this,Reg_infoActivity.class);
+                    break;
+                case R.id.backtologin:
+                    intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                    break;
+            }
+            startActivity(intent);
+        }
+    }
+
+
+
+
+    /*private class OnClick implements View.OnClickListener{
 
 
         public Activity act;
@@ -146,5 +175,5 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
 
-    }
+    }*/
 }

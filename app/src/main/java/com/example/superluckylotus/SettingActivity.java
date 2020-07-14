@@ -33,7 +33,7 @@ public class SettingActivity extends AppCompatActivity {
         mBackBtn.setOnClickListener(onClick);
     }
 
-    private class OnClick implements View.OnClickListener{
+    class OnClick implements View.OnClickListener{
 
         @Override
         public void onClick(View v){
