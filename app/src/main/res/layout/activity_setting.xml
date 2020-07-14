@@ -172,16 +172,17 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:text="编辑个人资料"
         android:textColor="#FFFFFF"
-        android:textSize="18sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/changephoto"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="48dp"
@@ -191,7 +192,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.037" />
+        app:layout_constraintVertical_bias="0.16" />
 
     <LinearLayout
         android:id="@+id/changename"
@@ -300,6 +301,6 @@
         app:layout_constraintBottom_toTopOf="@+id/changename"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+        app:layout_constraintTop_toBottomOf="@+id/changephoto" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
