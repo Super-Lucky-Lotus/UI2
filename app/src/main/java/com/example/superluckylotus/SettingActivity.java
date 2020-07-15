@@ -44,6 +44,7 @@ public class SettingActivity extends AppCompatActivity {
     LinearLayout mChangesex;
     DialogManager dm;
     TextView mTvSex;
+    TextView mTvBirthday;
     private ArrayList<SexBean> sex = new ArrayList<SexBean>();
 
     private OptionsPickerView pvCustomOptions;
@@ -60,6 +61,7 @@ public class SettingActivity extends AppCompatActivity {
         mChangebirthday=(LinearLayout)findViewById(R.id.changebirthday);
         mChangesex=(LinearLayout)findViewById(R.id.changesex) ;
         mTvSex=(TextView)findViewById(R.id.tv_sex);
+        mTvBirthday=findViewById(R.id.tv_birthday);
         setListeners();
         dm = new DialogManager(this);
         getSexData();
@@ -174,9 +176,11 @@ public class SettingActivity extends AppCompatActivity {
               @Override
                  public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                                              Toast.makeText(SettingActivity.this, "您当前选择日期："+year+"年"+(month+1)+"月"+dayOfMonth+"日", Toast.LENGTH_SHORT).show();
-                          }
+
+                  mTvBirthday.setText(year+"年"+(month+1)+"月"+dayOfMonth+"日");              }
             }, 2020, 7,14);
                              datePickerDialog.show();//展示日期对话框
+
                      break;
                 case R.id.changesex:
                     if(pvCustomOptions != null){

@@ -29,7 +29,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/textView21"
+            android:id="@+id/tv_birthday"
             android:layout_width="43dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
