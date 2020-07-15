@@ -41,7 +41,7 @@ public class CommentActivity extends AppCompatActivity {
             Intent intent = null;
             switch (v.getId()){
                 case R.id.cm_back:
-                    intent = new Intent(CommentActivity.this,NoticeFragment.class);
+                    intent = new Intent(CommentActivity.this,MainActivity.class);
                     break;
             }
             startActivity(intent);
