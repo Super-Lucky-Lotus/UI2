@@ -5,10 +5,26 @@
     android:layout_height="match_parent"
     tools:context=".EarthFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <include layout="@layout/earth_upbutton" />
 
-    <include layout="@layout/fra_vedio" />
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/earth_upbutton" />
+
+        <include layout="@layout/fra_vedio" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 
 

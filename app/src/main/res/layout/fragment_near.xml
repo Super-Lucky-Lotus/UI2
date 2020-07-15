@@ -38,5 +38,6 @@
         </LinearLayout>
 
         <include layout="@layout/fra_vedio"></include>
+
     </LinearLayout>
 </FrameLayout>
