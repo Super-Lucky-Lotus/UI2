@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
@@ -22,8 +25,12 @@ import com.bigkoo.pickerview.builder.OptionsPickerBuilder;
 import com.bigkoo.pickerview.listener.CustomListener;
 import com.bigkoo.pickerview.listener.OnOptionsSelectListener;
 import com.bigkoo.pickerview.view.OptionsPickerView;
+import com.google.gson.Gson;
+
+import org.json.JSONArray;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @version: 1.0
@@ -42,10 +49,20 @@ public class SettingActivity extends AppCompatActivity {
     LinearLayout mChangeintro;
     LinearLayout mChangebirthday;
     LinearLayout mChangesex;
+    LinearLayout mChangeaddress;
     DialogManager dm;
     TextView mTvSex;
     TextView mTvBirthday;
     private ArrayList<SexBean> sex = new ArrayList<SexBean>();
+
+    private List<JsonBean> options1Items = new ArrayList<>();
+    private ArrayList<ArrayList<String>> options2Items = new ArrayList<>();
+    private ArrayList<ArrayList<ArrayList<String>>> options3Items = new ArrayList<>();
+    private Thread thread;
+    private static final int MSG_LOAD_DATA = 0x0001;
+    private static final int MSG_LOAD_SUCCESS = 0x0002;
+    private static final int MSG_LOAD_FAILED = 0x0003;
+    private static boolean isLoaded = false;
 
     private OptionsPickerView pvCustomOptions;
 
@@ -60,6 +77,7 @@ public class SettingActivity extends AppCompatActivity {
         mChangephoto=(ImageButton) findViewById(R.id.changephoto);
         mChangebirthday=(LinearLayout)findViewById(R.id.changebirthday);
         mChangesex=(LinearLayout)findViewById(R.id.changesex) ;
+        mChangeaddress=(LinearLayout)findViewById(R.id.changeaddress);
         mTvSex=(TextView)findViewById(R.id.tv_sex);
         mTvBirthday=findViewById(R.id.tv_birthday);
         setListeners();
@@ -143,6 +161,7 @@ public class SettingActivity extends AppCompatActivity {
         mChangepassword.setOnClickListener(onClick);
         mChangebirthday.setOnClickListener(onClick);
         mChangesex.setOnClickListener(onClick);
+        mChangeaddress.setOnClickListener(onClick);
     }
 
     class OnClick implements View.OnClickListener{
@@ -187,6 +206,11 @@ public class SettingActivity extends AppCompatActivity {
                         pvCustomOptions.show();
                     }
                     break;
+                case R.id.changeaddress:
+                    intent = new Intent(SettingActivity.this,JsonDataActivity.class);
+                    startActivity(intent);
+                    break;
+
 
                 default:
                     break;
@@ -194,6 +218,7 @@ public class SettingActivity extends AppCompatActivity {
             }
 
         }
+
 
 
 
