@@ -6,68 +6,69 @@
     android:layout_height="match_parent"
     android:background="#514F4F">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
 
         <LinearLayout
-            android:id="@+id/tab_notice"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/fans_tab"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="15dp"
-                android:layout_weight="1"
-                android:background="@drawable/fans" />
+            <LinearLayout
+                android:id="@+id/tab_notice"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/like_tab"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="15dp"
-                android:layout_weight="1"
-                android:background="@drawable/likes" />
+                <Button
+                    android:id="@+id/fans_tab"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/fans" />
 
-            <Button
-                android:id="@+id/at_tab"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="15dp"
-                android:layout_weight="1"
-                android:background="@drawable/at" />
+                <Button
+                    android:id="@+id/like_tab"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/likes" />
 
-            <Button
-                android:id="@+id/comment_tab"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/n_comment" />
+                <Button
+                    android:id="@+id/at_tab"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/at" />
 
-        </LinearLayout>
+                <Button
+                    android:id="@+id/comment_tab"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/n_comment" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="5dp"
-            android:layout_below="@id/tab_notice"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/line" />
+            </LinearLayout>
 
-        <ScrollView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_below="@id/tab_notice"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/line" />
+
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -367,9 +368,9 @@
 
             </LinearLayout>
 
-        </ScrollView>
 
+        </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
