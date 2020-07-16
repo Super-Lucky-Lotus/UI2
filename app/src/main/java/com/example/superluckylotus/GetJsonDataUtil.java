@@ -7,10 +7,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * <读取Json文件的工具类>
-
-
- */
+ * @version: 2.0
+ * @author: 黄诗雯
+ * @className: GetJsonDataUtil
+ * @packageName:com.example.superluckylotus
+ * @description: 读取Json文件的工具类
+ * @data: 2020.07.16 00:19
+ **/
 
 public class GetJsonDataUtil {
 

@@ -33,12 +33,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @version: 1.0
+ * @version: 3.0
  * @author: 黄诗雯
  * @className: SettingActivity
  * @packageName:com.example.superluckylotus
  * @description: 设置界面
- * @data: 2020.07.11 22:30
+ * @data: 2020.07.16 13:25
  **/
 public class SettingActivity extends AppCompatActivity {
 

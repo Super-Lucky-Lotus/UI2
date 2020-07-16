@@ -25,6 +25,14 @@ import org.json.JSONArray;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @version: 3.0
+ * @author: 黄诗雯
+ * @className: Reg_infoActivity
+ * @packageName:com.example.superluckylotus
+ * @description: 注册资料界面
+ * @data: 2020.07.16 13:20
+ **/
 public class Reg_infoActivity extends AppCompatActivity {
 
     Button mEnter;

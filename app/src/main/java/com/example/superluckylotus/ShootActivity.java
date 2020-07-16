@@ -12,7 +12,7 @@ import android.widget.Button;
 
 /**
  * @version: 1.0
- * @author: 宋佳容
+ * @author: 黄诗雯、宋佳容
  * @className: ShootActivity
  * @packageName:com.example.superluckylotus
  * @description: 拍摄界面

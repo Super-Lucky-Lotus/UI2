@@ -6,12 +6,15 @@ import com.contrarywind.interfaces.IPickerViewData;
 import java.util.List;
 
 /**
- * TODO<json数据源>
- *
- */
+ * @version: 2.0
+ * @author: 黄诗雯
+ * @className: JsonBean
+ * @packageName:com.example.superluckylotus
+ * @description: Json数据源
+ * @data: 2020.07.16 00:19
+ **/
 
 public class JsonBean implements IPickerViewData {
-
 
     /**
      * name : 省份

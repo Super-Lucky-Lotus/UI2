@@ -2,6 +2,15 @@ package com.example.superluckylotus;
 
 import com.contrarywind.interfaces.IPickerViewData;
 
+
+/**
+ * @version: 1.0
+ * @author: 黄诗雯
+ * @className: SexBean
+ * @packageName:com.example.superluckylotus
+ * @description: 性别数据源
+ * @data: 2020.07.16 00:19
+ **/
 public class SexBean implements IPickerViewData {
     int id;
     String sexNo;
