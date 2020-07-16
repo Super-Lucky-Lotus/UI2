@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 
@@ -32,12 +33,17 @@ import androidx.annotation.Nullable;
 public class EarthFragment extends Fragment {
 
     private Button turnSearchPage_btn;
+    private ImageView mMore;
+    MoreDialog md;
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_earth,null);
         turnSearchPage_btn = (Button)view.findViewById(R.id.turnSearchPage_btn);
+        mMore=view.findViewById(R.id.more);
+        md=new MoreDialog(getActivity());
         OnClick onclick=new OnClick();
         turnSearchPage_btn.setOnClickListener(onclick);
+        mMore.setOnClickListener(onclick);
         return view;
     }
 
@@ -48,9 +54,12 @@ public class EarthFragment extends Fragment {
             switch (v.getId()){
                 case R.id.turnSearchPage_btn:
                     intent.setClass(getActivity(),SearchActivity.class);
+                    getActivity().startActivity(intent);
+                    break;
+                case R.id.more:
+                    md.popupWindowDialog( v);
                     break;
             }
-            getActivity().startActivity(intent);
         }
     }
 

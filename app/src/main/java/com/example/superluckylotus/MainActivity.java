@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
@@ -33,7 +34,6 @@ public class MainActivity extends AppCompatActivity  {
     private EarthFragment earthFragment;
     private NearFragment nearFragment;
     private NoticeFragment noticeFragment;
-    private ShootActivity shootActivity;
 
     private FragmentManager fm;
 
@@ -120,9 +120,10 @@ public class MainActivity extends AppCompatActivity  {
             switch (v.getId()){
                 case R.id.btn_shoot:
                     intent = new Intent(MainActivity.this,ShootActivity.class);
+                    startActivity(intent);
                     break;
             }
-            startActivity(intent);
+
         }
     }
 }
