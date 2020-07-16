@@ -7,44 +7,6 @@
     android:background="#514F4F"
     tools:context=".Reg_infoActivity">
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="234dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_sex"
-        app:layout_constraintTop_toBottomOf="@+id/et_address">
-
-        <RadioButton
-            android:id="@+id/btn_female"
-            android:layout_width="80dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:background="@drawable/sex_selector"
-            android:button="@null"
-            android:gravity="center"
-            android:text="女"
-            android:textSize="18sp" />
-
-        <RadioButton
-            android:id="@+id/btn_male"
-            android:layout_width="80dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="40dp"
-            android:background="@drawable/sex_selector"
-            android:button="@null"
-            android:gravity="center"
-            android:text="男"
-            android:textSize="18sp" />
-
-    </RadioGroup>
-
     <EditText
         android:id="@+id/editTextTextPersonName6"
         android:layout_width="240dp"
@@ -73,21 +35,6 @@
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_birthday" />
-
-    <EditText
-        android:id="@+id/et_address"
-        android:layout_width="240dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/text"
-        android:ems="10"
-        android:hint="请输入地区"
-        android:inputType="textPersonName"
-        android:paddingLeft="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.648"
-        app:layout_constraintStart_toEndOf="@+id/tv_address"
-        app:layout_constraintTop_toBottomOf="@+id/et_password2" />
 
     <EditText
         android:id="@+id/et_password2"
@@ -275,7 +222,7 @@
         android:id="@+id/btn_birthday"
         android:layout_width="240dp"
         android:layout_height="40dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/text"
         android:gravity="left|center_vertical"
         android:paddingLeft="10dp"
@@ -285,6 +232,38 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.67"
         app:layout_constraintStart_toEndOf="@+id/tv_birthday"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_sex" />
+
+    <Button
+        android:id="@+id/btn_address"
+        android:layout_width="240dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/text"
+        android:gravity="left|center_vertical"
+        android:text="请选择地区"
+        android:textColor="#B5B0B0"
+        android:textSize="18sp"
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.63"
+        app:layout_constraintStart_toEndOf="@+id/tv_address"
+        app:layout_constraintTop_toBottomOf="@+id/et_password2" />
+
+    <Button
+        android:id="@+id/btn_sex"
+        android:layout_width="240dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/text"
+        android:gravity="left|center_vertical"
+        android:text="请选择性别"
+        android:textColor="#B5B0B0"
+        android:textSize="18sp"
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.662"
+        app:layout_constraintStart_toEndOf="@+id/tv_sex"
+        app:layout_constraintTop_toBottomOf="@+id/btn_address" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

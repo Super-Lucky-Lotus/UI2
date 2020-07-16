@@ -6,16 +6,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/**
- * <读取Json文件的工具类>
-
-
- */
-
-public class GetJsonDataUtil {
-
-
-    public String getJson(SettingActivity context, String fileName) {
+public class GetJsonDataUtil_Reg {
+    public String getJson(Reg_infoActivity context, String fileName) {
 
         StringBuilder stringBuilder = new StringBuilder();
         try {
@@ -32,4 +24,3 @@ public class GetJsonDataUtil {
         return stringBuilder.toString();
     }
 }
-

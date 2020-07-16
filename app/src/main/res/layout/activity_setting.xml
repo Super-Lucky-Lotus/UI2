@@ -110,7 +110,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/textView15"
+            android:id="@+id/tv_address"
             android:layout_width="43dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
