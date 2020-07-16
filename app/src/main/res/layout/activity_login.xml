@@ -39,7 +39,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="请输入手机号"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:textColor="#FFFDFD"
             android:textColorHint="#D8D7D7" />
 

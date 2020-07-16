@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="type">
+        <item>关注</item>
+        <item>音乐</item>
+        <item>影视</item>
+        <item>社会</item>
+        <item>游戏</item>
+        <item>美食</item>
+        <item>儿童</item>
+        <item>生活</item>
+        <item>体育</item>
+        <item>文化</item>
+        <item>时尚</item>
+        <item>科技</item>
+        <item>其他</item>
+    </string-array>
+</resources>
