@@ -2,43 +2,41 @@ package com.example.superluckylotus;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.Toast;
+import android.widget.TextView;
 
 /**
  * @version: 2.0
  * @author: 宋佳容
- * @className: SearchActivity
+ * @className: FriendListActivity
  * @packageName:com.example.superluckylotus
- * @description: 搜索界面
- * @data: 2020.07.15 18：00
+ * @description: 好友列表
+ * @data: 2020.07.16 16:18
  **/
 
-public class SearchActivity extends AppCompatActivity {
+public class FriendListActivity extends AppCompatActivity {
 
-    private Button search_btn;
-    private Button search_back_btn;
+    private Button fri_list_back_btn;
+    private TextView go_find_fri_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.activity_friend_list);
 
-        search_btn = (Button) findViewById(R.id.search_btn);
-        search_back_btn = (Button) findViewById(R.id.search_back);
+        fri_list_back_btn = (Button) findViewById(R.id.fri_num_back);
+        go_find_fri_btn = (TextView) findViewById(R.id.find_fri_btn);
 
         setListeners();
     }
 
     private void setListeners() {
         OnClick onClick = new OnClick();
-        search_btn.setOnClickListener(onClick);
-        search_back_btn.setOnClickListener(onClick);
+        fri_list_back_btn.setOnClickListener(onClick);
+        go_find_fri_btn.setOnClickListener(onClick);
     }
 
     class OnClick implements View.OnClickListener {
@@ -47,19 +45,15 @@ public class SearchActivity extends AppCompatActivity {
         public void onClick(View v) {
             Intent intent = null;
             switch (v.getId()) {
-                case R.id.search_btn:
-                    intent = new Intent(SearchActivity.this, SearchResultActivity.class);
+                case R.id.fri_num_back:
+                    intent = new Intent(FriendListActivity.this, MainActivity.class);
                     startActivity(intent);
                     break;
-                case R.id.search_back:
-                    intent = new Intent(SearchActivity.this, MainActivity.class);
+                case R.id.find_fri_btn:
+                    intent = new Intent(FriendListActivity.this, FindFriendActivity.class);
                     startActivity(intent);
                     break;
             }
-
         }
-
-
     }
-
 }

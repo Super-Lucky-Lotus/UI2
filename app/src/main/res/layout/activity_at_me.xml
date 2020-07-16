@@ -53,7 +53,7 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/n_likes_frame1"
+                android:id="@+id/n_at_frame1"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:background="#514F4F"
@@ -118,7 +118,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/n_likes_frame2"
+                android:id="@+id/n_at_frame2"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:background="#514F4F"

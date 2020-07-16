@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#514F4F"
+    android:orientation="vertical"
+    tools:context=".FriendListActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/fri_num_back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/left" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            android:text="好友列表"
+            android:textColor="#BEBEBE"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/find_fri_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="寻找好友"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@id/at_title"
+        android:layout_marginTop="3dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/line" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+
+                <EditText
+                    android:id="@+id/FriL_search_edittext"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="30dp"
+                    android:background="@drawable/edit_bcg"
+                    android:hint="请输入关键字"></EditText>
+
+                <Button
+                    android:id="@+id/FriL_search_btn"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/search"
+                    android:gravity="center_vertical" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:background="#514F4F"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/Fri_pic1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#CCCCFF"
+                    android:text="头像"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/Fri1_tv"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="1dp"
+                    android:text="UserName1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#FFFFFF"
+                    android:textSize="23sp" />
+
+
+                <Button
+                    android:id="@+id/chatToFri1_btn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="3dp"
+                    android:background="@drawable/comment"
+                    android:textColor="#000000" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:background="#514F4F"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/Fri_pic2"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#FFCCCC"
+                    android:text="头像"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/Fri2_tv"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="1dp"
+                    android:text="UserName2"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#FFFFFF"
+                    android:textSize="23sp" />
+
+
+                <Button
+                    android:id="@+id/chatToFri2_btn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="3dp"
+                    android:background="@drawable/comment"
+                    android:textColor="#000000" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:background="#514F4F"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/Fir_pic3"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#CCCCFF"
+                    android:text="头像"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/Fri3_tv"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="1dp"
+                    android:text="UserName3"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#FFFFFF"
+                    android:textSize="23sp" />
+
+
+                <Button
+                    android:id="@+id/chatToFri3_btn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="3dp"
+                    android:background="@drawable/comment"
+                    android:textColor="#000000" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="暂时没有更多了"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp" />
+
+</LinearLayout>
