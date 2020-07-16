@@ -37,7 +37,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         </LinearLayout>
 
-        <include layout="@layout/fra_vedio"></include>
+        <include layout="@layout/fragment_video"></include>
 
     </LinearLayout>
 </FrameLayout>

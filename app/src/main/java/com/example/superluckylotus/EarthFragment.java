@@ -33,7 +33,7 @@ import androidx.annotation.Nullable;
 public class EarthFragment extends Fragment {
 
     private Button turnSearchPage_btn;
-    private ImageView mMore;
+    private Button mMore;
     MoreDialog md;
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {

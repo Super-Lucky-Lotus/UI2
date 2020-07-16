@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/video_frag">
+
+    <FrameLayout
+        android:id="@+id/video_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <VideoView
+            android:id="@+id/video"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#514F4F"/>
+
+        <LinearLayout
+            android:id="@+id/btn_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="390dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="right">
+
+            <ToggleButton
+                android:id="@+id/like"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:checked="false"
+                android:background= "@drawable/like_selector"
+                android:textOff=""
+                android:textOn=""/>
+
+            <Button
+                android:id="@+id/comment"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/w_comment" />
+
+            <Button
+                android:id="@+id/share"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/w_share" />
+
+            <Button
+                android:id="@+id/more"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/w_more" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/vedio_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
+            android:layout_gravity="left|bottom">
+
+            <TextView
+                android:id="@+id/textView_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\@username"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"/>
+
+            <TextView
+                android:id="@+id/textView_tab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="#tab"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"/>
+
+            <TextView
+                android:id="@+id/textView_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="describe detail"
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"/>
+
+            <TextView
+                android:id="@+id/textView_bgm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🎵BGM"
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+</LinearLayout>
