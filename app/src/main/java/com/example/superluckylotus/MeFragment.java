@@ -75,6 +75,14 @@ public class MeFragment extends Fragment {
         fans_num_btn.setOnClickListener(onclick);
         follow_num_btn.setOnClickListener(onclick);
         video1_btn.setOnClickListener(onclick);
+        video2_btn.setOnClickListener(onclick);
+        video3_btn.setOnClickListener(onclick);
+        video4_btn.setOnClickListener(onclick);
+        video5_btn.setOnClickListener(onclick);
+        video6_btn.setOnClickListener(onclick);
+        video7_btn.setOnClickListener(onclick);
+        video8_btn.setOnClickListener(onclick);
+        video9_btn.setOnClickListener(onclick);
         return view;
     }
 

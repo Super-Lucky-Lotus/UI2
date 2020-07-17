@@ -7,6 +7,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * @version: 2.0
+ * @author: 宋佳容
+ * @className: NewFansActivity
+ * @packageName:com.example.superluckylotus
+ * @description: 关注列表界面
+ * @data: 2020.07.17 18:00
+ **/
+
 public class FollowListActivity extends AppCompatActivity {
 
     private Button follow_list_back_btn;

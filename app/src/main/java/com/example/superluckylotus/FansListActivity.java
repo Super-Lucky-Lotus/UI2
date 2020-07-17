@@ -8,6 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+/**
+ * @version: 2.0
+ * @author: 宋佳容
+ * @className: NewFansActivity
+ * @packageName:com.example.superluckylotus
+ * @description: 粉丝列表界面
+ * @data: 2020.07.17 18:15
+ **/
+
 public class FansListActivity extends AppCompatActivity {
 
     private Button fans_list_back_btn;
