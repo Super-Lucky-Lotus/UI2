@@ -13,8 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FindFriendActivity" />
-        <activity android:name=".FriendListActivity" />
+        <activity android:name=".VideoCutActivity"></activity>
+        <activity
+            android:name=".FindFriendActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FriendListActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SearchResultActivity"
             android:theme="@style/AppTheme.NoActionBar" />
