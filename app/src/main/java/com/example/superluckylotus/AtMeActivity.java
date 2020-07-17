@@ -20,12 +20,14 @@ import android.widget.ImageButton;
 public class AtMeActivity extends AppCompatActivity {
 
     private Button back_Btn;
+    private Button at_video_btn1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_at_me);
         back_Btn=(Button)findViewById(R.id.at_back);
+        at_video_btn1=(Button)findViewById(R.id.atVedio1_btn);
         setListeners();
     }
 
@@ -41,10 +43,14 @@ public class AtMeActivity extends AppCompatActivity {
             Intent intent = null;
             switch (v.getId()){
                 case R.id.at_back:
-                    intent = new Intent(AtMeActivity.this,MainActivity.class);
+                    finish();
+                    break;
+                case R.id.atVedio1_btn:
+                    intent = new Intent(AtMeActivity.this,SingleVideoActivity.class);
+                    startActivity(intent);
                     break;
             }
-            startActivity(intent);
+
         }
     }
 }

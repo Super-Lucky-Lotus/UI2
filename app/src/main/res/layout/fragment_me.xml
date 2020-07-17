@@ -107,16 +107,17 @@
             android:textColor="#FFFFFF"
             android:textSize="14sp" />
 
-        <TextView
+        <Button
+            android:id="@+id/num_follow_btn"
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
+            android:background="#514F4F"
             android:text="关注数"
             android:textColor="#FFFFFF"
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/num_follow"
             android:layout_width="37dp"
             android:layout_height="match_parent"
             android:gravity="center_vertical"

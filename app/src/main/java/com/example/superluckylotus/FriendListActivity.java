@@ -46,8 +46,7 @@ public class FriendListActivity extends AppCompatActivity {
             Intent intent = null;
             switch (v.getId()) {
                 case R.id.fri_num_back:
-                    intent = new Intent(FriendListActivity.this, MainActivity.class);
-                    startActivity(intent);
+                    finish();
                     break;
                 case R.id.find_fri_btn:
                     intent = new Intent(FriendListActivity.this, FindFriendActivity.class);

@@ -13,6 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".FollowListActivity"></activity>
+        <activity android:name=".FansListActivity" />
+        <activity android:name=".SingleVideoActivity" />
         <activity android:name=".FindFriendActivity" />
         <activity android:name=".FriendListActivity" />
         <activity

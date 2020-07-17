@@ -38,6 +38,8 @@ public class MeFragment extends Fragment {
     private Button mInfo;
     private Button find_fri_btn;
     private Button fri_num_btn;
+    private  Button fans_num_btn;
+    private  Button follow_num_btn;
 
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -45,10 +47,14 @@ public class MeFragment extends Fragment {
         mInfo=(Button) view.findViewById(R.id.btn_setting);
         find_fri_btn=(Button)view.findViewById(R.id.addFri_btn) ;
         fri_num_btn=(Button) view.findViewById(R.id.num_friend_btn);
+        fans_num_btn=(Button)view.findViewById(R.id.num_fans_btn);
+        follow_num_btn=(Button)view.findViewById(R.id.num_follow_btn);
         OnClick onclick=new OnClick();
         mInfo.setOnClickListener(onclick);
         find_fri_btn.setOnClickListener(onclick);
         fri_num_btn.setOnClickListener(onclick);
+        fans_num_btn.setOnClickListener(onclick);
+        follow_num_btn.setOnClickListener(onclick);
         return view;
     }
 
@@ -66,6 +72,12 @@ public class MeFragment extends Fragment {
                     break;
                 case R.id.num_friend_btn:
                     intent.setClass(getActivity(),FriendListActivity.class);
+                    break;
+                case R.id.num_fans_btn:
+                    intent.setClass(getActivity(),FansListActivity.class);
+                    break;
+                case R.id.num_follow_btn:
+                    intent.setClass(getActivity(),FollowListActivity.class);
                     break;
             }
             getActivity().startActivity(intent);

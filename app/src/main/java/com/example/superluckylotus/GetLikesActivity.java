@@ -41,10 +41,9 @@ public class GetLikesActivity extends AppCompatActivity {
             Intent intent = null;
             switch (v.getId()){
                 case R.id.gl_back:
-                    intent = new Intent(GetLikesActivity.this,MainActivity.class);
+                    finish();
                     break;
             }
-            startActivity(intent);
         }
     }
 }

@@ -41,11 +41,9 @@ public class NewFansActivity extends AppCompatActivity {
             Intent intent = null;
             switch (v.getId()){
                 case R.id.nf_back:
-                    intent = new Intent(NewFansActivity.this,MainActivity.class);
+                    finish();
                     break;
             }
-            startActivity(intent);
         }
     }
-
 }
