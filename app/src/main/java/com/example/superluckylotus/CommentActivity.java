@@ -20,28 +20,39 @@ import android.widget.ImageButton;
 public class CommentActivity extends AppCompatActivity {
 
     private Button back_Btn;
+    private Button comment_video1;
+    private Button comment_video2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comment);
-        back_Btn=(Button)findViewById(R.id.cm_back);
+        back_Btn = (Button) findViewById(R.id.cm_back);
+        comment_video1 = (Button) findViewById(R.id.commentVedio1_btn);
+        comment_video2 = (Button) findViewById(R.id.commentVedio2_btn);
         setListeners();
     }
 
-    private void setListeners(){
+    private void setListeners() {
         OnClick onClick = new OnClick();
         back_Btn.setOnClickListener(onClick);
+        comment_video1.setOnClickListener(onClick);
+        comment_video2.setOnClickListener(onClick);
     }
 
-    class OnClick implements View.OnClickListener{
+    class OnClick implements View.OnClickListener {
 
         @Override
-        public void onClick(View v){
+        public void onClick(View v) {
             Intent intent = null;
-            switch (v.getId()){
+            switch (v.getId()) {
                 case R.id.cm_back:
                     finish();
+                    break;
+                case R.id.commentVedio1_btn:
+                case R.id.commentVedio2_btn:
+                    intent = new Intent(CommentActivity.this, SingleVideoActivity.class);
+                    startActivity(intent);
                     break;
             }
         }

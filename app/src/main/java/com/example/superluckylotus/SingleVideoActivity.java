@@ -18,30 +18,31 @@ import android.widget.Button;
 
 public class SingleVideoActivity extends AppCompatActivity {
 
-//    private Button close_sv_btn;
+    private Button close_sv_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_video);
-//        close_sv_btn = (Button) findViewById(R.id.close_sv);
-//        setListeners();
+        close_sv_btn = (Button) findViewById(R.id.close_sv);
+        setListeners();
     }
 
-//    private void setListeners() {
-//        OnClick onClick = new OnClick();
-//        close_sv_btn.setOnClickListener(onClick);
-//    }
-//
-//    class OnClick implements View.OnClickListener {
-//
-//        @Override
-//        public void onClick(View v) {
-//            switch (v.getId()) {
-//                case R.id.close_sv:
-//                    finish();
-//                    break;
-//            }
-//        }
-//    }
+    private void setListeners() {
+        OnClick onClick = new OnClick();
+        close_sv_btn.setOnClickListener(onClick);
+    }
+
+    class OnClick implements View.OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.close_sv:
+                    finish();
+                    break;
+            }
+        }
+    }
+
 }
