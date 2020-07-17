@@ -16,8 +16,13 @@
         <activity android:name=".FollowListActivity"></activity>
         <activity android:name=".FansListActivity" />
         <activity android:name=".SingleVideoActivity" />
-        <activity android:name=".FindFriendActivity" />
-        <activity android:name=".FriendListActivity" />
+        <activity android:name=".VideoCutActivity"></activity>
+        <activity
+            android:name=".FindFriendActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FriendListActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SearchResultActivity"
             android:theme="@style/AppTheme.NoActionBar" />

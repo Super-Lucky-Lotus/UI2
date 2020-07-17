@@ -30,20 +30,34 @@ import androidx.annotation.Nullable;
  * @data: 2020.07.10 15:12
  **/
 
+/**
+ * @version: 3.0
+ * @author: 黄诗雯
+ * @className: EarthFragment
+ * @packageName:com.example.superluckylotus
+ * @description: 跳出更多弹窗和评论弹窗
+ * @data: 2020.07.17 15:27
+ **/
+
 public class EarthFragment extends Fragment {
 
     private Button turnSearchPage_btn;
     private Button mMore;
+    private Button mComment;
     MoreDialog md;
+    CommentDialog cd;
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_earth,null);
         turnSearchPage_btn = (Button)view.findViewById(R.id.turnSearchPage_btn);
         mMore=view.findViewById(R.id.more);
+        mComment=view.findViewById(R.id.comment);
         md=new MoreDialog(getActivity());
+        cd=new CommentDialog(getActivity());
         OnClick onclick=new OnClick();
         turnSearchPage_btn.setOnClickListener(onclick);
         mMore.setOnClickListener(onclick);
+        mComment.setOnClickListener(onclick);
         return view;
     }
 
@@ -58,6 +72,9 @@ public class EarthFragment extends Fragment {
                     break;
                 case R.id.more:
                     md.popupWindowDialog( v);
+                    break;
+                case R.id.comment:
+                    cd.popupWindowDialog( v);
                     break;
             }
         }

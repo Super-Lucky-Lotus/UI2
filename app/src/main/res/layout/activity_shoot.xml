@@ -7,32 +7,6 @@
     android:background="#000000"
     tools:context=".ShootActivity">
 
-    <ImageButton
-        android:id="@+id/btn_music"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="16dp"
-        android:background="#00FFFFFF"
-        android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton8"
-        app:srcCompat="@drawable/music" />
-
-    <ImageButton
-        android:id="@+id/imageButton8"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:background="#00FFFFFF"
-        android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_change"
-        app:srcCompat="@drawable/start" />
-
     <Button
         android:id="@+id/btn_back"
         android:layout_width="50dp"
