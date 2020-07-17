@@ -2,20 +2,15 @@ package com.example.superluckylotus;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
+
 import android.app.FragmentManager;
 
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 
-import android.util.SparseArray;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 /**
@@ -48,7 +43,7 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE); //没有标题栏
         setContentView(R.layout.activity_main);
-        shoot_Btn = (Button)findViewById(R.id.btn_shoot);
+        shoot_Btn = (Button)findViewById(R.id.btn_addshoot);
         setListeners();
 
         //实例化EarthFragment
@@ -118,7 +113,7 @@ public class MainActivity extends AppCompatActivity  {
         public void onClick(View v){
             Intent intent = null;
             switch (v.getId()){
-                case R.id.btn_shoot:
+                case R.id.btn_addshoot:
                     intent = new Intent(MainActivity.this,ShootActivity.class);
                     startActivity(intent);
                     break;
