@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NearFragment">
+    tools:context=".NearFragment"
+    android:background="#514F4F">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -37,7 +38,23 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         </LinearLayout>
 
-        <include layout="@layout/fragment_video"></include>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="866dp"
+            android:orientation="vertical">
+
+            <include layout="@layout/fragment_video" />
+
+            <include layout="@layout/fragment_video" />
+
+
+        </LinearLayout>
+
+        </ScrollView>
 
     </LinearLayout>
 </FrameLayout>
