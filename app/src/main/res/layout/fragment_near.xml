@@ -18,7 +18,7 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="30dp"
+            android:layout_width="20dp"
             android:layout_height="30dp"
             android:layout_marginLeft="100dp"
             android:layout_weight="1"
@@ -30,6 +30,7 @@
             android:layout_height="30dp"
             android:layout_marginRight="140dp"
             android:text="Place"
+            android:textColor="#cca266"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
     </LinearLayout>
 

@@ -92,8 +92,9 @@
                         android:layout_marginTop="15dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
-                        android:background="#CCCCFF"
-                        android:text="头像"
+                        android:background="#cca266"
+                        android:text="小麦\n分享"
+                        android:textSize="25sp"
                         android:textColor="#FFFFFF" />
 
                     <LinearLayout
@@ -108,7 +109,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:text="UserName"
+                            android:text="【今日推荐】标题"
                             android:textAppearance="@style/TextAppearance.AppCompat.Large"
                             android:textColor="#cca266" />
 
@@ -117,7 +118,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:text="消息概要·发送时间"
+                            android:text="系统消息·发送时间"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                             android:textColor="#cca266" />
                     </LinearLayout>
@@ -140,8 +141,9 @@
                         android:layout_marginTop="15dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
-                        android:background="#FFCCCC"
-                        android:text="头像"
+                        android:background="#83b748"
+                        android:text="小麦\n助手"
+                        android:textSize="25sp"
                         android:textColor="#FFFFFF" />
 
                     <LinearLayout
@@ -156,7 +158,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:text="UserName"
+                            android:text="【小麦提醒】通知类型"
                             android:textAppearance="@style/TextAppearance.AppCompat.Large"
                             android:textColor="#cca266" />
 
@@ -188,8 +190,9 @@
                         android:layout_marginTop="15dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
-                        android:background="#CCCCFF"
-                        android:text="头像"
+                        android:background="#83b748"
+                        android:text="小麦\n助手"
+                        android:textSize="25sp"
                         android:textColor="#FFFFFF" />
 
                     <LinearLayout
@@ -204,7 +207,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:text="UserName"
+                            android:text="【今日总结】标题"
                             android:textAppearance="@style/TextAppearance.AppCompat.Large"
                             android:textColor="#cca266" />
 
@@ -213,7 +216,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:text="消息概要·发送时间"
+                            android:text="关键字·发送时间"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                             android:textColor="#cca266" />
                     </LinearLayout>
@@ -221,149 +224,7 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/n_message_frame4"
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:background="#fff7a2"
-                    android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/user_pic4"
-                        android:layout_width="50dp"
-                        android:layout_height="90dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_weight="1"
-                        android:background="#FFCCCC"
-                        android:text="头像"
-                        android:textColor="#FFFFFF" />
-
-                    <LinearLayout
-                        android:layout_width="280dp"
-                        android:layout_height="80dp"
-                        android:layout_marginTop="20dp"
-                        android:orientation="vertical">
-
-
-                        <TextView
-                            android:id="@+id/textView19"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="UserName"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                            android:textColor="#cca266" />
-
-                        <TextView
-                            android:id="@+id/textView20"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="消息概要·发送时间"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                            android:textColor="#cca266" />
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/n_message_frame5"
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:background="#fff7a2"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/user5_pic"
-                        android:layout_width="50dp"
-                        android:layout_height="90dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_weight="1"
-                        android:background="#CCCCFF"
-                        android:text="头像"
-                        android:textColor="#FFFFFF" />
-
-                    <LinearLayout
-                        android:layout_width="280dp"
-                        android:layout_height="80dp"
-                        android:layout_marginTop="20dp"
-                        android:orientation="vertical">
-
-
-                        <TextView
-                            android:id="@+id/textView21"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="UserName"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                            android:textColor="#cca266" />
-
-                        <TextView
-                            android:id="@+id/textView22"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="消息概要·发送时间"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                            android:textColor="#cca266" />
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/n_message_frame6"
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:background="#fff7a2"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/user_pic6"
-                        android:layout_width="50dp"
-                        android:layout_height="90dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_weight="1"
-                        android:background="#FFCCCC"
-                        android:text="头像"
-                        android:textColor="#FFFFFF" />
-
-                    <LinearLayout
-                        android:layout_width="280dp"
-                        android:layout_height="80dp"
-                        android:layout_marginTop="20dp"
-                        android:orientation="vertical">
-
-
-                        <TextView
-                            android:id="@+id/textView23"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="UserName"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                            android:textColor="#cca266" />
-
-                        <TextView
-                            android:id="@+id/textView24"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="消息概要·发送时间"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                            android:textColor="#cca266" />
-                    </LinearLayout>
-
-
-                </LinearLayout>
 
 
             </LinearLayout>

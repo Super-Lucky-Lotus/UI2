@@ -4,11 +4,11 @@
     <item>
         <shape
             android:shape="rectangle">
-            <solid android:color="#514F4F"/>
+            <solid android:color="#ffcd74"/>
             <corners android:radius="10dp"/>
             <stroke
-                android:width="2dp"
-                android:color="#CCCCCC"/>
+                android:width="3dp"
+                android:color="#CCA266"/>
         </shape>
     </item>
 </layer-list>

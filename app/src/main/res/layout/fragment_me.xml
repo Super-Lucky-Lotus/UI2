@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="149dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/my_bcg" />
+        android:src="@drawable/bcg_user" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,7 +33,7 @@
             app:layout_constraintHorizontal_bias="0.051"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="168dp"
-            tools:src="@tools:sample/avatars" />
+            android:background="@drawable/logo1" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -67,7 +67,9 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:background="#ffcd74"
-                    android:text="个人资料" />
+                    android:text="个人资料"
+                    android:textSize="20sp"
+                    android:textColor="#FFFFFF"/>
 
                 <Button
                     android:id="@+id/addFri_btn"
@@ -75,7 +77,9 @@
                     android:layout_height="50dp"
                     android:layout_marginLeft="20dp"
                     android:background="#ffcd74"
-                    android:text="＋" />
+                    android:text="＋"
+                    android:textSize="20sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -171,10 +175,10 @@
     <ImageView
         android:id="@+id/line1"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="7dp"
         android:layout_marginBottom="5dp"
         android:scaleType="fitXY"
-        android:src="@drawable/line" />
+        android:src="@drawable/video_frame" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -190,7 +194,7 @@
             android:layout_marginRight="20dp"
             android:layout_weight="1"
             android:background="#ffcd74"
-            android:text="视频"
+            android:text="已发布"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
 
@@ -225,6 +229,7 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:orientation="vertical">
 
             <LinearLayout

@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="149dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/my_bcg" />
+            android:src="@drawable/bcg_user" />
 
         <Button
             android:id="@+id/single_user_back"
@@ -25,7 +25,7 @@
             android:layout_height="45dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/black_left" />
+            android:background="@drawable/left" />
 
     </FrameLayout>
 
@@ -47,7 +47,7 @@
             app:layout_constraintHorizontal_bias="0.051"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="168dp"
-            tools:src="@tools:sample/avatars" />
+            android:background="@drawable/logo2" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -188,10 +188,10 @@
     <ImageView
         android:id="@+id/line1"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="7dp"
         android:layout_marginBottom="5dp"
         android:scaleType="fitXY"
-        android:src="@drawable/line" />
+        android:src="@drawable/video_frame" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -207,7 +207,7 @@
             android:layout_marginRight="20dp"
             android:layout_weight="1"
             android:background="#ffcd74"
-            android:text="视频"
+            android:text="TA的视频"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
 
@@ -217,7 +217,7 @@
             android:layout_height="30dp"
             android:layout_weight="1"
             android:background="#ffcd74"
-            android:text="点赞"
+            android:text="TA的点赞"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
 
@@ -231,6 +231,7 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:orientation="vertical">
 
             <LinearLayout
