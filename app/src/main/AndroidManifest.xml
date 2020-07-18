@@ -13,16 +13,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".CodeLoginActivity"></activity>
         <activity
             android:name=".SingleUserActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".FansListActivity" />
-        <activity android:name=".FollowListActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".SingleVideoActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".VideoCutActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".FollowListActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SingleVideoActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".VideoCutActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MusicActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -92,7 +96,6 @@
         <activity
             android:name=".RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
     </application>
 
 </manifest>

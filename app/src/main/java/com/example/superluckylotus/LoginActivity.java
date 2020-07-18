@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -31,12 +32,22 @@ import java.util.Map;
  * @description: 登录界面
  * @data: 2020.07.12 01:18
  **/
+
+/**
+ * @version: 2.0
+ * @author: 黄诗雯
+ * @className: LoginActivity
+ * @packageName:com.example.superluckylotus
+ * @description: 增加验证码登录
+ * @data: 2020.07.12 01:18
+ **/
 public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = "LoginActivity";
     private Button login_Btn;
     private Button reg_Btn;
     private Button skip_Btn;
+    private TextView mCodeLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
         login_Btn = (Button)findViewById(R.id.btn_login);
         reg_Btn = (Button)findViewById(R.id.btn_reg);
         skip_Btn = (Button)findViewById(R.id.btn_skip);
+        mCodeLogin=findViewById(R.id.tv_login);
         setListeners(this);
     }
 
@@ -53,6 +65,7 @@ public class LoginActivity extends AppCompatActivity {
         login_Btn.setOnClickListener(onClick);
         reg_Btn.setOnClickListener(onClick);
         skip_Btn.setOnClickListener(onClick);
+        mCodeLogin.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener{
@@ -85,6 +98,10 @@ public class LoginActivity extends AppCompatActivity {
                 case R.id.btn_skip:
                     intent = new Intent(LoginActivity.this,MainActivity.class);
                     break;
+                case R.id.tv_login:
+                    intent = new Intent(LoginActivity.this,CodeLoginActivity.class);
+                    break;
+
             }
             startActivity(intent);
 

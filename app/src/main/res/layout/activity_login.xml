@@ -92,6 +92,14 @@
         android:background="#ffcd74 "
         android:text="注册" />
 
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="忘记密码？试试验证码登录"
+        android:textColor="#cca266" />
+
     <Button
         android:id="@+id/btn_skip"
         android:layout_width="wrap_content"
