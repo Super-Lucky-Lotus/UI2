@@ -38,8 +38,8 @@ import androidx.recyclerview.widget.RecyclerView;
  **/
 public class NearFragment extends Fragment {
 
-//    private Button mMore;
-//    private Button mComment;
+    private Button mMore;
+    private Button mComment;
     MoreDialog md;
     CommentDialog cd;
 
@@ -50,13 +50,10 @@ public class NearFragment extends Fragment {
 
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.fragment_near,null);
-//            mMore=view.findViewById(R.id.more);
-//            mComment=view.findViewById(R.id.comment);
+
             md=new MoreDialog(getActivity());
             cd=new CommentDialog(getActivity());
             NearFragment.OnClick onclick=new NearFragment.OnClick();
-//            mMore.setOnClickListener(onclick);
-//            mComment.setOnClickListener(onclick);
             recyclerView = view.findViewById(R.id.near_recyclerView_dy);
             initView();
             return view;
@@ -99,6 +96,21 @@ public class NearFragment extends Fragment {
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_video,parent,false);
+            mMore=view.findViewById(R.id.video_more);
+            mComment=view.findViewById(R.id.video_comment);
+            mMore.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    md.popupWindowDialog(view);
+                }
+            });
+            mComment.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    cd.popupWindowDialog(view);
+                }
+            });
+
             return new MyAdapter.ViewHolder(view);
         }
 
