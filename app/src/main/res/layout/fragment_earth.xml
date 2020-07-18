@@ -3,32 +3,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EarthFragment"
+    android:background="#fff7a2"
     android:orientation="vertical"
-    android:background="#514F4F">
+    tools:context=".EarthFragment">
 
+    <include layout="@layout/earth_upbutton" />
 
-        <include layout="@layout/earth_upbutton" />
-
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_dy"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
 
-            <include layout="@layout/fragment_video"/>
-
-            <include layout="@layout/fragment_video"/>
-
-
-        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginTop="56dp">
 
 
-    </ScrollView>
+        </RelativeLayout>
 
+        <VideoView
+            android:id="@+id/line_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@android:color/white" />
+
+    </RelativeLayout>
 
 
 </LinearLayout>
