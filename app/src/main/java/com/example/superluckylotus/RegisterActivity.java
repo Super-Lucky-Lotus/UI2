@@ -26,44 +26,238 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.os.Handler;
+import android.os.Message;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.Toast;
+
+import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.Map;
+
+import cn.smssdk.EventHandler;
+import cn.smssdk.OnSendMessageHandler;
+import cn.smssdk.SMSSDK;
 
 public class RegisterActivity extends AppCompatActivity {
 
     Button mRegister;
     Button mback;
+    private String phone_number;
+    private String code_number;
+    private EditText editTextPhone;
+    private EditText editTextCode;
+    Button mGetCode;
     private static final String TAG = "RegisterActivity";
+    EventHandler eventHandler;
+    private boolean flag=true;
+    private TimeCountUtil mTimeCountUtil;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        mGetCode=(Button)findViewById(R.id.button3);
         mRegister=(Button)findViewById(R.id.btn_register);
         mback=(Button)findViewById(R.id.backtologin) ;
         //setListeners(this);
         setListeners();
+        mTimeCountUtil = new TimeCountUtil(mGetCode, 60000, 1000);
+
+        eventHandler = new EventHandler() {
+            public void afterEvent(int event, int result, Object data) {
+                Message msg=new Message();
+                msg.arg1=event;
+                msg.arg2=result;
+                msg.obj=data;
+                handler.sendMessage(msg);
+            }
+        };
+
+        SMSSDK.registerEventHandler(eventHandler);
+
     }
 
     private void setListeners(){
         RegisterActivity.OnClick onClick = new RegisterActivity.OnClick();
         mRegister.setOnClickListener(onClick);
         mback.setOnClickListener(onClick);
+        mGetCode.setOnClickListener(onClick);
     }
 
+    /**
+     * 使用Handler来分发Message对象到主线程中，处理事件
+     */
+    Handler handler=new Handler()
+    {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            int event=msg.arg1;
+            int result=msg.arg2;
+            Object data=msg.obj;
+            if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE) {
+                if(result == SMSSDK.RESULT_COMPLETE) {
+                    boolean smart = (Boolean)data;
+                    if(smart) {
+                        Toast.makeText(getApplicationContext(),"该手机号已经注册过，请重新输入",
+                                Toast.LENGTH_LONG).show();
+                        editTextPhone.requestFocus();
+                        return;
+                    }
+                }
+            }
+            if(result==SMSSDK.RESULT_COMPLETE)
+            {
+                if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {
+                    Toast.makeText(getApplicationContext(), "验证码输入正确",
+                            Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(RegisterActivity.this,Reg_infoActivity.class);
+                    Phone phoneObj;
+                    phoneObj = ((Phone)getApplicationContext());
+                    phoneObj.setPhone(phone_number);;
+                    startActivity(intent);
+                }
+            }
+            else
+            {
+                if(flag)
+                {
+                    Toast.makeText(getApplicationContext(),"验证码获取失败请重新获取", Toast.LENGTH_LONG).show();
+                    editTextPhone.requestFocus();
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(),"验证码输入错误", Toast.LENGTH_LONG).show();
+                    editTextPhone.requestFocus();
+                }
+            }
+        }
+
+    };
+
+
+
     private class OnClick implements View.OnClickListener{
+
         @Override
         public void onClick(View v){
+            editTextPhone = (EditText) findViewById(R.id.editTextPhone);
+            phone_number = editTextPhone.getText().toString();
+            editTextCode = (EditText) findViewById(R.id.et_number);
+            code_number = editTextCode.getText().toString();
             Intent intent = null;
             switch (v.getId()){
+                case R.id.button3:
+                    mTimeCountUtil.start();
+                    if(judPhone())//去掉左右空格获取字符串
+                    {
+                        SMSSDK.getVerificationCode("86",phone_number);
+                        editTextCode.requestFocus();
+                    }
+                    break;
                 case R.id.btn_register:
-                    intent = new Intent(RegisterActivity.this,Reg_infoActivity.class);
+                    if(judCord())
+                        SMSSDK.submitVerificationCode("86",phone_number,code_number);
+                    flag=false;
                     break;
                 case R.id.backtologin:
                     intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                    startActivity(intent);
                     break;
             }
-            startActivity(intent);
         }
     }
 
+    //实现倒计时功能
+    public class TimeCountUtil extends CountDownTimer {
+        private Button mButton;
+
+        public TimeCountUtil(Button button, long millisInFuture, long countDownInterval) {
+            super(millisInFuture, countDownInterval);
+            this.mButton = button;
+        }
+
+        @Override
+        public void onTick(long millisUntilFinished) {
+            // 按钮不可用
+            mButton.setEnabled(false);
+            mButton.setBackgroundColor(Color.parseColor("#dddddd"));
+            String showText = millisUntilFinished / 1000 + "秒后可重新发送";
+            mButton.setText(showText);
+        }
+
+        @Override
+        public void onFinish() {
+            // 按钮设置可用
+            mButton.setEnabled(true);
+            mButton.setText("重新获取验证码");
+        }
+    }
+
+    private boolean judPhone()
+    {
+        if(TextUtils.isEmpty(editTextPhone.getText().toString().trim()))
+        {
+            Toast.makeText(RegisterActivity.this,"请输入您的电话号码",Toast.LENGTH_LONG).show();
+            editTextPhone.requestFocus();
+            return false;
+        }
+        else if(editTextPhone.getText().toString().trim().length()!=11)
+        {
+            Toast.makeText(RegisterActivity.this,"您的电话号码位数不正确",Toast.LENGTH_LONG).show();
+            editTextPhone.requestFocus();
+            return false;
+        }
+        else
+        {
+            phone_number=editTextPhone.getText().toString().trim();
+            String num="[1][358]\\d{9}";
+            if(phone_number.matches(num))
+                return true;
+            else
+            {
+                Toast.makeText(RegisterActivity.this,"请输入正确的手机号码",Toast.LENGTH_LONG).show();
+                return false;
+            }
+        }
+    }
+
+    private boolean judCord() {
+        judPhone();
+        if (TextUtils.isEmpty(editTextCode.getText().toString().trim())) {
+            Toast.makeText(RegisterActivity.this, "请输入您的验证码", Toast.LENGTH_LONG).show();
+            editTextCode.requestFocus();
+            return false;
+        } else if (editTextCode.getText().toString().trim().length() != 6) {
+            Toast.makeText(RegisterActivity.this, "您的验证码位数不正确", Toast.LENGTH_LONG).show();
+            editTextCode.requestFocus();
+
+            return false;
+        } else {
+            code_number = editTextCode.getText().toString().trim();
+            return true;
+        }
 
     /*private void setListeners(Context context){
         RegisterActivity.OnClick onClick = new RegisterActivity.OnClick(context);
@@ -247,4 +441,6 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
     }*/
+    }
+
 }

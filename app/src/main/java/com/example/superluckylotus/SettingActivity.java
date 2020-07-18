@@ -1,22 +1,19 @@
 package com.example.superluckylotus;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
-import android.media.Image;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.text.Layout;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,9 +25,13 @@ import com.bigkoo.pickerview.view.OptionsPickerView;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @version: 3.0
@@ -40,8 +41,23 @@ import java.util.List;
  * @description: 设置界面
  * @data: 2020.07.16 13:25
  **/
+
+/**
+ * @version: 3.0
+ * @author: 黄坤
+ * @className: SettingActivity
+ * @packageName:com.example.superluckylotus
+ * @description: 对应用户的信息显示
+ * @data: 2020.07.16 17:25
+ **/
 public class SettingActivity extends AppCompatActivity {
 
+    protected String nickname="用户名";
+    protected String gender ="";
+    protected String password = "0";
+    protected String region = "";
+    protected String birthday = "";
+    protected String description = "";
     ImageButton mBackBtn;
     LinearLayout mChangename;
     LinearLayout mChangepassword;
@@ -50,6 +66,13 @@ public class SettingActivity extends AppCompatActivity {
     LinearLayout mChangebirthday;
     LinearLayout mChangesex;
     LinearLayout mChangeaddress;
+    Button mPreserve;
+    protected TextView textView1;
+    protected TextView textView2;
+    protected TextView textView3;
+    protected TextView textView4;
+    protected TextView textView5;
+    protected TextView textView6;
     TextView mTvSex;
     TextView mTvBirthday;
     TextView mTvAddress;
@@ -71,6 +94,12 @@ public class SettingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+        textView1 = (TextView)findViewById(R.id.textView6);
+        textView2 = (TextView)findViewById(R.id.textView8);
+        textView3 = (TextView)findViewById(R.id.tv_sex);
+        textView4 = (TextView)findViewById(R.id.tv_address);
+        textView5 = (TextView)findViewById(R.id.textView18);
+        textView6 = (TextView)findViewById(R.id.tv_birthday);
         mBackBtn=(ImageButton)findViewById(R.id.back);
         mChangeintro=(LinearLayout)findViewById(R.id.changeintro);
         mChangename=(LinearLayout)findViewById(R.id.changename);
@@ -79,13 +108,59 @@ public class SettingActivity extends AppCompatActivity {
         mChangebirthday=(LinearLayout)findViewById(R.id.changebirthday);
         mChangesex=(LinearLayout)findViewById(R.id.changesex) ;
         mChangeaddress=(LinearLayout)findViewById(R.id.changeaddress);
+        mPreserve=(Button)findViewById(R.id.btn_preserve);
         mTvSex=(TextView)findViewById(R.id.tv_sex);
         mTvBirthday=findViewById(R.id.tv_birthday);
         mTvAddress=findViewById(R.id.tv_address);
+        getData();
         setListeners();
         getSexData();
         initSexOptionPicker();
         mHandler.sendEmptyMessage(MSG_LOAD_DATA);//加载数据
+    }
+
+    private void getData() {
+        Phone phoneObj = (Phone)getApplication();
+        final String phone = phoneObj.getPhone();
+        String path = "http://139.219.4.34/profile/";
+        Map<String, String> userParams = new HashMap<String, String>();//将数据放在map里，便于取出传递
+        userParams.put("phone", phone);
+
+        if(!phone.equals("")) {
+            HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
+                @Override
+                public void onSuccess(String result) throws JSONException {
+                    JSONObject result_json = new JSONObject(result);
+                    String get = result_json.getString("msg");
+                    Log.v("SettingActivity",result);
+                    if (get.equals("success")) {
+                        nickname = result_json.getString("nickname");
+                        password = result_json.getString("password");
+                        gender= result_json.getString("gender");
+                        region = result_json.getString("region");
+                        description = result_json.getString("description");
+                        birthday = result_json.getString("birthday");
+                        textView1.setText(nickname);
+                        textView2.setText(password);
+                        textView3.setText(gender);
+                        textView4.setText(region);
+                        textView5.setText(description);
+                        textView6.setText(birthday);
+                    }
+                }
+
+                @Override
+                public void onError(Exception e) {
+
+                    Log.v("SettingActivity","连接失败！");
+                }
+
+                @Override
+                public void onFinish() {
+                }
+
+            });
+        }
     }
 
     private Handler mHandler = new Handler() {
@@ -300,12 +375,28 @@ public class SettingActivity extends AppCompatActivity {
         mChangebirthday.setOnClickListener(onClick);
         mChangesex.setOnClickListener(onClick);
         mChangeaddress.setOnClickListener(onClick);
+        mPreserve.setOnClickListener(onClick);
     }
 
     class OnClick implements View.OnClickListener{
 
         @Override
         public void onClick(View v){
+            TextView textView1 = (TextView) findViewById(R.id.tv_sex);
+            TextView textView2 = (TextView) findViewById(R.id.tv_address);
+            TextView textView3 = (TextView) findViewById(R.id.tv_birthday);
+            Phone phoneObj = (Phone)getApplication();
+            final String phone = phoneObj.getPhone();
+            String path1 = "http://139.219.4.34/editgerder/";
+            String path2 = "http://139.219.4.34/editregion/";
+            String path3 = "http://139.219.4.34/editbirthday/";
+            Map<String, String> userParams1 = new HashMap<String, String>();//将数据放在map里，便于取出传递
+            userParams1.put("phone", phone);
+            Map<String, String> userParams2 = new HashMap<String, String>();//将数据放在map里，便于取出传递
+            userParams2.put("phone", phone);
+            Map<String, String> userParams3 = new HashMap<String, String>();//将数据放在map里，便于取出传递
+            userParams3.put("phone", phone);
+
             Intent intent = null;
             switch (v.getId()){
                 case R.id.back:
@@ -318,27 +409,32 @@ public class SettingActivity extends AppCompatActivity {
                     break;
                 case R.id.changepassword:
                     intent = new Intent(SettingActivity.this,ChangePasswordActivity.class);
+                    //界面跳转并传递参数password
+                    intent.putExtra("password", password);
                     startActivity(intent);
                     break;
                 case R.id.changename:
                     intent = new Intent(SettingActivity.this,ChangeNameActivity.class);
+                    //界面跳转并传递参数nickname
+                    intent.putExtra("nickname", nickname);
                     startActivity(intent);
                     break;
                 case R.id.changeintro:
                     intent = new Intent(SettingActivity.this,ChangeIntroductionActivity.class);
+                    //界面跳转并传递参数description
+                    intent.putExtra("description", description);
                     startActivity(intent);
                     break;
                 case R.id.changebirthday:
                     DatePickerDialog datePickerDialog=new DatePickerDialog(SettingActivity.this, new DatePickerDialog.OnDateSetListener() {
-              @Override
-                 public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                                             Toast.makeText(SettingActivity.this, "您当前选择日期："+year+"年"+(month+1)+"月"+dayOfMonth+"日", Toast.LENGTH_SHORT).show();
+                        @Override
+                        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                            Toast.makeText(SettingActivity.this, "您当前选择日期："+year+"年"+(month+1)+"月"+dayOfMonth+"日", Toast.LENGTH_SHORT).show();
 
-                  mTvBirthday.setText(year+"年"+(month+1)+"月"+dayOfMonth+"日");              }
-            }, 2020, 7,14);
-                             datePickerDialog.show();//展示日期对话框
-
-                     break;
+                            mTvBirthday.setText(year+"年"+(month+1)+"月"+dayOfMonth+"日");              }
+                    }, 2020, 7,14);
+                    datePickerDialog.show();//展示日期对话框
+                    break;
                 case R.id.changesex:
                     if(pvCustomOptions != null){
                         pvCustomOptions.show();
@@ -348,24 +444,81 @@ public class SettingActivity extends AppCompatActivity {
                     if (isLoaded) {
                         showPickerView();
                     } else {
-                        Toast.makeText(SettingActivity.this, "Please waiting until the data is parsed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SettingActivity.this, "请等待数据解析完成", Toast.LENGTH_SHORT).show();
                     }
                     break;
-
-
+                case R.id.btn_preserve:
+                    String birthday = textView3.getText().toString();
+                    userParams3.put("birthday", birthday);
+                    Log.v("SettingActivity",birthday);
+                    HttpServer.SuperHttpUtil.post(userParams3,path3, new HttpServer.SuperHttpUtil.HttpCallBack() {
+                        @Override
+                        public void onSuccess(String result) throws JSONException {
+                            JSONObject result_json=new JSONObject(result);
+                            String change=result_json.getString("msg");
+                            if(change.equals("success")){
+                                Toast.makeText(SettingActivity.this,"修改成功", Toast.LENGTH_SHORT).show();
+                            } else{
+                                Toast.makeText(SettingActivity.this,"未知错误 ", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        @Override
+                        public void onError(Exception e) {
+                            Toast.makeText(SettingActivity.this,"服务器连接失败",Toast.LENGTH_SHORT).show();
+                        }
+                        @Override
+                        public void onFinish() {
+                        }
+                    });
+                    String gender = textView1.getText().toString();
+                    userParams1.put("gender", gender);
+                    Log.v("SettingActivity",gender);
+                    HttpServer.SuperHttpUtil.post(userParams1,path1, new HttpServer.SuperHttpUtil.HttpCallBack() {
+                        @Override
+                        public void onSuccess(String result) throws JSONException {
+                            JSONObject result_json=new JSONObject(result);
+                            String change=result_json.getString("msg");
+                            if(change.equals("success")){
+                                Toast.makeText(SettingActivity.this,"修改成功", Toast.LENGTH_SHORT).show();
+                            } else{
+                                Toast.makeText(SettingActivity.this,"未知错误 ", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        @Override
+                        public void onError(Exception e) {
+                            Toast.makeText(SettingActivity.this,"服务器连接失败",Toast.LENGTH_SHORT).show();
+                        }
+                        @Override
+                        public void onFinish() {
+                        }
+                    });
+                    String region = textView2.getText().toString();
+                    userParams2.put("region", region);
+                    Log.v("SettingActivity",region);
+                    HttpServer.SuperHttpUtil.post(userParams2,path2, new HttpServer.SuperHttpUtil.HttpCallBack() {
+                        @Override
+                        public void onSuccess(String result) throws JSONException {
+                            JSONObject result_json=new JSONObject(result);
+                            String change=result_json.getString("msg");
+                            if(change.equals("success")){
+                                Toast.makeText(SettingActivity.this,"修改成功", Toast.LENGTH_SHORT).show();
+                            } else{
+                                Toast.makeText(SettingActivity.this,"未知错误 ", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        @Override
+                        public void onError(Exception e) {
+                            Toast.makeText(SettingActivity.this,"服务器连接失败",Toast.LENGTH_SHORT).show();
+                        }
+                        @Override
+                        public void onFinish() {
+                        }
+                    });
                 default:
                     break;
 
             }
 
         }
-
-
-
-
-
-
-
-
     }
 }

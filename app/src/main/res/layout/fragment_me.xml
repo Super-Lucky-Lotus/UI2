@@ -120,6 +120,7 @@
             android:textSize="14sp" />
 
         <TextView
+            android:id="@+id/num_follow"
             android:layout_width="37dp"
             android:layout_height="match_parent"
             android:gravity="center_vertical"

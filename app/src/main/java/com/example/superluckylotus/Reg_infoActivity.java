@@ -2,15 +2,19 @@ package com.example.superluckylotus;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,9 +25,13 @@ import com.bigkoo.pickerview.view.OptionsPickerView;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @version: 3.0
@@ -33,6 +41,16 @@ import java.util.List;
  * @description: 注册资料界面
  * @data: 2020.07.16 13:20
  **/
+
+/**
+ * @version: 3.0
+ * @author: 黄坤
+ * @className: Reg_infoActivity
+ * @packageName:com.example.superluckylotus
+ * @description: 注册信息发送到数据库
+ * @data: 2020.07.16 13:20
+ **/
+
 public class Reg_infoActivity extends AppCompatActivity {
 
     Button mEnter;
@@ -41,6 +59,8 @@ public class Reg_infoActivity extends AppCompatActivity {
     Button mSex;
     Button mAddress;
 
+    private static final String TAG = "Reg_infoActivity";
+    public Activity act;
     private List<JsonBean> options1Items = new ArrayList<>();
     private ArrayList<ArrayList<String>> options2Items = new ArrayList<>();
     private ArrayList<ArrayList<ArrayList<String>>> options3Items = new ArrayList<>();
@@ -63,7 +83,7 @@ public class Reg_infoActivity extends AppCompatActivity {
         mBirthday=findViewById(R.id.btn_birthday);
         mSex=findViewById(R.id.btn_sex);
         mAddress=findViewById(R.id.btn_address);
-        setListeners();
+        setListeners(this);
         getSexData();
         initSexOptionPicker();
         mHandler.sendEmptyMessage(MSG_LOAD_DATA);//加载数据
@@ -76,7 +96,7 @@ public class Reg_infoActivity extends AppCompatActivity {
                     //如果已创建就不再重新创建子线程了
                     if (thread == null) {
 
-                        Toast.makeText(Reg_infoActivity.this, "Begin Parse Data", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Reg_infoActivity.this, "开始解析数据", Toast.LENGTH_SHORT).show();
                         thread = new Thread(new Runnable() {
                             @Override
                             public void run() {
@@ -89,12 +109,12 @@ public class Reg_infoActivity extends AppCompatActivity {
                     break;
 
                 case MSG_LOAD_SUCCESS:
-                    Toast.makeText(Reg_infoActivity.this, "Parse Succeed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Reg_infoActivity.this, "解析成功", Toast.LENGTH_SHORT).show();
                     isLoaded = true;
                     break;
 
                 case MSG_LOAD_FAILED:
-                    Toast.makeText(Reg_infoActivity.this, "Parse Failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Reg_infoActivity.this, "解析失败", Toast.LENGTH_SHORT).show();
                     break;
             }
         }
@@ -273,8 +293,8 @@ public class Reg_infoActivity extends AppCompatActivity {
         }
     }
 
-    private void setListeners() {
-        Reg_infoActivity.OnClick onClick = new OnClick();
+    private void setListeners(Context context) {
+        OnClick onClick = new OnClick(context);
         mBacktoReg.setOnClickListener(onClick);
         mEnter.setOnClickListener(onClick);
         mBirthday.setOnClickListener(onClick);
@@ -283,14 +303,91 @@ public class Reg_infoActivity extends AppCompatActivity {
     }
 
     private class OnClick implements View.OnClickListener{
+        public String nickname;
+        public String password;
+        public String password2;
+        public String description;
+        public String region;
+        public String gender;
+        public String birthday;
+        public OnClick(Context context) {
+            act=(Activity)context;
+        }
 
         @Override
         public void onClick(View v){
+            Phone phoneObj;
+            phoneObj = ((Phone)getApplicationContext());
+            final String phone = phoneObj.getPhone();
+            EditText editText1 = (EditText) findViewById(R.id.et_username);
+            nickname = editText1.getText().toString();
+            EditText editText2 = (EditText) findViewById(R.id.et_password);
+            password = editText2.getText().toString();
+            EditText editText3 = (EditText) findViewById(R.id.et_password2);
+            password2 = editText3.getText().toString();
+            EditText editText4 = (EditText) findViewById(R.id.editTextTextPersonName6);
+            description = editText4.getText().toString();
+            region = mAddress.getText().toString();
+            gender = mSex.getText().toString();
+            birthday = mBirthday.getText().toString();
+
+
+            String path = "http://139.219.4.34/register/";
+            Map<String, String> userParams = new HashMap<String, String>();//将数据放在map里，便于取出传递
+
+            userParams.put("phone", phone);
+            userParams.put("nickname", nickname);
+            userParams.put("password", password);
+            userParams.put("description", description);
+            userParams.put("region", region);
+            userParams.put("gender", gender);
+            userParams.put("birthday", birthday);
+
             Intent intent = null;
             switch (v.getId()){
                 case R.id.btn_enter:
-                    intent = new Intent(Reg_infoActivity.this,MainActivity.class);
-                    startActivity(intent);
+                    if(password.equals(password2)) {
+                        try {
+                            HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
+                                @Override
+                                public void onSuccess(String result) throws JSONException {
+                                    JSONObject result_json = new JSONObject(result);
+                                    String register = result_json.getString("msg");
+                                    if (register.equals("success")) {
+                                        Toast.makeText(act, "注册成功", Toast.LENGTH_SHORT).show();
+                                        Intent intent = null;
+                                        intent = new Intent(Reg_infoActivity.this, MainActivity.class);
+                                        intent.putExtra("phone", phone);
+                                        startActivity(intent);
+                                        Log.v(TAG, result);
+                                    } else if(register.equals("user existed")){
+                                        Toast.makeText(act, "用户已经注册过，将直接登录", Toast.LENGTH_SHORT).show();
+                                        Intent intent = null;
+                                        intent = new Intent(Reg_infoActivity.this, MainActivity.class);
+                                        startActivity(intent);
+                                        Log.v(TAG, result);
+                                    }else{
+                                        Toast.makeText(Reg_infoActivity.this, "注册失败,不明错误", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+
+                                @Override
+                                public void onError(Exception e) {
+                                    Toast.makeText(Reg_infoActivity.this, "注册失败，服务器连接错误", Toast.LENGTH_SHORT).show();
+                                }
+
+                                @Override
+                                public void onFinish() {
+                                    Toast.makeText(Reg_infoActivity.this, "接收完成", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    else{
+                        Toast.makeText(Reg_infoActivity.this, "两次密码输入不一致，请重新输入", Toast.LENGTH_SHORT).show();
+                    }
                     break;
                 case R.id.backtoreg:
                     intent = new Intent(Reg_infoActivity.this,RegisterActivity.class);
@@ -314,7 +411,7 @@ public class Reg_infoActivity extends AppCompatActivity {
                     if (isLoaded) {
                         showPickerView();
                     } else {
-                        Toast.makeText(Reg_infoActivity.this, "Please waiting until the data is parsed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Reg_infoActivity.this, "请等待数据解析完成", Toast.LENGTH_SHORT).show();
                     }
                     break;
 

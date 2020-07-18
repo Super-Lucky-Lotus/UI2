@@ -13,6 +13,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -40,6 +44,15 @@ import java.util.Map;
  * @packageName:com.example.superluckylotus
  * @description: 增加验证码登录
  * @data: 2020.07.12 01:18
+ **/
+
+/**
+ * @version: 2.0
+ * @author: 黄坤
+ * @className: LoginActivity
+ * @packageName:com.example.superluckylotus
+ * @description: 实现手机号和密码登录功能
+ * @data: 2020.07.18 16:18
  **/
 public class LoginActivity extends AppCompatActivity {
 
@@ -72,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         public Activity act;
-        public String username;
+        public String phone;
         public String password;
         public OnClick(Context context) {
             act=(Activity)context;
@@ -82,28 +95,67 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         public void onClick(View v){
             EditText editText1 = (EditText) findViewById(R.id.name);
-            username = editText1.getText().toString();
+            phone = editText1.getText().toString();
             EditText editText2 = (EditText) findViewById(R.id.psw);
             password = editText2.getText().toString();
-            Log.v(TAG,"username:"+username);
-            Log.v(TAG,"password:"+username);
-            Intent intent = null;
+            String path = "http://139.219.4.34/login/";
+            Map<String, String> userParams = new HashMap<String, String>();//将数据放在map里，便于取出传递
+            userParams.put("phone", phone);
+            userParams.put("password", password);
+
             switch (v.getId()){
                 case R.id.btn_login:
-                    intent = new Intent(LoginActivity.this,MainActivity.class);
+                    try {
+                        HttpServer.SuperHttpUtil.post(userParams,path, new HttpServer.SuperHttpUtil.HttpCallBack() {
+                            @Override
+                            public void onSuccess(String result) throws JSONException {
+                                JSONObject result_json=new JSONObject(result);
+                                String login=result_json.getString("msg");
+                                if(login.equals("success")){
+                                    Phone phoneObj = (Phone)getApplication();
+                                    phoneObj.setPhone(phone);
+                                    Toast.makeText(LoginActivity.this,"登录成功", Toast.LENGTH_SHORT).show();
+                                    Intent intent = null;
+                                    intent = new Intent(LoginActivity.this,MainActivity.class);
+                                    startActivity(intent);
+                                }
+                                else if(login.equals("password failure")){
+                                    Toast.makeText(LoginActivity.this,"登录失败，密码错误 ", Toast.LENGTH_SHORT).show();
+                                }else{
+                                    Toast.makeText(LoginActivity.this,"登录失败，用户不存在 ", Toast.LENGTH_SHORT).show();
+                                }
+                                Log.v(TAG,result);
+                            }
+                            @Override
+                            public void onError(Exception e) {
+                                Toast.makeText(LoginActivity.this,"服务器连接失败",Toast.LENGTH_SHORT).show();
+                            }
+
+                            @Override
+                            public void onFinish() {
+                                Toast.makeText(LoginActivity.this,"onFinish",Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case R.id.btn_reg://MainActivity要改成reg的act
+                    Intent intent = null;
                     intent = new Intent(LoginActivity.this,RegisterActivity.class);
+                    startActivity(intent);
                     break;
                 case R.id.btn_skip:
                     intent = new Intent(LoginActivity.this,MainActivity.class);
+                    startActivity(intent);
                     break;
                 case R.id.tv_login:
                     intent = new Intent(LoginActivity.this,CodeLoginActivity.class);
+                    startActivity(intent);
                     break;
 
             }
-            startActivity(intent);
+
 
         }
     }
