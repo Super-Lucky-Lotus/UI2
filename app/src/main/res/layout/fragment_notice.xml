@@ -4,7 +4,7 @@
     android:id="@+id/notice_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#514F4F">
+    android:background="#fff7a2">
 
     <ScrollView
         android:layout_width="fill_parent"
@@ -81,7 +81,7 @@
                     android:id="@+id/n_message_frame1"
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
-                    android:background="#514F4F"
+                    android:background="#fff7a2"
                     android:orientation="horizontal">
 
                     <Button
@@ -110,7 +110,7 @@
                             android:layout_marginTop="10dp"
                             android:text="UserName"
                             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                            android:textColor="#FFFFFF" />
+                            android:textColor="#cca266" />
 
                         <TextView
                             android:id="@+id/textView16"
@@ -119,7 +119,7 @@
                             android:layout_marginTop="8dp"
                             android:text="消息概要·发送时间"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                            android:textColor="#FFFFFF" />
+                            android:textColor="#cca266" />
                     </LinearLayout>
 
 
@@ -129,7 +129,7 @@
                     android:id="@+id/n_message_frame2"
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
-                    android:background="#514F4F"
+                    android:background="#fff7a2"
                     android:orientation="horizontal">
 
                     <Button
@@ -158,7 +158,7 @@
                             android:layout_marginTop="10dp"
                             android:text="UserName"
                             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                            android:textColor="#FFFFFF" />
+                            android:textColor="#cca266" />
 
                         <TextView
                             android:id="@+id/textView14"
@@ -167,7 +167,7 @@
                             android:layout_marginTop="8dp"
                             android:text="消息概要·发送时间"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                            android:textColor="#FFFFFF" />
+                            android:textColor="#cca266" />
                     </LinearLayout>
 
 
@@ -177,7 +177,7 @@
                     android:id="@+id/n_message_frame3"
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
-                    android:background="#514F4F"
+                    android:background="#fff7a2"
                     android:orientation="horizontal">
 
                     <Button
@@ -206,7 +206,7 @@
                             android:layout_marginTop="10dp"
                             android:text="UserName"
                             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                            android:textColor="#FFFFFF" />
+                            android:textColor="#cca266" />
 
                         <TextView
                             android:id="@+id/textView18"
@@ -215,7 +215,7 @@
                             android:layout_marginTop="8dp"
                             android:text="消息概要·发送时间"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                            android:textColor="#FFFFFF" />
+                            android:textColor="#cca266" />
                     </LinearLayout>
 
 
@@ -225,7 +225,7 @@
                     android:id="@+id/n_message_frame4"
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
-                    android:background="#514F4F"
+                    android:background="#fff7a2"
                     android:orientation="horizontal">
 
                     <Button
@@ -254,7 +254,7 @@
                             android:layout_marginTop="10dp"
                             android:text="UserName"
                             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                            android:textColor="#FFFFFF" />
+                            android:textColor="#cca266" />
 
                         <TextView
                             android:id="@+id/textView20"
@@ -263,7 +263,7 @@
                             android:layout_marginTop="8dp"
                             android:text="消息概要·发送时间"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                            android:textColor="#FFFFFF" />
+                            android:textColor="#cca266" />
                     </LinearLayout>
 
 
@@ -273,7 +273,7 @@
                     android:id="@+id/n_message_frame5"
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
-                    android:background="#514F4F"
+                    android:background="#fff7a2"
                     android:orientation="horizontal">
 
                     <Button
@@ -302,7 +302,7 @@
                             android:layout_marginTop="10dp"
                             android:text="UserName"
                             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                            android:textColor="#FFFFFF" />
+                            android:textColor="#cca266" />
 
                         <TextView
                             android:id="@+id/textView22"
@@ -311,7 +311,7 @@
                             android:layout_marginTop="8dp"
                             android:text="消息概要·发送时间"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                            android:textColor="#FFFFFF" />
+                            android:textColor="#cca266" />
                     </LinearLayout>
 
 
@@ -321,7 +321,7 @@
                     android:id="@+id/n_message_frame6"
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
-                    android:background="#514F4F"
+                    android:background="#fff7a2"
                     android:orientation="horizontal">
 
                     <Button
@@ -350,7 +350,7 @@
                             android:layout_marginTop="10dp"
                             android:text="UserName"
                             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                            android:textColor="#FFFFFF" />
+                            android:textColor="#cca266" />
 
                         <TextView
                             android:id="@+id/textView24"
@@ -359,7 +359,7 @@
                             android:layout_marginTop="8dp"
                             android:text="消息概要·发送时间"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                            android:textColor="#FFFFFF" />
+                            android:textColor="#cca266" />
                     </LinearLayout>
 
 

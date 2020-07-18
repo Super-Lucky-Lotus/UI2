@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="40dp"
-    android:background="#514F4F">
+    android:background="#fff7a2">
 
     <Button
         android:id="@+id/rcm_btn"
@@ -15,8 +15,8 @@
         android:layout_marginRight="70dp"
         android:onClick="onClick"
         android:text="推荐"
-        android:textColor="#FFFFFF"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#cca266"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

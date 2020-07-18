@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#514F4F"
+    android:background="#fff7a2 "
     android:orientation="vertical"
     tools:context=".GetLikesActivity">
 
@@ -31,7 +31,7 @@
             android:layout_marginTop="5dp"
             android:text="收到点赞"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="#FFFFFF" />
+            android:textColor="#cca266" />
     </LinearLayout>
 
     <ImageView
@@ -56,7 +56,7 @@
                 android:id="@+id/n_likes_frame1"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:background="#514F4F"
+                android:background="#fff7a2 "
                 android:orientation="horizontal">
 
                 <Button
@@ -84,7 +84,7 @@
                         android:layout_marginTop="1dp"
                         android:text="UserName1"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:textColor="#FFFFFF" />
+                        android:textColor="#cca266" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -92,7 +92,7 @@
                         android:layout_marginTop="3dp"
                         android:text="点赞了我的视频"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:textColor="#FFFFFF" />
+                        android:textColor="#cca266" />
 
                     <TextView
                         android:id="@+id/likesT1_tv"
@@ -101,7 +101,7 @@
                         android:layout_marginTop="3dp"
                         android:text="点赞时间"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:textColor="#FFFFFF" />
+                        android:textColor="#cca266" />
                 </LinearLayout>
 
                 <Button
@@ -121,7 +121,7 @@
                 android:id="@+id/n_likes_frame2"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:background="#514F4F"
+                android:background="#fff7a2 "
                 android:orientation="horizontal">
 
                 <Button
@@ -149,7 +149,7 @@
                         android:layout_marginTop="1dp"
                         android:text="UserName2"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:textColor="#FFFFFF" />
+                        android:textColor="#cca266" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -157,7 +157,7 @@
                         android:layout_marginTop="3dp"
                         android:text="点赞了我的视频"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:textColor="#FFFFFF" />
+                        android:textColor="#cca266" />
 
                     <TextView
                         android:id="@+id/likesT2_tv"
@@ -166,7 +166,7 @@
                         android:layout_marginTop="3dp"
                         android:text="点赞时间"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:textColor="#FFFFFF" />
+                        android:textColor="#cca266" />
                 </LinearLayout>
 
                 <Button

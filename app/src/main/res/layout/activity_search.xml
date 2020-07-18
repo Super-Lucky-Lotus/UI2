@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#514F4F"
+    android:background="#fff7a2"
     android:orientation="vertical"
     tools:context=".SearchActivity">
 
@@ -65,7 +65,7 @@
                     android:layout_height="match_parent"
                     android:text="1 aa"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#cca266" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -73,7 +73,7 @@
                     android:gravity="center_horizontal"
                     android:text="3 aa"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#cca266" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -81,7 +81,7 @@
                     android:gravity="center_horizontal"
                     android:text="5 aa"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#cca266" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -89,7 +89,7 @@
                     android:gravity="center_horizontal"
                     android:text="7 aa"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#cca266" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -97,7 +97,7 @@
                     android:gravity="center_horizontal"
                     android:text="9 aa"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#cca266" />
 
             </LinearLayout>
 
@@ -124,7 +124,7 @@
                     android:gravity="center_horizontal"
                     android:text="2 aa"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#cca266" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -132,7 +132,7 @@
                     android:gravity="center_horizontal"
                     android:text="4 aa"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#cca266" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -140,7 +140,7 @@
                     android:gravity="center_horizontal"
                     android:text="6 aa"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#cca266" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -148,7 +148,7 @@
                     android:gravity="center_horizontal"
                     android:text="8 aa"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#cca266" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -156,7 +156,7 @@
                     android:gravity="center_horizontal"
                     android:text="10 aa"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#cca266" />
 
             </LinearLayout>
 

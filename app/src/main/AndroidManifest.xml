@@ -42,9 +42,6 @@
             android:name=".SearchActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ChatActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".NewFansActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

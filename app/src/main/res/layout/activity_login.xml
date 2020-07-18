@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="#514F4F"
+    android:background="#fff7a2"
     android:orientation="vertical">
 
     <ImageView
@@ -30,7 +30,7 @@
             android:layout_weight="1"
             android:text="手机"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="#FFFFFF" />
+            android:textColor="#cca266" />
 
         <EditText
             android:id="@+id/name"
@@ -59,7 +59,7 @@
             android:layout_weight="1"
             android:text="密码"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="#FFFFFF" />
+            android:textColor="#cca266" />
 
         <EditText
             android:id="@+id/psw"
@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:background="#FFFFFF"
+        android:background="#ffcd74 "
         android:text="登陆" />
 
     <Button
@@ -89,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:background="#FFFFFF"
+        android:background="#ffcd74 "
         android:text="注册" />
 
     <Button
@@ -101,7 +101,7 @@
         android:layout_marginTop="50dp"
         android:background="#00FFFFFF"
         android:text=">>跳过"
-        android:textColor="#FFFFFF" />
+        android:textColor="#cca266" />
 
 
 </LinearLayout>

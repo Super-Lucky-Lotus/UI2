@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#514F4F"
+    android:background="#fff7a2 "
     android:orientation="vertical"
     tools:context=".MeFragment">
 
@@ -46,7 +46,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="用户名"
-                android:textColor="#FFFFFF"
+                android:textColor="#cca266 "
                 android:textSize="25sp" />
 
             <TextView
@@ -54,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="用户ID"
-                android:textColor="#FFFFFF"
+                android:textColor="#cca266 "
                 android:textSize="13sp" />
 
             <LinearLayout
@@ -66,6 +66,7 @@
                     android:id="@+id/btn_setting"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
+                    android:background="#ffcd74"
                     android:text="个人资料" />
 
                 <Button
@@ -73,6 +74,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginLeft="20dp"
+                    android:background="#ffcd74"
                     android:text="＋" />
 
             </LinearLayout>
@@ -95,7 +97,7 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:text="点赞数"
-            android:textColor="#FFFFFF"
+            android:textColor="#cca266 "
             android:textSize="14sp" />
 
         <TextView
@@ -104,17 +106,17 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:text="100"
-            android:textColor="#FFFFFF"
+            android:textColor="#cca266 "
             android:textSize="14sp" />
 
         <Button
             android:id="@+id/num_follow_btn"
             android:layout_width="50dp"
             android:layout_height="match_parent"
+            android:background="#fff7a2"
             android:gravity="center_vertical"
-            android:background="#514F4F"
             android:text="关注数"
-            android:textColor="#FFFFFF"
+            android:textColor="#cca266 "
             android:textSize="14sp" />
 
         <TextView
@@ -122,16 +124,16 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:text="20"
-            android:textColor="#FFFFFF"
+            android:textColor="#cca266 "
             android:textSize="14sp" />
 
         <Button
             android:id="@+id/num_fans_btn"
             android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:background="#514F4F"
+            android:background="#fff7a2"
             android:text="粉丝数"
-            android:textColor="#FFFFFF"
+            android:textColor="#cca266 "
             android:textSize="14sp" />
 
         <TextView
@@ -140,7 +142,7 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:text="20"
-            android:textColor="#FFFFFF"
+            android:textColor="#cca266 "
             android:textSize="14sp" />
 
         <Button
@@ -148,9 +150,9 @@
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
-            android:background="#514F4F"
+            android:background="#fff7a2"
             android:text="好友数"
-            android:textColor="#FFFFFF"
+            android:textColor="#cca266"
             android:textSize="14sp" />
 
         <TextView
@@ -159,7 +161,7 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:text="20"
-            android:textColor="#FFFFFF"
+            android:textColor="#cca266 "
             android:textSize="14sp" />
 
     </LinearLayout>
@@ -186,7 +188,7 @@
             android:layout_height="30dp"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
-            android:background="#514F4F"
+            android:background="#ffcd74"
             android:text="视频"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
@@ -197,7 +199,7 @@
             android:layout_height="30dp"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
-            android:background="#514F4F"
+            android:background="#ffcd74"
             android:text="收藏"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
@@ -207,7 +209,7 @@
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
-            android:background="#514F4F"
+            android:background="#ffcd74"
             android:text="点赞"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />

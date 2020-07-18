@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#514F4F">
+    android:background="#fff7a2">
 
     <ImageView
         android:id="@+id/imageView6"
@@ -24,7 +24,7 @@
         android:layout_marginTop="16dp"
         android:layout_weight="1"
         android:text="用户名"
-        android:textColor="#FFFFFF"
+        android:textColor="#cca266 "
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
         app:layout_constraintTop_toTopOf="parent" />
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
         android:text="·评论时间"
-        android:textColor="#FFFFFF"
+        android:textColor="#cca266 "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.769"
         app:layout_constraintStart_toEndOf="@+id/tv_comment"

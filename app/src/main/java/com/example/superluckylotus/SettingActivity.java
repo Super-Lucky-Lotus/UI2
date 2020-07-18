@@ -309,7 +309,8 @@ public class SettingActivity extends AppCompatActivity {
             Intent intent = null;
             switch (v.getId()){
                 case R.id.back:
-                    finish();
+                    intent = new Intent(SettingActivity.this,MainActivity.class);
+                    startActivity(intent);
                     break;
                 case R.id.changephoto:
                     intent = new Intent(SettingActivity.this,ChangePhotoActivity.class);

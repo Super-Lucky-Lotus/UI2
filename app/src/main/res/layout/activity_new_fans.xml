@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#514F4F"
+    android:background="#fff7a2 "
     android:orientation="vertical"
     tools:context=".NewFansActivity">
 
@@ -31,7 +31,7 @@
             android:layout_marginTop="5dp"
             android:text="新增粉丝"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="#FFFFFF" />
+            android:textColor="#cca266" />
     </LinearLayout>
 
     <ScrollView
@@ -47,7 +47,7 @@
                 android:id="@+id/n_fans_frame"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:background="#514F4F"
+                android:background="#fff7a2 "
                 android:orientation="horizontal">
 
                 <Button
@@ -76,7 +76,7 @@
                         android:layout_marginTop="10dp"
                         android:text="UserName"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:textColor="#FFFFFF" />
+                        android:textColor="#cca266" />
 
                     <TextView
                         android:id="@+id/newfansDes_tv"
@@ -85,7 +85,7 @@
                         android:layout_marginTop="8dp"
                         android:text="用户简介"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:textColor="#FFFFFF" />
+                        android:textColor="#cca266" />
                 </LinearLayout>
 
                 <ToggleButton
@@ -123,7 +123,7 @@
                 android:id="@+id/n_fans_frame1"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:background="#514F4F"
+                android:background="#fff7a2 "
                 android:orientation="horizontal">
 
                 <Button
@@ -152,7 +152,7 @@
                         android:layout_marginTop="10dp"
                         android:text="UserName1"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:textColor="#FFFFFF" />
+                        android:textColor="#cca266" />
 
                     <TextView
                         android:id="@+id/fansDes1_tv"
@@ -161,7 +161,7 @@
                         android:layout_marginTop="8dp"
                         android:text="用户简介"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:textColor="#FFFFFF" />
+                        android:textColor="#cca266" />
                 </LinearLayout>
 
                 <ToggleButton
@@ -181,7 +181,7 @@
                 android:id="@+id/n_fans_frame2"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:background="#514F4F"
+                android:background="#fff7a2 "
                 android:orientation="horizontal">
 
                 <Button
@@ -210,7 +210,7 @@
                         android:layout_marginTop="10dp"
                         android:text="UserName2"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:textColor="#FFFFFF" />
+                        android:textColor="#cca266" />
 
                     <TextView
                         android:id="@+id/fansDes2_tv"
@@ -219,7 +219,7 @@
                         android:layout_marginTop="8dp"
                         android:text="用户简介"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:textColor="#FFFFFF" />
+                        android:textColor="#cca266" />
                 </LinearLayout>
 
                 <ToggleButton

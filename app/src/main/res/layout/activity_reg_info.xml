@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#514F4F"
+    android:background="#fff7a2"
     tools:context=".Reg_infoActivity">
 
     <EditText
@@ -31,7 +31,7 @@
         android:layout_marginTop="24dp"
         android:layout_weight="1"
         android:text="简介"
-        android:textColor="#FFFFFF"
+        android:textColor="#cca266"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_birthday" />
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="个人信息填写"
-        android:textColor="#FFFFFF"
+        android:textColor="#cca266"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.55"
@@ -99,7 +99,7 @@
         android:layout_marginTop="24dp"
         android:layout_weight="1"
         android:text="地区*"
-        android:textColor="#FFFFFF"
+        android:textColor="#cca266"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_password2" />
@@ -113,7 +113,7 @@
         android:layout_marginTop="24dp"
         android:layout_weight="1"
         android:text="性别*"
-        android:textColor="#FFFFFF"
+        android:textColor="#cca266"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_address" />
@@ -127,7 +127,7 @@
         android:layout_marginTop="24dp"
         android:layout_weight="1"
         android:text="生日*"
-        android:textColor="#FFFFFF"
+        android:textColor="#cca266"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_sex" />
@@ -157,7 +157,7 @@
         android:layout_marginTop="36dp"
         android:layout_weight="1"
         android:text="昵称*"
-        android:textColor="#FFFFFF"
+        android:textColor="#cca266"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/photo" />
@@ -186,7 +186,7 @@
         android:layout_marginTop="24dp"
         android:layout_weight="1"
         android:text="确认密码*"
-        android:textColor="#FFFFFF"
+        android:textColor="#cca266"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_password" />
@@ -200,7 +200,7 @@
         android:layout_marginTop="24dp"
         android:layout_weight="1"
         android:text="密码*"
-        android:textColor="#FFFFFF"
+        android:textColor="#cca266"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_username" />
@@ -210,7 +210,7 @@
         android:layout_width="117dp"
         android:layout_height="49dp"
         android:layout_marginBottom="10dp"
-        android:background="#EDD6D6"
+        android:background="#ffcd74"
         android:text="确定"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
@@ -241,10 +241,10 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/text"
         android:gravity="left|center_vertical"
+        android:paddingLeft="10dp"
         android:text="请选择地区"
         android:textColor="#B5B0B0"
         android:textSize="18sp"
-        android:paddingLeft="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.63"
         app:layout_constraintStart_toEndOf="@+id/tv_address"
@@ -257,10 +257,10 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/text"
         android:gravity="left|center_vertical"
+        android:paddingLeft="10dp"
         android:text="请选择性别"
         android:textColor="#B5B0B0"
         android:textSize="18sp"
-        android:paddingLeft="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.662"
         app:layout_constraintStart_toEndOf="@+id/tv_sex"

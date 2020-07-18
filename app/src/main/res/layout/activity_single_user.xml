@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#514F4F"
+    android:background="#fff7a2"
     android:orientation="vertical"
     tools:context=".SingleUserActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <ImageView
             android:id="@+id/single_user_Mybcg"
             android:layout_width="match_parent"
@@ -22,9 +23,9 @@
             android:id="@+id/single_user_back"
             android:layout_width="45dp"
             android:layout_height="45dp"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
-            android:background="@drawable/black_left"/>
+            android:layout_marginTop="10dp"
+            android:background="@drawable/black_left" />
 
     </FrameLayout>
 
@@ -51,32 +52,32 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_marginLeft="20dp"
-            android:orientation="horizontal"
-            android:layout_gravity="center_vertical">
+            android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="150dp"
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/single_username"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:text="用户名"
+                    android:textColor="#cca266 "
+                    android:textSize="30sp" />
 
-                    <TextView
-                        android:id="@+id/single_username"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="用户名"
-                        android:textColor="#FFFFFF"
-                        android:textSize="30sp" />
+                <TextView
+                    android:id="@+id/single_userID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="用户ID"
+                    android:textColor="#cca266 "
+                    android:textSize="15sp" />
 
-                    <TextView
-                        android:id="@+id/single_userID"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="用户ID"
-                        android:textColor="#FFFFFF"
-                        android:textSize="15sp" />
-
-                </LinearLayout>
+            </LinearLayout>
 
             <ToggleButton
                 android:layout_width="50dp"
@@ -88,17 +89,17 @@
                 android:textOff="添加\n好友"
                 android:textOn="好友" />
 
-                <ToggleButton
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/focus_selector"
-                    android:checked="false"
-                    android:textOff="关注"
-                    android:textOn="已关注" />
+            <ToggleButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/focus_selector"
+                android:checked="false"
+                android:textOff="关注"
+                android:textOn="已关注" />
 
-            </LinearLayout>
+        </LinearLayout>
 
 
     </LinearLayout>
@@ -116,7 +117,7 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:text="点赞数"
-            android:textColor="#FFFFFF"
+            android:textColor="#cca266 "
             android:textSize="14sp" />
 
         <TextView
@@ -125,16 +126,15 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:text="100"
-            android:textColor="#FFFFFF"
+            android:textColor="#cca266 "
             android:textSize="14sp" />
 
         <TextView
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
-            android:background="#514F4F"
             android:text="关注数"
-            android:textColor="#FFFFFF"
+            android:textColor="#cca266 "
             android:textSize="14sp" />
 
         <TextView
@@ -143,16 +143,15 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:text="20"
-            android:textColor="#FFFFFF"
+            android:textColor="#cca266 "
             android:textSize="14sp" />
 
         <TextView
             android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:background="#514F4F"
-            android:text="粉丝数"
             android:gravity="center_vertical"
-            android:textColor="#FFFFFF"
+            android:text="粉丝数"
+            android:textColor="#cca266 "
             android:textSize="14sp" />
 
         <TextView
@@ -161,7 +160,7 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:text="20"
-            android:textColor="#FFFFFF"
+            android:textColor="#cca266 "
             android:textSize="14sp" />
 
         <Button
@@ -169,9 +168,9 @@
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
-            android:background="#514F4F"
+            android:background="#fff7a2"
             android:text="好友数"
-            android:textColor="#FFFFFF"
+            android:textColor="#cca266 "
             android:textSize="14sp" />
 
         <TextView
@@ -180,7 +179,7 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:text="20"
-            android:textColor="#FFFFFF"
+            android:textColor="#cca266 "
             android:textSize="14sp" />
 
     </LinearLayout>
@@ -207,7 +206,7 @@
             android:layout_height="30dp"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
-            android:background="#514F4F"
+            android:background="#ffcd74"
             android:text="视频"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
@@ -217,7 +216,7 @@
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
-            android:background="#514F4F"
+            android:background="#ffcd74"
             android:text="点赞"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />

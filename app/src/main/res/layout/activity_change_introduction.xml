@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#514F4F"
+    android:background="#fff7a2"
     tools:context=".ChangeIntroductionActivity">
 
     <TextView
@@ -15,7 +15,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="36dp"
         android:text="个人简介"
-        android:textColor="#FFFFFF"
+        android:textColor="#cca266"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/backtosettting" />
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:text="修改简介"
-        android:textColor="#FFFFFF"
+        android:textColor="#cca266"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,8 +68,8 @@
         android:foregroundGravity="center"
         android:gravity="start|top|left"
         android:hint="请输入个人简介"
-        android:paddingLeft="10dp"
         android:inputType="textPersonName"
+        android:paddingLeft="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#514F4F"
+    android:background="#fff7a2 "
     tools:context=".VideoPostActivity">
 
     <ImageView
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="发布视频"
-        android:textColor="#FFFFFF"
+        android:textColor="#cca266 "
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/btn_post"
         app:layout_constraintHorizontal_bias="0.459"
@@ -85,7 +85,7 @@
         android:layout_width="297dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
-        android:background="#00FFFFFF"
+        android:background="#ffcd74 "
         android:text="你在哪里"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
@@ -99,7 +99,7 @@
         android:layout_width="297dp"
         android:layout_height="50dp"
         android:layout_marginTop="28dp"
-        android:background="#FFFFFF"
+        android:background="#ffcd74 "
         android:entries="@array/type"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.771"

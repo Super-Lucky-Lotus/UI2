@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#514F4F"
+    android:background="#fff7a2"
     tools:context=".SettingActivity">
 
     <LinearLayout
         android:id="@+id/changebirthday"
         android:layout_width="416dp"
         android:layout_height="40dp"
-        android:background="#94E3E3E3"
+        android:background="#ffcd74"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -51,7 +51,7 @@
         android:id="@+id/changeintro"
         android:layout_width="416dp"
         android:layout_height="40dp"
-        android:background="#94E3E3E3"
+        android:background="#ffcd74"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -92,7 +92,7 @@
         android:id="@+id/changeaddress"
         android:layout_width="416dp"
         android:layout_height="40dp"
-        android:background="#94E3E3E3"
+        android:background="#ffcd74"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -132,7 +132,7 @@
         android:id="@+id/changepassword"
         android:layout_width="416dp"
         android:layout_height="40dp"
-        android:background="#94E3E3E3"
+        android:background="#ffcd74"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -174,7 +174,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="编辑个人资料"
-        android:textColor="#FFFFFF"
+        android:textColor="#cca266"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
@@ -199,7 +199,7 @@
         android:layout_width="416dp"
         android:layout_height="40dp"
         android:layout_marginTop="248dp"
-        android:background="#94E3E3E3"
+        android:background="#ffcd74"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -240,7 +240,7 @@
         android:id="@+id/changesex"
         android:layout_width="416dp"
         android:layout_height="40dp"
-        android:background="#94E3E3E3"
+        android:background="#ffcd74"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -277,7 +277,6 @@
     </LinearLayout>
 
 
-
     <ImageButton
         android:id="@+id/back"
         android:layout_width="50dp"
@@ -296,7 +295,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="点击更换头像"
-        android:textColor="#FFFFFF"
+        android:textColor="#cca266"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/changename"
         app:layout_constraintEnd_toEndOf="parent"
