@@ -5,6 +5,6 @@
     android:drawable ="@drawable/red_like"/>
 
     <item android:state_checked="false"
-        android:drawable="@drawable/w_like"/>
+        android:drawable="@drawable/o_like"/>
 
 </selector>

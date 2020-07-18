@@ -7,54 +7,70 @@
     <RadioGroup
         android:id="@+id/tabs_rg"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="45dp"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
         android:orientation="horizontal"
         android:background="#fff7a2">
 
+        <View
+            android:layout_width="20dp"
+            android:layout_height="match_parent" />
+
         <RadioButton
             android:id="@+id/earth_tab"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:background="@drawable/tab_earth_selector"
             android:button="@null"
+            android:layout_gravity="center_vertical"
             android:checked="true" />
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="match_parent" />
 
         <RadioButton
             android:id="@+id/near_tab"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="18dp"
             android:layout_marginRight="18dp"
+            android:layout_gravity="center_vertical"
             android:background="@drawable/tab_near_selector"
             android:button="@null" />
 
         <View
-            android:layout_width="80dp"
+            android:layout_width="120dp"
+            android:layout_gravity="center_horizontal"
             android:layout_height="match_parent" />
 
         <RadioButton
             android:id="@+id/notice_tab"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="18dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+            android:layout_gravity="center_vertical"
             android:background="@drawable/tab_notice_selector"
             android:button="@null" />
+        <View
+            android:layout_width="40dp"
+            android:layout_height="match_parent" />
 
         <RadioButton
             android:id="@+id/me_tab"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
             android:background="@drawable/tab_my_selector"
             android:button="@null" />
+
     </RadioGroup>
 
     <Button
         android:id="@+id/btn_addshoot"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal|bottom"
