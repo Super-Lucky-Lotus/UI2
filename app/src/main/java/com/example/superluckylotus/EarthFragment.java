@@ -98,9 +98,9 @@ public class EarthFragment extends Fragment {
 
     class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
         //添加封面
-        private int[] imgs = {R.mipmap.img_video_1,R.mipmap.img_video_2,R.mipmap.img_video_1,R.mipmap.img_video_2,R.mipmap.img_video_1,R.mipmap.img_video_2};
+        private int[] imgs = {R.mipmap.img_video_1,R.mipmap.img_video_2,R.mipmap.img_video_3,R.mipmap.img_video_4,R.mipmap.img_video_1,R.mipmap.img_video_2};
         //添加视频
-        private int[] videos = {R.raw.video_1,R.raw.video_2,R.raw.video_1,R.raw.video_2,R.raw.video_1,R.raw.video_2};
+        private int[] videos = {R.raw.video_1,R.raw.video_2,R.raw.video_3,R.raw.video_4,R.raw.video_1,R.raw.video_2};
         public MyAdapter(){
         }
         @Override
