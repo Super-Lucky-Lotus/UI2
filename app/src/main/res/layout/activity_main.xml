@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/tabs_rg" />
 
     <RadioGroup
         android:id="@+id/tabs_rg"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"
-        android:background="#ffcd74"
-        android:orientation="horizontal">
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:background="#fff7a2">
 
         <RadioButton
             android:id="@+id/earth_tab"
@@ -61,5 +57,18 @@
         android:layout_height="80dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal|bottom"
         android:background="@drawable/add" />
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/tabs_rg">
+    </FrameLayout>
+
+
+
+
 </RelativeLayout>

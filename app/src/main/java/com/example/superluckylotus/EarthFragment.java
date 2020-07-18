@@ -50,8 +50,8 @@ import androidx.recyclerview.widget.RecyclerView;
 public class EarthFragment extends Fragment {
 
     private Button turnSearchPage_btn;
-    private Button mMore;
-    private Button mComment;
+//    private Button mMore;
+//    private Button mComment;
     MoreDialog md;
     CommentDialog cd;
 
@@ -62,14 +62,14 @@ public class EarthFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_earth,null);
         turnSearchPage_btn = (Button)view.findViewById(R.id.turnSearchPage_btn);
-        mMore=view.findViewById(R.id.more);
-        mComment=view.findViewById(R.id.comment);
+//        mMore=view.findViewById(R.id.more);
+//        mComment=view.findViewById(R.id.comment);
         md=new MoreDialog(getActivity());
         cd=new CommentDialog(getActivity());
         OnClick onclick=new OnClick();
         turnSearchPage_btn.setOnClickListener(onclick);
-        //mMore.setOnClickListener(onclick);
-        //mComment.setOnClickListener(onclick);
+//        mMore.setOnClickListener(onclick);
+//        mComment.setOnClickListener(onclick);
         recyclerView = view.findViewById(R.id.recyclerView_dy);
         initView();
         return view;
@@ -84,7 +84,6 @@ public class EarthFragment extends Fragment {
             @Override
             public void onPageRelease(boolean isNest, View position) {
                 releaseVideo(position);
-
             }
 
             @Override
@@ -211,12 +210,12 @@ public class EarthFragment extends Fragment {
                     intent.setClass(getActivity(),SearchActivity.class);
                     getActivity().startActivity(intent);
                     break;
-                /*case R.id.more:
-                    md.popupWindowDialog( v);
-                    break;
-                case R.id.comment:
-                    cd.popupWindowDialog( v);
-                    break;*/
+//                case R.id.more:
+//                    md.popupWindowDialog( v);
+//                    break;
+//                case R.id.comment:
+//                    cd.popupWindowDialog( v);
+//                    break;
             }
         }
     }

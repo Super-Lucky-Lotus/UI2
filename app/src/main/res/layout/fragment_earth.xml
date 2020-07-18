@@ -16,15 +16,16 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView_dy"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="match_parent"
+            ></androidx.recyclerview.widget.RecyclerView>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:layout_marginTop="56dp">
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:layout_marginTop="56dp">-->
 
 
-        </RelativeLayout>
+<!--        </RelativeLayout>-->
 
         <VideoView
             android:id="@+id/line_bottom"

@@ -1,61 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".NearFragment"
-    android:background="#514F4F">
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="#fff7a2"
+    android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
 
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#514F4F"
-        android:orientation="vertical">
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
 
-
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="5dp"
-            android:orientation="horizontal">
+            android:layout_marginLeft="100dp"
+            android:layout_weight="1"
+            android:src="@drawable/near" />
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:src="@drawable/near" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="80dp"
-                android:layout_height="30dp"
-                android:text="Place"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-        </LinearLayout>
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="866dp"
-            android:orientation="vertical">
-
-            <include layout="@layout/fragment_video" />
-
-            <include layout="@layout/fragment_video" />
-
-
-        </LinearLayout>
-
-        </ScrollView>
-
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="140dp"
+            android:text="Place"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
     </LinearLayout>
-</FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/near_recyclerView_dy"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            ></androidx.recyclerview.widget.RecyclerView>
+
+
+        <VideoView
+            android:id="@+id/line_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@android:color/white" />
+
+    </RelativeLayout>
+
+</LinearLayout>
+
+
+
+
