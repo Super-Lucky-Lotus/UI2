@@ -283,7 +283,7 @@ public class Reg_infoActivity extends AppCompatActivity {
     private void getSexData() {
         sex.add(new SexBean(0, "男 " ));
         sex.add(new SexBean(0, "女" ));
-        sex.add(new SexBean(0, "不显示 " ));
+        sex.add(new SexBean(0, "不显示" ));
 
         for (int i = 0; i < sex.size(); i++) {
             if (sex.get(i).getCardNo().length() > 3) {

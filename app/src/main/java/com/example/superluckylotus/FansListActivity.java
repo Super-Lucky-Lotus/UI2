@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
@@ -20,18 +21,23 @@ import android.widget.TextView;
 public class FansListActivity extends AppCompatActivity {
 
     private Button fans_list_back_btn;
+    private Button fan_search_btn;
+    private EditText search_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fans_list);
         fans_list_back_btn = (Button) findViewById(R.id.fans_list_back);
+        fan_search_btn= (Button) findViewById(R.id.FansL_search_btn);
+        search_name = (EditText) findViewById(R.id.FansL_search_edittext);
         setListeners();
     }
 
     private void setListeners() {
         OnClick onClick = new OnClick();
         fans_list_back_btn.setOnClickListener(onClick);
+        fan_search_btn.setOnClickListener(onClick);
     }
 
     class OnClick implements View.OnClickListener {
@@ -42,6 +48,8 @@ public class FansListActivity extends AppCompatActivity {
             switch (v.getId()) {
                 case R.id.fans_list_back:
                     finish();
+                    break;
+                case R.id.FansL_search_btn:
                     break;
             }
         }

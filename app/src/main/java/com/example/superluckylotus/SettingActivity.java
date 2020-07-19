@@ -387,7 +387,7 @@ public class SettingActivity extends AppCompatActivity {
             TextView textView3 = (TextView) findViewById(R.id.tv_birthday);
             Phone phoneObj = (Phone)getApplication();
             final String phone = phoneObj.getPhone();
-            String path1 = "http://139.219.4.34/editgerder/";
+            String path1 = "http://139.219.4.34/editgender/";
             String path2 = "http://139.219.4.34/editregion/";
             String path3 = "http://139.219.4.34/editbirthday/";
             Map<String, String> userParams1 = new HashMap<String, String>();//将数据放在map里，便于取出传递
@@ -457,14 +457,14 @@ public class SettingActivity extends AppCompatActivity {
                             JSONObject result_json=new JSONObject(result);
                             String change=result_json.getString("msg");
                             if(change.equals("success")){
-                                Toast.makeText(SettingActivity.this,"修改成功", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SettingActivity.this,"生日修改成功", Toast.LENGTH_SHORT).show();
                             } else{
-                                Toast.makeText(SettingActivity.this,"未知错误 ", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SettingActivity.this,"修改生日发生未知错误 ", Toast.LENGTH_SHORT).show();
                             }
                         }
                         @Override
                         public void onError(Exception e) {
-                            Toast.makeText(SettingActivity.this,"服务器连接失败",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SettingActivity.this,"修改生日服务器连接失败",Toast.LENGTH_SHORT).show();
                         }
                         @Override
                         public void onFinish() {
@@ -479,14 +479,14 @@ public class SettingActivity extends AppCompatActivity {
                             JSONObject result_json=new JSONObject(result);
                             String change=result_json.getString("msg");
                             if(change.equals("success")){
-                                Toast.makeText(SettingActivity.this,"修改成功", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SettingActivity.this,"修改性别成功", Toast.LENGTH_SHORT).show();
                             } else{
-                                Toast.makeText(SettingActivity.this,"未知错误 ", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SettingActivity.this,"修改性别时发生未知错误 ", Toast.LENGTH_SHORT).show();
                             }
                         }
                         @Override
                         public void onError(Exception e) {
-                            Toast.makeText(SettingActivity.this,"服务器连接失败",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SettingActivity.this,"修改性别服务器连接失败",Toast.LENGTH_SHORT).show();
                         }
                         @Override
                         public void onFinish() {
@@ -501,14 +501,14 @@ public class SettingActivity extends AppCompatActivity {
                             JSONObject result_json=new JSONObject(result);
                             String change=result_json.getString("msg");
                             if(change.equals("success")){
-                                Toast.makeText(SettingActivity.this,"修改成功", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SettingActivity.this,"修改地区成功", Toast.LENGTH_SHORT).show();
                             } else{
-                                Toast.makeText(SettingActivity.this,"未知错误 ", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SettingActivity.this,"修改地区时未知错误 ", Toast.LENGTH_SHORT).show();
                             }
                         }
                         @Override
                         public void onError(Exception e) {
-                            Toast.makeText(SettingActivity.this,"服务器连接失败",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SettingActivity.this,"修改地区服务器连接失败",Toast.LENGTH_SHORT).show();
                         }
                         @Override
                         public void onFinish() {

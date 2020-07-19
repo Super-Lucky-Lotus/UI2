@@ -20,7 +20,6 @@
         <activity
             android:name=".SingleUserActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".FansListActivity" />
         <activity
             android:name=".FollowListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -41,6 +40,9 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".FriendListActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FansListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SearchResultActivity"
