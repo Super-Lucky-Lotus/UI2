@@ -33,10 +33,11 @@
         app:srcCompat="@drawable/left" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/iv_photo"
         android:layout_width="400dp"
         android:layout_height="400dp"
         android:layout_marginTop="32dp"
+        android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"

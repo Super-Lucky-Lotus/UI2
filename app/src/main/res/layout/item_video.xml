@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:clickable="false"
         android:focusable="false"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true" />
 
     <ImageView
         android:id="@+id/img_thumb"
