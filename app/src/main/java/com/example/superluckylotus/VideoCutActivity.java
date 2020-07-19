@@ -1,19 +1,33 @@
 package com.example.superluckylotus;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.MediaController;
+import android.widget.Toast;
+import android.widget.VideoView;
+
+import java.io.File;
 
 public class VideoCutActivity extends AppCompatActivity {
     ImageView mBacktoShoot;
+    private VideoView mVideo;
     ImageView mMusic;
     ImageView mSpeed;
     ImageView mReady;
     private SpeedDialog sd;
+    File file = new File(Environment.getExternalStorageDirectory().getPath()+"/video.mp4" );//设置录像存储路径
+    Uri uri = Uri.fromFile(file);//文件转成Uri格式
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +37,26 @@ public class VideoCutActivity extends AppCompatActivity {
         mMusic=(ImageView)findViewById(R.id.btn_music);
         mSpeed=(ImageView)findViewById(R.id.btn_speed);
         mReady=findViewById(R.id.btn_ready);
+        mVideo=(VideoView)findViewById(R.id.videoView);
+        initVideoPath();
         sd=new SpeedDialog(this);
         setListeners();
     }
+
+    private void initVideoPath() {
+        if (ContextCompat.checkSelfPermission(VideoCutActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(VideoCutActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+        }
+        Toast.makeText(this, "have found video", Toast.LENGTH_SHORT).show();
+        mVideo.setVideoURI(uri);
+        mVideo.setVideoPath(file.getAbsolutePath());
+        MediaController mediaController=new MediaController(this);
+        mVideo.setMediaController(mediaController);
+        mediaController.setMediaPlayer(mVideo);
+        mVideo.requestFocus();
+        mVideo.start();
+    }
+
     private void setListeners(){
         VideoCutActivity.OnClick onClick = new VideoCutActivity.OnClick();
         mBacktoShoot.setOnClickListener(onClick);

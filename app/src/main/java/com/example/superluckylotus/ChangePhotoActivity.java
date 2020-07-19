@@ -39,7 +39,6 @@ import java.io.FileNotFoundException;
 public class ChangePhotoActivity extends AppCompatActivity {
 
 
-    public static final int CROP_CODE = 1;
     public static final int CHOOSE_PHOTO = 2;
     ImageButton mbacktosetting;
     ImageView mImagePhoto;

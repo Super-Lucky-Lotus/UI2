@@ -26,6 +26,7 @@ public class VideoPostActivity extends AppCompatActivity {
 
     Button mChoosePlace;
     ImageView mPost;
+    ImageView mBacktocut;
 
 
     private List<JsonBean> options1Items = new ArrayList<>();
@@ -43,6 +44,7 @@ public class VideoPostActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_post);
         mChoosePlace=findViewById(R.id.btn_place);
+        mBacktocut=findViewById(R.id.btn_backtovideocut);
         mPost=findViewById(R.id.btn_post);
         mHandler.sendEmptyMessage(MSG_LOAD_DATA);//加载数据
         setListeners();
@@ -188,6 +190,7 @@ public class VideoPostActivity extends AppCompatActivity {
         VideoPostActivity.OnClick onClick = new OnClick();
         mPost.setOnClickListener(onClick);
         mChoosePlace.setOnClickListener(onClick);
+        mBacktocut.setOnClickListener(onClick);
     }
 
     class OnClick implements View.OnClickListener{
@@ -205,6 +208,10 @@ public class VideoPostActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_post:
                     intent = new Intent(VideoPostActivity.this,MainActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_backtovideocut:
+                    intent = new Intent(VideoPostActivity.this,VideoCutActivity.class);
                     startActivity(intent);
                     break;
             }
