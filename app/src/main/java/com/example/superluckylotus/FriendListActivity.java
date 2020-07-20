@@ -29,6 +29,15 @@ import static com.mob.tools.utils.DeviceHelper.getApplication;
  **/
 
 /**
+ * @version: 3.0
+ * @author: 宋佳容
+ * @className: FriendListActivity
+ * @packageName:com.example.superluckylotus
+ * @description: 分离对应xml文件
+ * @data: 2020.07.20 16:02
+ **/
+
+/**
  * @version: 2.0
  * @author: 黄坤
  * @className: FriendListActivity

@@ -47,13 +47,24 @@ import androidx.recyclerview.widget.RecyclerView;
  * @data: 2020.07.17 15:27
  **/
 
+/**
+ * @version: 3.0
+ * @author: 宋佳容
+ * @className: EarthFragment
+ * @packageName:com.example.superluckylotus
+ * @description: 修改打赏功能，增加分享弹窗
+ * @data: 2020.07.20 15:06
+ **/
+
 public class EarthFragment extends Fragment {
 
     private Button turnSearchPage_btn;
     private Button mMore;
     private Button mComment;
+    private Button mShare;
     MoreDialog md;
     CommentDialog cd;
+    ShareDialog sd;
 
     private RecyclerView recyclerView;
 
@@ -64,6 +75,7 @@ public class EarthFragment extends Fragment {
         turnSearchPage_btn = (Button)view.findViewById(R.id.turnSearchPage_btn);
         md=new MoreDialog(getActivity());
         cd=new CommentDialog(getActivity());
+        sd=new ShareDialog(getActivity());
         OnClick onclick=new OnClick();
         turnSearchPage_btn.setOnClickListener(onclick);
         recyclerView = view.findViewById(R.id.recyclerView_dy);
@@ -108,6 +120,7 @@ public class EarthFragment extends Fragment {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_video,parent,false);
             mMore=view.findViewById(R.id.video_more);
             mComment=view.findViewById(R.id.video_comment);
+            mShare=view.findViewById(R.id.video_share);
             mMore.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -118,6 +131,12 @@ public class EarthFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     cd.popupWindowDialog(view);
+                }
+            });
+            mShare.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    sd.popupWindowDialog(view);
                 }
             });
             return new ViewHolder(view);

@@ -36,12 +36,24 @@ import androidx.recyclerview.widget.RecyclerView;
  * @description: 更多弹窗和评论弹窗
  * @data: 2020.07.17 15:29
  **/
+
+/**
+ * @version: 3.0
+ * @author: 宋佳容
+ * @className: NearFragment
+ * @packageName:com.example.superluckylotus
+ * @description: 修改打赏功能，增加分享弹窗
+ * @data: 2020.07.20 18:19
+ **/
+
 public class NearFragment extends Fragment {
 
     private Button mMore;
     private Button mComment;
+    private  Button mShare;
     MoreDialog md;
     CommentDialog cd;
+    ShareDialog sd;
 
     private RecyclerView recyclerView;
 
@@ -53,6 +65,7 @@ public class NearFragment extends Fragment {
 
             md=new MoreDialog(getActivity());
             cd=new CommentDialog(getActivity());
+            sd=new ShareDialog(getActivity());
             NearFragment.OnClick onclick=new NearFragment.OnClick();
             recyclerView = view.findViewById(R.id.near_recyclerView_dy);
             initView();
@@ -98,6 +111,7 @@ public class NearFragment extends Fragment {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_video,parent,false);
             mMore=view.findViewById(R.id.video_more);
             mComment=view.findViewById(R.id.video_comment);
+            mShare=view.findViewById(R.id.video_share);
             mMore.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -108,6 +122,12 @@ public class NearFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     cd.popupWindowDialog(view);
+                }
+            });
+            mShare.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    sd.popupWindowDialog(view);
                 }
             });
 
@@ -207,12 +227,7 @@ public class NearFragment extends Fragment {
         public void onClick(View v){
             Intent intent = new Intent();
             switch (v.getId()){
-//                case R.id.more:
-//                    md.popupWindowDialog( v);
-//                    break;
-//                case R.id.comment:
-//                    cd.popupWindowDialog( v);
-//                    break;
+
             }
         }
     }
