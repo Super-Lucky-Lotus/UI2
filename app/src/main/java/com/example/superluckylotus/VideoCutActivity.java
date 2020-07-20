@@ -25,8 +25,9 @@ public class VideoCutActivity extends AppCompatActivity {
     ImageView mMusic;
     ImageView mSpeed;
     ImageView mReady;
+    static String filepath;
     private SpeedDialog sd;
-    File file = new File(Environment.getExternalStorageDirectory().getPath()+"/video.mp4" );//设置录像存储路径
+    File file = new File( filepath);//设置录像存储路径
     Uri uri = Uri.fromFile(file);//文件转成Uri格式
 
     @Override

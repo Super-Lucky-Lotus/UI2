@@ -1,5 +1,6 @@
 package com.example.superluckylotus;
 
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -7,6 +8,7 @@ import androidx.core.app.ActivityCompat;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.Build;
@@ -14,6 +16,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.StrictMode;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.SurfaceView;
 import android.view.View;
@@ -23,6 +26,7 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URLDecoder;
 
 /**
  * @version: 1.0
@@ -33,7 +37,7 @@ import java.io.IOException;
  * @data: 2020.07.12 00:48
  **/
 public class ShootActivity extends AppCompatActivity {
-
+    private int SELECT_IMAGE_REQUEST_CODE=201;//判断请求识别码
     private Button back_Btn;
     private ImageButton mVedio;
     Button takeVideo;
@@ -63,6 +67,7 @@ public class ShootActivity extends AppCompatActivity {
         back_Btn.setOnClickListener(onClick);
         mVedio.setOnClickListener(onClick);
         takeVideo.setOnClickListener(onClick);
+        ((ImageButton)findViewById(R.id.btn_photo)).setOnClickListener(onClick);
     }
 
 
@@ -76,6 +81,7 @@ public class ShootActivity extends AppCompatActivity {
                     startActivity(intent);
                     break;
                 case R.id.btn_shoot:
+                    VideoCutActivity.filepath=Environment.getExternalStorageDirectory().getPath()+"/video.mp4";
                     intent = new Intent(ShootActivity.this,VideoCutActivity.class);
                     startActivity(intent);
                     break;
@@ -96,9 +102,34 @@ public class ShootActivity extends AppCompatActivity {
                     ActivityCompat.requestPermissions(ShootActivity.this, new String[]{Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
                     startActivityForResult(intent1, 0);
                     break;
+                case R.id.btn_photo:
+                    //WU.setContext(ShootActivity.this);
+                    //WU.toast("hh");
+                    Intent innerIntent = new Intent(Intent.ACTION_PICK, MediaStore.Video.Media.EXTERNAL_CONTENT_URI);
+                    Intent wrapperIntent = Intent.createChooser(innerIntent, "选择二维码图片");
+
+                    startActivityForResult(wrapperIntent, SELECT_IMAGE_REQUEST_CODE);
+                    break;
             }
 
         }
     }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
 
+        if(requestCode==SELECT_IMAGE_REQUEST_CODE&&resultCode==RESULT_OK){//从图库选择图片
+            String[] proj = {MediaStore.Video.Media.DATA};
+            // 获取选中图片的路径
+            Cursor cursor = this.getContentResolver().query(intent.getData(),proj, null, null, null);
+            if (cursor.moveToFirst()) {
+                int columnIndex = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+                String photoPath = cursor.getString(columnIndex);
+                //WU.toast(photoPath);
+                VideoCutActivity.filepath=photoPath;
+                startActivity(new Intent().setClass(ShootActivity.this,VideoCutActivity.class));
+            }
+            cursor.close();
+        }
+    }
 }
