@@ -63,7 +63,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="1 aa"
+                    android:text="1 宠物"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#cca266" />
 
@@ -71,7 +71,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal"
-                    android:text="3 aa"
+                    android:text="3 音乐"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#cca266" />
 
@@ -79,7 +79,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal"
-                    android:text="5 aa"
+                    android:text="5 生活"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#cca266" />
 
@@ -87,7 +87,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal"
-                    android:text="7 aa"
+                    android:text="7 科技"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#cca266" />
 
@@ -95,7 +95,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal"
-                    android:text="9 aa"
+                    android:text="9 社会"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#cca266" />
 
@@ -122,7 +122,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal"
-                    android:text="2 aa"
+                    android:text="2 时尚"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#cca266" />
 
@@ -130,7 +130,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal"
-                    android:text="4 aa"
+                    android:text="4 体育"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#cca266" />
 
@@ -138,7 +138,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal"
-                    android:text="6 aa"
+                    android:text="6 文化"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#cca266" />
 
@@ -146,7 +146,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal"
-                    android:text="8 aa"
+                    android:text="8 影视"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#cca266" />
 
@@ -154,7 +154,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal"
-                    android:text="10 aa"
+                    android:text="10 儿童"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#cca266" />
 

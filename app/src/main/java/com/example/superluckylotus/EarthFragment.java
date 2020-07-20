@@ -220,12 +220,6 @@ public class EarthFragment extends Fragment {
                     intent.setClass(getActivity(),SearchActivity.class);
                     getActivity().startActivity(intent);
                     break;
-                /*case R.id.more:
-                    md.popupWindowDialog( v);
-                    break;
-                case R.id.comment:
-                    cd.popupWindowDialog( v);
-                    break;*/
             }
         }
     }

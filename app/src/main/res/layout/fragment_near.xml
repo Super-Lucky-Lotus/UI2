@@ -29,7 +29,7 @@
             android:layout_width="80dp"
             android:layout_height="30dp"
             android:layout_marginRight="140dp"
-            android:text="Place"
+            android:text="深圳"
             android:textColor="#cca266"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
     </LinearLayout>
