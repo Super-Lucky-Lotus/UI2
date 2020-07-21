@@ -19,6 +19,15 @@ import android.widget.VideoView;
 
 import java.io.File;
 
+/**
+ * @version: 3.0
+ * @author: 黄诗雯
+ * @className: VideoCutActivity
+ * @packageName:com.example.superluckylotus
+ * @description: 调用相册，选取视频
+ * @data: 2020.07.20 22:46
+ **/
+
 public class VideoCutActivity extends AppCompatActivity {
     ImageView mBacktoShoot;
     private VideoView mVideo;

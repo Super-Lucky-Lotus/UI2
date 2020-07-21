@@ -86,13 +86,14 @@
 
             </LinearLayout>
 
-<!--            <uses-permission android:name="android.permission.READ_CONTACTS"></uses-permission>-->
+            <!--            <uses-permission android:name="android.permission.READ_CONTACTS"></uses-permission>-->
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="85dp"
                 android:background="#fff7a2"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <Button
                     android:id="@+id/FindFri_pic1"
@@ -131,6 +132,14 @@
         </LinearLayout>
 
     </ScrollView>
+
+    <ListView
+        android:id="@+id/listv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+    </ListView>
 
     <TextView
         android:layout_width="wrap_content"

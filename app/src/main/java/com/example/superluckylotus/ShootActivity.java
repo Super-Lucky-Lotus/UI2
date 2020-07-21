@@ -36,6 +36,17 @@ import java.net.URLDecoder;
  * @description: 拍摄界面
  * @data: 2020.07.12 00:48
  **/
+
+/**
+ * @version: 3.0
+ * @author: 黄诗雯、宋佳容
+ * @className: ShootActivity
+ * @packageName:com.example.superluckylotus
+ * @description: 调用摄像头，拍摄视频
+ * @data: 2020.07.20 20:32
+ **/
+
+
 public class ShootActivity extends AppCompatActivity {
     private int SELECT_IMAGE_REQUEST_CODE=201;//判断请求识别码
     private Button back_Btn;
