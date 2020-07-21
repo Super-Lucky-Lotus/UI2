@@ -85,21 +85,28 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/Fri_List_Linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/item_frilist"/>
+
+            </LinearLayout>
 
 
         </LinearLayout>
 
     </ScrollView>
 
-
     <ListView
-        android:id="@+id/frilist_listv"
+        android:id="@+id/fri_listv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1">
 
     </ListView>
-
 
     <TextView
         android:layout_width="wrap_content"

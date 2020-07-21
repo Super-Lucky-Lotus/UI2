@@ -88,6 +88,47 @@
 
             <!--            <uses-permission android:name="android.permission.READ_CONTACTS"></uses-permission>-->
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:background="#fff7a2"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/FindFri_pic1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#CCCCFF"
+                    android:text="头像"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/FindFri1_tv"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="1dp"
+                    android:text="UserName1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#cca266 "
+                    android:textSize="23sp" />
+
+
+                <Button
+                    android:id="@+id/addFri1_btn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="3dp"
+                    android:background="@drawable/add" />
+
+
+            </LinearLayout>
+
+
         </LinearLayout>
 
     </ScrollView>
