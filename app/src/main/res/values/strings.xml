@@ -1,3 +1,272 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
+
+    <!--1、录制/拍照-->
+    <!--2、抖音/随拍-->
+    <!--3、视频编辑-->
+    <!--4、照片电影-->
+    <!--5、创意搞怪小视频-->
+    <!--6、多格视频-->
+    <!--7、短视频-->
+    <!--8、相册-->
+    <!--9、视频截取-->
+    <!--10、视频压缩-->
+    <!--11、音效示例-->
+    <!--12、不规则四边形示例-->
+    <!--13、异形示例-->
+
+    <string name="app_name">Video Edit SDK</string>
+    <string name="video_isAntiChang">该视频是防篡改视频</string>
+    <string name="osd_title">"水印内容：</string>
+    <string name="osd_hint">"请输入水印内容</string>
+    <string name="osd_content">"×××营业厅 ×××业务员 \n业务员编号:0001  \n业务名称:xxxx  \n客户身份证号：500233yyyymmddxxxx</string>
+    <string name="btnSetting">设置</string>
+
+
+    <string name="recordOtakephoto">1、录制/拍照</string>
+    <string name="squareType">(1)正方形方式</string>
+    <string name="fullScreenType">(2)全屏方式</string>
+    <string name="changeRecordType">(3)正方形、全屏（自由切换）</string>
+    <string name="recordDyui" translatable="false">2、抖音/随拍</string>
+
+    <string name="videoEdit">2、视频编辑</string>
+    <string name="directEdit">(1)无相册选择，进入编辑</string>
+    <string name="galleryMediaEdit">(2)从相册选择后进入编辑</string>
+
+    <string name="imageVideoDemo">3、照片电影示例</string>
+    <string name="apiQuik">(1)API实现(仿Quik)</string>
+    <string name="aeVideo">(2)AE模板</string>
+
+    <string name="creativeFunnyVideo">4、创意搞怪小视频</string>
+    <string name="crFunnyApiDemo">(1)API实现</string>
+    <string name="crFunnyAEDemo">(2)AE模板 (简影)</string>
+    <string name="crFunnyZSDemo">(3)字说</string>
+    <string name="crFunnyZSDemo2">(4)字说(自绘)</string>
+    <string name="crFunnyZSDemo3">(5)字说(语音转文字)</string>
+    <string name="crFunnyZSDemo4">(6)文字转语音</string>
+
+
+    <string name="spliceSample">5、多格示例</string>
+    <string name="spliceSample1">(1)多格视频</string>
+
+    <string name="shortVideo">6、短视频(由视频编辑配置而成)</string>
+    <string name="short15">(1)15秒短视频</string>
+
+
+    <string name="albumTitle">7、相册</string>
+    <string name="imageAndVideo">(1)视频+图片</string>
+    <string name="onlyVideo">(2)仅视频</string>
+    <string name="onlyImage">(3)仅图片</string>
+
+
+    <string name="videoTrim">9、视频截取</string>
+    <string name="horizontalVideo">(1)横屏视频</string>
+    <string name="verticalVideo">(2)竖屏视频</string>
+    <string name="squareVideo">(3)正方形视频</string>
+    <string name="galleryVideo">(4)相册视频</string>
+
+
+    <string name="compressionText">10、视频压缩</string>
+    <string name="compressionVideo">(1)视频压缩</string>
+
+    <string name="audioEffectDemo">11、音效示例</string>
+    <string name="audioEffect1">(1)音效示例</string>
+    <string name="audioEffectNpDemo">(2)音效示例(独立音频播放器)</string>
+
+
+    <string name="irregularRectDemo">12、不规则四边形示例</string>
+    <string name="irregularVPDemo">(1)不规则四边形（视频+图片）</string>
+    <string name="photoRectAnim">(2)照片电影(矩形动画)</string>
+
+
+    <string name="maskDemo">13、异形示例(mask)</string>
+    <string name="maskEdit">(1)编辑</string>
+
+
+    <string name="draftEdit">(3)草稿箱</string>
+
+
+    <string name="alone">8、单独</string>
+
+    <string name="aloneVideoSubVer">1.竖排字幕</string>
+    <string name="aloneVideoCover">2.封面</string>
+    <string name="aloneVideoAlone">3.小功能拆分</string>
+    <string name="aloneVideoTranscod">1) 转码 (转MD5)</string>
+    <string name="aloneVideoReverse">2) 倒放</string>
+    <string name="aloneVideoIntercept">3) 截取</string>
+    <string name="aloneVideoTransition">4) 转场</string>
+    <string name="aloneVideoToning">5) 调色</string>
+    <string name="aloneVideoSpeed">6) 变速</string>
+    <string name="aloneSoundEffect">7) 变声</string>
+    <string name="aloneVideoDubbing">8) 配音</string>
+    <string name="aloneVideoClip">9) 片段编辑</string>
+    <string name="aloneVideoCrop">10) 裁切</string>
+    <string name="aloneVideoWord">11) 文字</string>
+    <string name="aloneVideoSticker">12) 贴纸</string>
+    <string name="aloneVideoFilter">13) 滤镜</string>
+    <string name="aloneVideoEffect">14) 特效</string>
+    <string name="aloneVideoOSD">15) 去水印</string>
+    <string name="aloneVideoCollage">16) 画中画</string>
+    <string name="aloneVideoGraffiti">17) 涂鸦</string>
+    <string name="aloneImageDuration">18) 图片时长</string>
+
+
+    <string name="antiChangeRecord">14、防篡改录制</string>
+    <string name="antiFullRecord">(1)全屏录制</string>
+    <string name="otherMenu">15、其它</string>
+    <string name="player">(1)播放器</string>
+    <string name="imageDeformation">(2)图片变形</string>
+    <string name="exportDemo">(3)导出(支持片尾、水印)</string>
+    <string name="resetAllConfig">(4)重置设置</string>
+
+    <!--草稿箱界面-->
+    <string name="noDraftList">没有草稿视频</string>
+    <string name="exporting">正在导出...</string>
+    <string name="exportFailed">导出失败</string>
+    <string name="duration_text">时长: %.1f 秒</string>
+    <string name="somethingNotExits">部分资源不存在</string>
+    <string name="draft_dialog_title">是否删除此视频？</string>
+    <string name="draft_dialog_title_release">此草稿已发布，是否删除？</string>
+    <string name="draft_dialog_pos">删除</string>
+    <string name="draft_dialog_neg">取消</string>
+    <string name="delete_success">删除成功</string>
+    <string name="delete_failed">删除失败</string>
+
+
+    <!-- Dialog.config-->
+    <string name="back">返回</string>
+    <string name="save">保存</string>
+    <string name="openWizard">开启向导模式</string>
+    <string name="closeWizard">关闭向导模式</string>
+    <string name="openAutoRepeatPlay">开启自动重播</string>
+    <string name="closeAutoRepeatPlay">关闭自动重播</string>
+
+    <string name="audioToastMsg">方式二配音只能在配乐开启的情况下有效</string>
+    <string name="trailerAuthor">秀友</string>
+
+
+    <!---截取Diloag-->
+
+    <string name="trimRebackType">请选择截取后返回类型</string>
+    <string name="trimVideo">截取视频</string>
+    <string name="trimTimeRange">截取时间</string>
+    <string name="draftList">草稿箱</string>
+    <string name="enableTakePhotoBtn">显示拍摄按钮</string>
+    <string name="galleryMediaMax">限制相册选择个数：</string>
+    <string name="hint0NotLimited">默认0,不限制</string>
+
+    <!-- audio-->
+    <string name="audioEffectSetting">音频设置</string>
+    <string name="audioChannel">音频声道数：</string>
+    <string name="audioHint">不设置为默认值</string>
+    <string name="audioSampleRate">音频采样率：</string>
+    <string name="audioBitRate">音频码率：</string>
+
+
+    <!--camera_config-->
+    <string name="uiDirection">UI方向设置</string>
+    <string name="lockVertical">锁定竖屏</string>
+    <string name="lockHorizontal">锁定横屏</string>
+    <string name="autoSensor">自动切换</string>
+    <string name="recordWithMusic">录制中播放音乐</string>
+    <string name="recordDurationMin">拍摄最小时长：</string>
+    <string name="recordDurationMax">拍摄最大时长：</string>
+    <string name="hint_record_duration_limit">默认0为不限制，单位秒</string>
+    <string name="video">视频</string>
+    <string name="hint_record_mv_max_limit">默认为15秒，单位秒</string>
+    <string name="record_short_mv">短视频MV</string>
+    <string name="record_image">照片</string>
+    <string name="recordSupportMode">拍摄支持类型</string>
+    <string name="cameraConfig">摄像头设置：</string>
+    <string name="cameraFront">前置</string>
+    <string name="cameraRear">后置</string>
+    <string name="camera_takephoto_mode_config">拍照模式设置</string>
+    <string name="takePhotoSingle">单次</string>
+    <string name="takePhotoMore">多次</string>
+    <string name="takePhotoSingleIsSave">写入相册</string>
+    <string name="isShowGalleryBtn">显示相册按钮</string>
+    <string name="isEnableCustomGallery">使用自定义相册</string>
+    <string name="isEnableFaceu">人脸道具贴纸(android4.3及以上支持)：</string>
+    <string name="open">开启</string>
+    <string name="close">关闭</string>
+    <string name="record_osd_end_duration">水印片尾时长：</string>
+    <string name="hint_record_osd_end">范围(0-1.0f),单位秒</string>
+    <string name="cameraOSD">相机水印</string>
+    <string name="enableAntiChange">启用防篡改录制</string>
+    <string name="enableBeautify">启用美颜</string>
+    <string name="enableFrontMirror">启用前置输出镜像(4.3以上有效)</string>
+
+
+    <!-- compress-->
+    <string name="enableHWAcc">使用硬件加速</string>
+    <string name="compressX">x轴：</string>
+    <string name="hintCompressX">范围0-1.0</string>
+    <string name="compressY">y轴：</string>
+    <string name="hintCompressY">范围0-1.0</string>
+    <string name="compress_scale_x">x轴缩放比例：</string>
+    <string name="hint_scale">默认为1</string>
+    <string name="compress_scale_y">y轴缩放比例：</string>
+    <string name="compress_watermark">图片水印</string>
+    <string name="compressBitRate">码率(kbps):</string>
+    <string name="compressVideoConstrain">等比例</string>
+    <string name="hintCompressBitRate">默认为4M,单位M</string>
+    <string name="hintCompressFrameRate">默认为25帧</string>
+    <string name="compress_width">视频宽度：</string>
+    <string name="hint_compress_width">默认为原始宽高</string>
+    <string name="compress_height">视频高度：</string>
+    <string name="hint_compress_height">默认为原始宽高</string>
+    <string name="compress_title">正在压缩视频...</string>
+    <string name="compress_src_info">原始视频信息</string>
+    <string name="size">分辨率:</string>
+    <string name="videoFrame">帧率:</string>
+    <string name="videoEncodingBitRate">码率:</string>
+
+
+    <!-- trim-->
+    <string name="rbTrimReturnMedia">真实截取</string>
+    <string name="rbTrimReturnTime">返回时间段</string>
+    <string name="rbTrimDynamicReturn">动态截取</string>
+    <string name="trimReturnType">截取行为</string>
+    <string name="trimTypeFree">自由截取</string>
+    <string name="trimSingleFixed">单个定长截取</string>
+    <string name="trimTimeText">截取时间：</string>
+    <string name="hintSinglefixedTrimTime">默认为15秒，单位秒</string>
+    <string name="trimDoubleFixed">两个定长截取</string>
+    <string name="timeTime1">截取时间1：</string>
+    <string name="hintTrimTime1">默认为8秒，单位秒</string>
+    <string name="trimTime2">截取时间2：</string>
+    <string name="hintTrimTime2">默认为16秒，单位秒</string>
+    <string name="trimTime">截取时间</string>
+    <string name="trimCropNormal">原始</string>
+    <string name="trimCrop1x1">1比1</string>
+    <string name="trimCropNormalWithItem">默认为原始,可切换</string>
+    <string name="trimCrop1x1WithItem">默认为1比1,可切换</string>
+    <string name="trimCrop">视频裁剪比例</string>
+
+    <!--UI-->
+    <string name="enableNewNetApi">使用自定义素材</string>
+    <string name="newApiText">（资源放到自己的服务器）</string>
+    <string name="hintNewCustomApi">配置自己的资源地址 http://</string>
+    <string name="voiceTrak1">配音一</string>
+    <string name="voiceTrak2">配音二(只能在配乐开启时有效)</string>
+    <string name="voiceTrack">配音</string>
+    <string name="_16_9">16:9</string>
+    <string name="proportionTitle">画面比例</string>
+    <string name="edit_support_type">编辑支持的文件类型：</string>
+    <string name="format_only_video">仅视频</string>
+    <string name="format_only_image">仅图片</string>
+    <string name="format_default">视频+图片</string>
+    <string name="exportSetting">导出设置:</string>
+    <string name="limit_export_duration">限制导出视频时间：</string>
+    <string name="ui_video_trailer">片尾水印</string>
+    <string name="textWatermark">文字水印</string>
+    <string name="subSpecialEffectOuter">字幕、贴纸在MV之外显示</string>
+    <string name="imageExpading">图片铺满</string>
+    <string name="export_asset">导出测试资源</string>
+
+
+    <string name="reset_all_success">重置所有配置成功</string>
+    <string name="reset_all_failures">重置所有配置失败</string>
+
 
 </resources>

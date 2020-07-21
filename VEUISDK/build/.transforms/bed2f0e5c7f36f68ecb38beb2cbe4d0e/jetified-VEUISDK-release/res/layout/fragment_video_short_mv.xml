@@ -1,0 +1,33 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rlBottomMenu">
+
+        <TextView
+            android:id="@+id/tvLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="加载中..."/>
+
+        <com.veuisdk.ui.HorizontalListViewFresco
+            android:id="@+id/lvListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:scrollbars="none">
+
+            <include layout="@layout/camare_filters_container"/>
+
+        </com.veuisdk.ui.HorizontalListViewFresco>
+
+    </FrameLayout>
+
+    <include
+        layout="@layout/layout_bottom_menu"/>
+
+</RelativeLayout>

@@ -1,0 +1,39 @@
+<com.vecore.base.lib.ui.PreviewFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="match_parent"
+    >
+
+
+    <com.vecore.base.lib.ui.RotateImageView
+        android:id="@+id/ivPhotoListThumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:contentDescription="@null"
+        android:minHeight="@dimen/video_list_grid_item_height"
+        android:minWidth="@dimen/video_list_grid_item_width"/>
+
+    <TextView
+        android:id="@+id/ivVideoDur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/select_photo_video_duration_bg"
+        android:contentDescription="@null"
+        android:gravity="right|center_vertical"
+        android:paddingRight="2dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_12"
+        android:visibility="gone"/>
+
+
+    <com.veuisdk.ui.ExtImageView
+        android:id="@+id/part_add"
+        android:layout_width="@dimen/media_add_btn"
+        android:layout_height="@dimen/media_add_btn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@null"
+        android:src="@drawable/media_part_add"/>
+
+</com.vecore.base.lib.ui.PreviewFrameLayout>

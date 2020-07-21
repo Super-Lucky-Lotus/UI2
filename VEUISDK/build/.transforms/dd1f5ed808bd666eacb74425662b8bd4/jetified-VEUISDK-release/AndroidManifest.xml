@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.veuisdk"
+    android:versionCode="135"
+    android:versionName="1.3.5.13438_Pre" >
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="23" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application android:allowBackup="true" >
+        <activity
+            android:name="com.veuisdk.demo.zishuo.VoiceTextActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" >
+        </activity>
+        <activity
+            android:name="com.veuisdk.demo.zishuo.ZiShuoActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" >
+        </activity>
+        <activity
+            android:name="com.veuisdk.demo.VideoCompressActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" >
+        </activity>
+        <activity
+            android:name="com.veuisdk.demo.VideoEditAloneActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" >
+        </activity>
+        <activity
+            android:name="com.veuisdk.demo.InterceptActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" >
+        </activity>
+        <activity
+            android:name="com.veuisdk.demo.CoverActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" >
+        </activity>
+        <activity
+            android:name="com.veuisdk.SelectMediaActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.main" />
+        <activity
+            android:name="com.veuisdk.SelectMediaActivity2"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.main" />
+        <activity
+            android:name="com.veuisdk.VideoPreviewActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="video/*" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.veuisdk.EditPreviewActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="com.veuisdk.CropRotateMirrorActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+        <activity
+            android:name="com.veuisdk.VideoEditActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="com.veuisdk.SpeedPreviewActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+        <activity
+            android:name="com.veuisdk.ImageDurationActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+        <activity
+            android:name="com.veuisdk.ExtPhotoActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="com.veuisdk.RecorderActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="com.veuisdk.MoreMusicActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="com.veuisdk.MusicSignActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="com.veuisdk.SightseeingFileActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="com.veuisdk.TrimMediaActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+        <activity
+            android:name="com.veuisdk.SortMediaActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+        <activity
+            android:name="com.veuisdk.TestAnimation"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+        <activity
+            android:name="com.veuisdk.QuikActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+        <activity
+            android:name="com.veuisdk.MusicFilterActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+        <activity
+            android:name="com.veuisdk.MusicFilterNpActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+        <activity
+            android:name="com.veuisdk.SilhouetteActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+        <activity
+            android:name="com.veuisdk.AEActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+        <activity
+            android:name="com.veuisdk.AEListActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.main2" />
+        <activity
+            android:name="com.veuisdk.AEDetailActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.main" />
+        <activity
+            android:name="com.veuisdk.AEPreviewActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.main" />
+        <activity
+            android:name="com.veuisdk.AlienActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+        <activity
+            android:name="com.veuisdk.AETextActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+        <activity
+            android:name="com.veuisdk.ImageTransActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+        <activity
+            android:name="com.veuisdk.RecorderConfigActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+        <activity
+            android:name="com.veuisdk.MediaFilterActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+        <activity
+            android:name="com.veuisdk.MediaFilterConfigActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+        <activity
+            android:name="com.veuisdk.ZishuoActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+        <activity
+            android:name="com.veuisdk.ZishuoDrawActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+        <activity
+            android:name="com.veuisdk.MediaEffectActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+        <activity
+            android:name="com.veuisdk.SpliceActivitiy"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" /> <!-- 小功能 -->
+        <activity
+            android:name="com.veuisdk.demo.VideoTranscodActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+        <activity
+            android:name="com.veuisdk.demo.VideoSoundEffectActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+        <activity
+            android:name="com.veuisdk.demo.VideoTransitionActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+        <activity
+            android:name="com.veuisdk.demo.VideoReverseActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+        <activity
+            android:name="com.veuisdk.demo.VideoDubbingActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen" />
+    </application>
+
+</manifest>

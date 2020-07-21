@@ -1,0 +1,156 @@
+<com.veuisdk.ui.NoneMultiTouchLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                              android:layout_width="match_parent"
+                                              android:layout_height="match_parent"
+                                              android:background="@color/public_background_color"
+                                              android:fitsSystemWindows="true"
+                                              android:orientation="vertical">
+
+
+    <com.veuisdk.ui.PriviewLayout
+        android:id="@+id/mroot_priview_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.veuisdk.ui.PriviewLinearLayout
+            android:id="@+id/the_priview_layout_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <FrameLayout
+                    android:id="@+id/theframe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:minHeight="100dp">
+
+                    <include layout="@layout/preview_edit"/>
+
+                    <include layout="@layout/preview_edit_split"/>
+
+                    <include layout="@layout/layout_partedit_add"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/flUpperZone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/theframe">
+
+                    <com.vecore.base.lib.ui.PreviewFrameLayout
+                        android:id="@+id/rlPreview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.vecore.VirtualVideoView
+                            android:id="@+id/vvMediaPlayer"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"/>
+
+                        <RelativeLayout
+                            android:id="@+id/rlSplitView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="gone"/>
+                    </com.vecore.base.lib.ui.PreviewFrameLayout>
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/llDurationSeekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/theframe"
+                    android:layout_marginBottom="-22dp"
+                    android:background="@color/transparent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/ivPlayerState"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_edit_play"/>
+
+                    <TextView
+                        android:id="@+id/tvCurTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="@string/record_default_time"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_12"/>
+
+
+                    <com.veuisdk.ui.RdSeekBar
+                        android:id="@+id/sbPreview"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@id/tvTotalTime"
+                        android:layout_toRightOf="@id/tvCurTime"
+                        android:layout_weight="1"
+                        android:maxHeight="8px"
+                        android:minHeight="8px"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="15dp"
+                        android:progressDrawable="@drawable/video_editor_progress"
+                        android:thumb="@drawable/seekbar_thumb"
+                        android:thumbOffset="23dp"/>
+
+
+                    <TextView
+                        android:id="@+id/tvTotalTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/record_default_time"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_12"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/ivProportion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginRight="7dp"
+                    android:background="@drawable/edit_more_orientation_button"
+                    android:visibility="gone"/>
+
+                <include layout="@layout/rdveuisdk_public_title_bar"/>
+            </RelativeLayout>
+        </com.veuisdk.ui.PriviewLinearLayout>
+        <!-- 可拖动的层 -->
+        <com.veuisdk.ui.DraggedTrashLayout
+            android:id="@+id/thelinearDraggedLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent_black80"
+            android:splitMotionEvents="false"
+            android:visibility="gone">
+
+            <com.veuisdk.ui.DraggedView
+                android:id="@+id/dragged_info_trash_View"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </com.veuisdk.ui.DraggedTrashLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlSplitScreen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+        </RelativeLayout>
+    </com.veuisdk.ui.PriviewLayout>
+
+
+</com.veuisdk.ui.NoneMultiTouchLinearLayout>

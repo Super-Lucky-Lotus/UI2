@@ -1,0 +1,1463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <string-array name="ae_image_menu">
+        <item>编辑</item>
+        <item>替换</item>
+    </string-array>
+    <string-array name="cover_duration_array">
+        <item>0s</item>
+        <item>0.5s</item>
+        <item>1s</item>
+        <item>1.5s</item>
+        <item>2s</item>
+    </string-array>
+    <string-array name="cover_picture">
+        <item>本地图片</item>
+        <!--<item>丰富照片素材</item>-->
+        <item>视频本身</item>
+    </string-array>
+    <string-array name="cover_text">
+        <item>添加横排文字</item>
+        <item>添加竖排文字</item>
+    </string-array>
+    <string-array name="crop_menu">
+        <item>原始值</item>
+        <item>正方形</item>
+        <item>自由</item>
+    </string-array>
+    <string-array name="duration_array">
+        <item>0.1</item>
+        <item>2</item>
+        <item>4</item>
+        <item>6</item>
+        <item>8</item>
+    </string-array>
+    <string-array name="inscription_library">
+        <item>更换题词</item>
+        <item>自定义题词</item>
+        <item>清除题词</item>
+    </string-array>
+    <string-array name="music_filter_titles">
+        <item>自定义</item>
+        <item>正常</item>
+        <item>男声</item>
+        <item>女声</item>
+        <item>怪兽</item>
+        <item>卡通</item>
+        <item>混响</item>
+        <item>回声</item>
+        <item>房间</item>
+        <item>舞台</item>
+        <item>KTV</item>
+        <item>厂房</item>
+        <item>竞技场</item>
+        <item>电音</item>
+    </string-array>
+    <string-array name="scan_sd_menu">
+        <item>快速扫描</item>
+        <item>自定义扫描</item>
+    </string-array>
+    <string-array name="speed_array">
+        <item>1/4</item>
+        <item>1/2</item>
+        <item>1X</item>
+        <item>2X</item>
+        <item>4X</item>
+    </string-array>
+    <color name="ae_list_bg">#F3F3F3</color>
+    <color name="auto_txt_color">#13cadb</color>
+    <color name="baseline_color">#ebeef3</color>
+    <color name="black">#ff000000</color>
+    <color name="border_no_checked">#888888</color>
+    <color name="borderline_color">#888888</color>
+    <color name="camera_list_back_color">#70000000</color>
+    <color name="colorAccent">#fc1b53</color>
+    <color name="colorPrimary">#fafafa</color>
+    <color name="colorPrimaryDark">#27262C</color>
+    <color name="color_effect_item_text">#FFFFFF</color>
+    <color name="color_effect_rg_bg">#80000000</color>
+    <color name="color_thumbnail_position_rect">#FC1C8F</color>
+    <color name="color_time_effect_bg">#991fb6ff</color>
+    <color name="config_menu_title_bg">#2B2B33</color>
+    <color name="config_titlebar_bg">#27262C</color>
+    <color name="create_video_title_color">#171b24</color>
+    <color name="crop_reset_bg">#202020</color>
+    <color name="crop_reset_tx_color">#b2b2b2</color>
+    <color name="crop_shadow_color">#CF000000</color>
+    <color name="crop_shadow_wp_color">#4F000000</color>
+    <color name="crop_wp_markers">#7FFFFFFF</color>
+    <color name="dark_bg">#0F0F0F</color>
+    <color name="doodle_text_color">#13cada</color>
+    <color name="edit_menu_bg">#0F0F0F</color>
+    <color name="edit_menu_bg_transparent">#000F0F0F</color>
+    <color name="edit_music_divider">#62626e</color>
+    <color name="edit_music_soundtrack_bg">#19181d</color>
+    <color name="edit_rightbtn_textcolor">#13cadb</color>
+    <color name="edit_text_gray">#545454</color>
+    <color name="fragment_content_bg">#0F0F0F</color>
+    <color name="fragment_titlebar_bg">#131313</color>
+    <color name="fu_menu_text_color">#cccccc</color>
+    <color name="gradient_button_back_color_begin">#33c3e8</color>
+    <color name="gradient_button_back_color_end">#1cb3a0</color>
+    <color name="grid_listview_item_backgroup">#E8E9ED</color>
+    <color name="item_art_txcolor">#88888888</color>
+    <color name="item_duration_txcolor">#b1b1b1</color>
+    <color name="item_songname_txcolor">#464646</color>
+    <color name="item_title_bar_bg">#efefef</color>
+    <color name="item_title_textcolor">#88888888</color>
+    <color name="kxred_dialog_translucent">#8013cadb</color>
+    <color name="linear_seekbar_color">#fff87a00</color>
+    <color name="linear_seekbar_color_translucent">#80f87a00</color>
+    <color name="main_btn_text_color_d">#545454</color>
+    <color name="main_btn_text_color_n">#D1D5DE</color>
+    <color name="main_btn_text_color_p">#9FD1D5DE</color>
+    <color name="main_color">#13cadb</color>
+    <color name="main_orange">#ffd500</color>
+    <color name="main_orange_transparent_50">#b2ffd500</color>
+    <color name="main_orange_transparent_66">#b2ffd500</color>
+    <color name="message_text_hint">#888888</color>
+    <color name="music_text_background">#34333b</color>
+    <color name="music_text_selected">#13cadb</color>
+    <color name="not_found_text_color">#888888</color>
+    <color name="one_key_make_solid">#ED335C</color>
+    <color name="orientation_text">#afafaf</color>
+    <color name="orientation_text_translucent">#80afafaf</color>
+    <color name="osd_n">#131313</color>
+    <color name="osd_p">#252525</color>
+    <color name="progress_between">#ffd500</color>
+    <color name="progress_n">#2a2a2c</color>
+    <color name="progress_progress">#fcbc7f</color>
+    <color name="public_background_color">#27262C</color>
+    <color name="public_gradient_background_color">#0027262C</color>
+    <color name="public_menu_back_color">#33333B</color>
+    <color name="rb_order_bg">#1E282C</color>
+    <color name="rb_splice_order_textcolor_n">#5A646B</color>
+    <color name="rdveuisdk_main_bg_color">#ff000000</color>
+    <color name="record_config_menu_bg">#F5F5F5</color>
+    <color name="record_menu_txtcolor_n">#888888</color>
+    <color name="record_type_textcolor_p">#f53333</color>
+    <color name="red">#E5004F</color>
+    <color name="ruler_background_color">#4B4B4B</color>
+    <color name="ruler_text_color">#808080</color>
+    <color name="scan_music_dialog_color">#D7D7D7</color>
+    <color name="scroll_color_border">#363636</color>
+    <color name="special_bg">#242424</color>
+    <color name="special_checked">#13cadb</color>
+    <color name="speed_line_button_back_color">#42424C</color>
+    <color name="speed_line_button_text_color">#898989</color>
+    <color name="splice_fragment_bg">#12181B</color>
+    <color name="splice_menu_bg">#222B31</color>
+    <color name="sub_menu_bgcolor">#27262C</color>
+    <color name="sub_menu_bgcolor_transparent">#8027262C</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent20_white">#20FFFFFF</color>
+    <color name="transparent80_white">#CDFFFFFF</color>
+    <color name="transparent_black">#50000000</color>
+    <color name="transparent_black20">#33000000</color>
+    <color name="transparent_black80">#80000000</color>
+    <color name="transparent_black95">#95000000</color>
+    <color name="transparent_orange">#a9e38a43</color>
+    <color name="transparent_white">#88FFFFFF</color>
+    <color name="trash_border_color">#E50050</color>
+    <color name="trim_point_color">#D7225A</color>
+    <color name="voice_progress_p">#2CB2F5</color>
+    <color name="voice_progress_secondary">#817775</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_divider">#33ffffff</color>
+    <declare-styleable name="CircleAnimationView"><attr format="reference" name="loadingSrc"/><attr format="float" name="uncheckedAlpha"/></declare-styleable>
+    <declare-styleable name="CircleImageView"><attr format="dimension" name="border_width"/><attr format="color" name="border_color"/></declare-styleable>
+    <declare-styleable name="EffectRadioButton"><attr format="float" name="rbUncheckedAlpha"/></declare-styleable>
+    <declare-styleable name="ExtCircle"><attr format="boolean" name="circleChecked"/><attr format="color|reference" name="circleBgColor"/><attr format="color|reference" name="circleBorderColor"/><attr format="dimension" name="circleBorderWidth"/></declare-styleable>
+    <declare-styleable name="ExtCircleProgressBar"><attr format="reference" name="extprogressDrawable"/><attr format="reference" name="extindetermiateDrawable"/><attr format="boolean" name="extindetermiate"/></declare-styleable>
+    <declare-styleable name="ExtImage"><attr format="reference" name="extSrc"/><attr format="dimension" name="extBorderLineWidth"/><attr format="dimension" name="extBorderRoundRadius"/></declare-styleable>
+    <declare-styleable name="ExtSquare"><attr format="boolean" name="squareChecked"/><attr format="color|reference" name="squareBgColor"/><attr format="color|reference" name="squareBorderColorP"/><attr format="color|reference" name="squareBorderColorN"/><attr format="dimension" name="squareBorderWidth"/><attr format="dimension" name="squareCornersRadius"/></declare-styleable>
+    <declare-styleable name="PuzzleView"><attr format="integer" name="line_size"/><attr format="color" name="line_color"/><attr format="color" name="selected_line_color"/><attr format="color" name="handle_bar_color"/><attr format="boolean" name="need_draw_line"/><attr format="boolean" name="need_draw_outer_line"/><attr format="dimension" name="piece_padding"/><attr format="integer" name="animation_duration"/><attr format="float" name="radian"/></declare-styleable>
+    <declare-styleable name="RangeSeekBar"><attr format="boolean" name="isSide"/></declare-styleable>
+    <declare-styleable name="SwitchButton"><attr format="reference" name="swThumbDrawable"/><attr format="color|reference" name="swThumbColor"/><attr format="dimension|reference" name="swThumbMargin"/><attr format="dimension|reference" name="swThumbMarginTop"/><attr format="dimension|reference" name="swThumbMarginBottom"/><attr format="dimension|reference" name="swThumbMarginLeft"/><attr format="dimension|reference" name="swThumbMarginRight"/><attr format="dimension|reference" name="swThumbWidth"/><attr format="dimension|reference" name="swThumbHeight"/><attr format="dimension|reference" name="swThumbRadius"/><attr format="dimension|reference" name="swBackRadius"/><attr format="reference" name="swBackDrawable"/><attr format="color|reference" name="swBackColor"/><attr format="boolean" name="swFadeBack"/><attr format="float" name="swBackMeasureRatio"/><attr format="integer" name="swAnimationDuration"/><attr format="color|reference" name="swTintColor"/><attr format="string" name="swTextOn"/><attr format="string" name="swTextOff"/><attr format="dimension" name="swTextMarginH"/><attr format="boolean" name="swAutoAdjustTextPosition"/></declare-styleable>
+    <declare-styleable name="VerSeekbar"><attr format="reference" name="thumb"/><attr format="reference" name="VerProgressDrawable"/></declare-styleable>
+    <declare-styleable name="extAutoTitle"><attr format="string" name="sText"/></declare-styleable>
+    <declare-styleable name="extColorPicker"><attr format="boolean" name="isDrawCircle"/><attr format="boolean" name="isDrawStrokeOnly"/><attr format="boolean" name="isTextEdit"/></declare-styleable>
+    <declare-styleable name="extdragarray"><attr format="reference" name="sArrays"/></declare-styleable>
+    <declare-styleable name="squareview"><attr format="string" name="square_text"/><attr format="color" name="square_bg"/></declare-styleable>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_setting_text_size">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="alert_listview_dialog_item_height">40dp</dimen>
+    <dimen name="alert_listview_dialog_item_text_size">19dp</dimen>
+    <dimen name="athaoyou">14sp</dimen>
+    <dimen name="audio_reset_layout_margin_bottom">25dp</dimen>
+    <dimen name="audio_speark">120dp</dimen>
+    <dimen name="audio_tv_margin">20dp</dimen>
+    <dimen name="borderline_width2">2dp</dimen>
+    <dimen name="borderline_width4">4dp</dimen>
+    <dimen name="btn_textsize">14sp</dimen>
+    <dimen name="button_text_size">15dp</dimen>
+    <dimen name="buttonpadding">10dp</dimen>
+    <dimen name="camera_filter_more_content_height">180dp</dimen>
+    <dimen name="camera_preview_layout_margin_bottom">0dp</dimen>
+    <dimen name="circlebuttonborderwidth">2dp</dimen>
+    <dimen name="classfiy_tabpage_text_size">18dp</dimen>
+    <dimen name="classfiy_tabpage_title_minheight">40dp</dimen>
+    <dimen name="classify_head_advertis_height">30dp</dimen>
+    <dimen name="classify_head_advertis_text_size">15dp</dimen>
+    <dimen name="comdialog_width">40dp</dimen>
+    <dimen name="create_title_margintop">8dp</dimen>
+    <dimen name="crop_aspect_text_size">15sp</dimen>
+    <dimen name="crop_indicator_size">24dp</dimen>
+    <dimen name="crop_min_side">45dp</dimen>
+    <dimen name="crop_touch_tolerance">20dp</dimen>
+    <dimen name="dimen_10">10dp</dimen>
+    <dimen name="dimen_100">100dp</dimen>
+    <dimen name="dimen_15">15dp</dimen>
+    <dimen name="dimen_20">20dp</dimen>
+    <dimen name="dimen_30">30dp</dimen>
+    <dimen name="dimen_40">40dp</dimen>
+    <dimen name="dimen_60">60dp</dimen>
+    <dimen name="dimen_7">7dp</dimen>
+    <dimen name="dimen_80">80dp</dimen>
+    <dimen name="dimen_90">90dp</dimen>
+    <dimen name="discuss_thum_h">60dp</dimen>
+    <dimen name="discuss_thum_w">100dp</dimen>
+    <dimen name="doodle_button_width">80dp</dimen>
+    <dimen name="down_width">20dp</dimen>
+    <dimen name="downloading_minwidth">250dp</dimen>
+    <dimen name="edit_video_ment_item_marginLeft">15dp</dimen>
+    <dimen name="editview_text_size">16sp</dimen>
+    <dimen name="ext_border_width">2dp</dimen>
+    <dimen name="filter_list_item_size">45dp</dimen>
+    <dimen name="filter_list_padding_size">5dp</dimen>
+    <dimen name="friend_item_w">40dp</dimen>
+    <dimen name="handWidth">15dp</dimen>
+    <dimen name="heand_w_h">60dp</dimen>
+    <dimen name="hository_item_margin">8dp</dimen>
+    <dimen name="hository_item_padding">5dp</dimen>
+    <dimen name="hository_item_textsize">16dp</dimen>
+    <dimen name="item_idol_name_tx_size">16dp</dimen>
+    <dimen name="item_idol_summary_tx_size">15dp</dimen>
+    <dimen name="linear_margintop">5dp</dimen>
+    <dimen name="local_head_height">190dp</dimen>
+    <dimen name="local_others">14sp</dimen>
+    <dimen name="local_video_user_birthdate_text_size">16dp</dimen>
+    <dimen name="local_video_user_name_text_size">17dp</dimen>
+    <dimen name="login_text_size">20sp</dimen>
+    <dimen name="main_classify_gvimg_item_text_size">14dp</dimen>
+    <dimen name="main_classify_title_left_img_height">13dp</dimen>
+    <dimen name="main_classify_title_left_text_size">19dp</dimen>
+    <dimen name="main_top_text_height">40dp</dimen>
+    <dimen name="mainhead">30dp</dimen>
+    <dimen name="margin">20dp</dimen>
+    <dimen name="marginTop">15dp</dimen>
+    <dimen name="mix_audio_list_item_play_state_margin_left">40dp</dimen>
+    <dimen name="mix_audio_list_item_play_state_margin_top">42dp</dimen>
+    <dimen name="mix_audio_list_item_play_state_size">25dp</dimen>
+    <dimen name="mix_audio_padding_size">2dp</dimen>
+    <dimen name="music_bar_height">40dp</dimen>
+    <dimen name="music_item_height">82dp</dimen>
+    <dimen name="music_item_width">83dp</dimen>
+    <dimen name="oneheight">130dp</dimen>
+    <dimen name="padding">5dp</dimen>
+    <dimen name="pic_datetime_text_size">18sp</dimen>
+    <dimen name="preview_margin">0dp</dimen>
+    <dimen name="progressbarWidth">2dp</dimen>
+    <dimen name="public_share_hint_textsize">10sp</dimen>
+    <dimen name="public_titlebar_minheight">50dp</dimen>
+    <dimen name="radiobottom_height">3dp</dimen>
+    <dimen name="radiobtn_padding">18dp</dimen>
+    <dimen name="rangeseekbar_height">55dp</dimen>
+    <dimen name="rangseekbarHeight">30dp</dimen>
+    <dimen name="related_video_option_height">50dp</dimen>
+    <dimen name="related_video_plater_timer_tv_size">12dp</dimen>
+    <dimen name="related_video_text_size_14">14dp</dimen>
+    <dimen name="related_video_text_size_18">18.6dp</dimen>
+    <dimen name="related_video_title_tv_size">16dp</dimen>
+    <dimen name="relation_video_item_thumbnail_height">60dp</dimen>
+    <dimen name="relation_video_item_thumbnail_width">107dp</dimen>
+    <dimen name="save_gvPlatformList_width">134dp</dimen>
+    <dimen name="save_share_athaoyou_height">30dp</dimen>
+    <dimen name="save_share_linear_height">50dp</dimen>
+    <dimen name="scaning_music_dialog_bottom_height">45dp</dimen>
+    <dimen name="search_padding">4dp</dimen>
+    <dimen name="search_title_textsize">16dp</dimen>
+    <dimen name="select_music_bottom_left">14dp</dimen>
+    <dimen name="select_music_bottom_padding">14dp</dimen>
+    <dimen name="select_music_bottom_right">16dp</dimen>
+    <dimen name="select_music_list_margin">55dp</dimen>
+    <dimen name="select_music_tab_layer_height">40dp</dimen>
+    <dimen name="select_music_tab_layer_rb_size">16dp</dimen>
+    <dimen name="select_music_text_size">18dp</dimen>
+    <dimen name="select_pic_width">70dp</dimen>
+    <dimen name="sendcode_width">180dp</dimen>
+    <dimen name="setting_about_copyrightinfo_text_size">10dp</dimen>
+    <dimen name="shadow_margin">5dp</dimen>
+    <dimen name="share_and_save_btn_height">45dp</dimen>
+    <dimen name="share_listview_height">50dp</dimen>
+    <dimen name="sharevp_width">60dp</dimen>
+    <dimen name="sightseeing_file_showFilePath_height">60dp</dimen>
+    <dimen name="sightseeing_file_showList_item_marginLeft">5dp</dimen>
+    <dimen name="sightseeing_file_showList_item_text_size">15dp</dimen>
+    <dimen name="sightseeing_file_titleRight_margin">8dp</dimen>
+    <dimen name="sightseeing_file_title_text_size">16dp</dimen>
+    <dimen name="sore_item_textsize">17sp</dimen>
+    <dimen name="state_width">38dp</dimen>
+    <dimen name="submit_width">40dp</dimen>
+    <dimen name="tab_layer_radiobtn_right_margin">20dp</dimen>
+    <dimen name="tabview_paddingBottom">10dp</dimen>
+    <dimen name="tabview_paddingLeft">15dp</dimen>
+    <dimen name="tabview_paddingRight">15dp</dimen>
+    <dimen name="tabview_paddingRight_selected">9dp</dimen>
+    <dimen name="tabview_paddingTop">10dp</dimen>
+    <dimen name="text_size_10">10dp</dimen>
+    <dimen name="text_size_11">11dp</dimen>
+    <dimen name="text_size_11.5">11.5dp</dimen>
+    <dimen name="text_size_12">12dp</dimen>
+    <dimen name="text_size_13">13.3dp</dimen>
+    <dimen name="text_size_14">14dp</dimen>
+    <dimen name="text_size_15">15dp</dimen>
+    <dimen name="text_size_16">16dp</dimen>
+    <dimen name="text_size_18">18.6dp</dimen>
+    <dimen name="text_size_19">19dp</dimen>
+    <dimen name="text_size_20">20dp</dimen>
+    <dimen name="text_size_21">21dp</dimen>
+    <dimen name="text_size_22">22dp</dimen>
+    <dimen name="text_size_23">23dp</dimen>
+    <dimen name="text_size_25">25dp</dimen>
+    <dimen name="text_size_30">30dp</dimen>
+    <dimen name="text_size_9">9dp</dimen>
+    <dimen name="text_size_rangseekbar">13dp</dimen>
+    <dimen name="text_size_rangseekbar_bigger">15dp</dimen>
+    <dimen name="thumbnail_height">54dp</dimen>
+    <dimen name="thumbnail_width">96dp</dimen>
+    <dimen name="top_title_text_size">19dp</dimen>
+    <dimen name="ttf_item_height">38dp</dimen>
+    <dimen name="video_cmt_et_min_height">80dp</dimen>
+    <dimen name="video_cmt_hint_height">40dp</dimen>
+    <dimen name="video_cmt_text_size_13">13dp</dimen>
+    <dimen name="video_cmt_text_size_14">14dp</dimen>
+    <dimen name="video_cmt_text_size_15">15dp</dimen>
+    <dimen name="video_cmt_text_size_16">16dp</dimen>
+    <dimen name="video_detail_player_margin_top">-5dp</dimen>
+    <dimen name="video_details_icon_w">60dp</dimen>
+    <dimen name="video_editor_list_item_size">40dp</dimen>
+    <dimen name="video_list_grid_duration_item_height">14.6dp</dimen>
+    <dimen name="video_list_grid_item_space_size">5dp</dimen>
+    <dimen name="video_list_view_item_divider_height">10dp</dimen>
+    <dimen name="video_list_view_item_height">85dp</dimen>
+    <dimen name="video_list_view_item_height_min">85dp</dimen>
+    <dimen name="video_list_view_item_padding">5dp</dimen>
+    <dimen name="video_list_view_thumb_item_height">80dp</dimen>
+    <dimen name="video_list_view_thumb_item_width">80dp</dimen>
+    <dimen name="wp_selector_dash_length">4dp</dimen>
+    <dimen name="wp_selector_off_length">4dp</dimen>
+    <string name="activity_label_effect_music">选择音效</string>
+    <string name="activity_label_select_music">选择配乐</string>
+    <string name="activity_label_sightseeing_file">选择文件夹或文件</string>
+    <string name="add">添加</string>
+    <string name="add_scene">添加镜头</string>
+    <string name="add_sticker">添加贴纸</string>
+    <string name="add_subtitle">添加字幕</string>
+    <string name="addanim">添加动画</string>
+    <string name="addaudio_video_between_failed">时间区域太短无法添加配音!</string>
+    <string name="addaudio_video_end_failed">主题片尾无法添加配音!</string>
+    <string name="addaudio_video_head_failed">主题片头无法添加配音!</string>
+    <string name="added">已添加</string>
+    <string name="addmenu_addimage">添加图片</string>
+    <string name="addmenu_addtext">添加文字</string>
+    <string name="addmenu_addvideo">添加视频</string>
+    <string name="addmenu_transition">切换转场</string>
+    <string name="addsticker_video_between_failed">时间区域太短无法添加贴纸!</string>
+    <string name="addsticker_video_end_failed">主题片尾无法添加贴纸!</string>
+    <string name="addsticker_video_head_failed">主题片头无法添加贴纸!</string>
+    <string name="addsub_video_between_failed">区域太小无法添加字幕!</string>
+    <string name="addsub_video_end_failed">主题片尾无法添加字幕!</string>
+    <string name="addsub_video_head_failed">主题片头无法添加字幕!</string>
+    <string name="advanced_edit">高级编辑</string>
+    <string name="ae_enable_repeat">启用循环播放</string>
+    <string name="ae_list">AE模板</string>
+    <string name="ae_media_image">%d张图片</string>
+    <string name="ae_media_info">视频制作需要提供如下资源:</string>
+    <string name="ae_media_item_image">图片</string>
+    <string name="ae_media_item_video">视频/图片</string>
+    <string name="ae_media_item_word">文字</string>
+    <string name="ae_media_word">%d个文字</string>
+    <string name="ae_mode_media">%d个视频/图片</string>
+    <string name="ae_preview_change_music">替换背景音乐</string>
+    <string name="ae_preview_change_music_btn">选择音乐</string>
+    <string name="ae_preview_media">素材输入(点击下面的素材按钮输入)</string>
+    <string name="ae_preview_sound">背景音乐音量：</string>
+    <string name="ae_replace_picture">替换图片</string>
+    <string name="ae_replace_video">替换视频</string>
+    <string name="ae_template_error">模板有误</string>
+    <string name="ae_text_info">字数:%1$d/%2$d 最多:%3$d行</string>
+    <string name="album">相册</string>
+    <string name="album_dialog_ok">我知道了</string>
+    <string name="album_no_all">您还未选择图片或视频哟!</string>
+    <string name="album_no_photo">您还未选择图片哟!</string>
+    <string name="album_no_video">您还未选择视频哟!</string>
+    <string name="all_sound_effect">整体视频音效:</string>
+    <string name="all_video">全部视频</string>
+    <string name="allphoto">全部图片</string>
+    <string name="allvideo">全部视频</string>
+    <string name="already_bottom">已经到底了</string>
+    <string name="ani_type_zoom_out">图片运动</string>
+    <string name="app_name">rdVEDemo</string>
+    <string name="apply_to_all">应用到所有图片</string>
+    <string name="audio">配音</string>
+    <string name="audio_audition">试听</string>
+    <string name="audio_press">按住配音</string>
+    <string name="audio_remove_tip">点击按钮可删除当前选中的配音片段</string>
+    <string name="audio_reset">重配</string>
+    <string name="audio_tip">按住持续配音，松开后配音结束</string>
+    <string name="auto_recognition">AI 识别</string>
+    <string name="auto_recognition_failed">识别失败</string>
+    <string name="auto_recognition_ing">语音识别中...</string>
+    <string name="auto_server_error">语音识别失败（超出当月试用次数）</string>
+    <string name="background">背景</string>
+    <string name="begin_scan">开始扫描</string>
+    <string name="bg_color">背景色</string>
+    <string name="black">黑色</string>
+    <string name="blackboard_text">文字板</string>
+    <string name="blur">模糊</string>
+    <string name="border_size">粗细</string>
+    <string name="camare_filter_0">原图</string>
+    <string name="camare_fu_beauty">美颜</string>
+    <string name="camera_effect_0">原图</string>
+    <string name="camera_effect_10">优雅</string>
+    <string name="camera_effect_11">暴走</string>
+    <string name="camera_effect_12">街拍</string>
+    <string name="camera_effect_13">欧洲站</string>
+    <string name="camera_effect_14">里约</string>
+    <string name="camera_effect_15">流连</string>
+    <string name="camera_effect_16">聚光</string>
+    <string name="camera_effect_17">候鸟</string>
+    <string name="camera_effect_18">云端</string>
+    <string name="camera_effect_19">彩虹瀑</string>
+    <string name="camera_effect_20">淡雅</string>
+    <string name="camera_effect_21">优格</string>
+    <string name="camera_effect_22">青春</string>
+    <string name="camera_effect_23">胭脂</string>
+    <string name="camera_effect_24">精灵</string>
+    <string name="camera_effect_25">遐想</string>
+    <string name="camera_effect_26">冰冰凉</string>
+    <string name="camera_effect_27">牛奶</string>
+    <string name="camera_effect_28">塞纳河畔</string>
+    <string name="camera_effect_29">清晨</string>
+    <string name="camera_effect_30">伊豆</string>
+    <string name="camera_effect_31">随想</string>
+    <string name="camera_effect_32">窗菲</string>
+    <string name="camera_effect_33">近黄昏</string>
+    <string name="camera_effect_34">阴天</string>
+    <string name="camera_effect_35">檀岛</string>
+    <string name="camera_effect_36">节气</string>
+    <string name="camera_effect_37">晚霞</string>
+    <string name="camera_effect_38">朦胧</string>
+    <string name="camera_effect_5">暖风飘"</string>
+    <string name="camera_effect_6">阿宝</string>
+    <string name="camera_effect_7">梦里</string>
+    <string name="camera_effect_8">拿铁</string>
+    <string name="camera_effect_9">活力</string>
+    <string name="camera_min_limit_text">小主，至少%s秒</string>
+    <string name="cancel">取消</string>
+    <string name="cancel_all_changed">确定放弃所有操作？</string>
+    <string name="cancel_export">视频尚未导出完成，是否取消？</string>
+    <string name="canceling">取消中...</string>
+    <string name="caption_anim_fade_in_out">淡入淡出</string>
+    <string name="caption_anim_push_bottom">下推</string>
+    <string name="caption_anim_push_left">左推</string>
+    <string name="caption_anim_push_right">右推</string>
+    <string name="caption_anim_push_top">上推</string>
+    <string name="caption_anim_rotate_fade_in">滚动入出</string>
+    <string name="caption_anim_scale_fade_in">缩放入出</string>
+    <string name="clearanim">清除动画</string>
+    <string name="click_dash_line_to_edit">点击虚线框编辑</string>
+    <string name="close">关闭</string>
+    <string name="collage">画中画</string>
+    <string name="complete">完成</string>
+    <string name="compress">压缩</string>
+    <string name="compress_add_error">解析视频失败</string>
+    <string name="compress_bitrate">码率：</string>
+    <string name="compress_cancel">取消压缩</string>
+    <string name="compress_error">压缩视频失败</string>
+    <string name="compress_file_new_size">压缩后大小：</string>
+    <string name="compress_file_old_size">大小：</string>
+    <string name="compress_fps">帧率：</string>
+    <string name="compress_hardware">使用硬件加速</string>
+    <string name="compress_input_height">输入高：</string>
+    <string name="compress_input_width">输入宽：</string>
+    <string name="compress_size">分辨率：</string>
+    <string name="compress_size_1080">1080p</string>
+    <string name="compress_size_480">480p</string>
+    <string name="compress_size_720">720p</string>
+    <string name="compress_size_constrain">锁定比例</string>
+    <string name="compress_size_customize">自定义</string>
+    <string name="compress_size_original">原始尺寸</string>
+    <string name="compression_settings">压缩设置:</string>
+    <string name="continue_txt">继续</string>
+    <string name="cover">封面</string>
+    <string name="cover_add_picture">添加图片</string>
+    <string name="cover_add_text">添加文字</string>
+    <string name="cover_duration">时长</string>
+    <string name="cover_head">片头</string>
+    <string name="cover_prompt_add_image">请添加图片</string>
+    <string name="cover_select">选择封面</string>
+    <string name="cover_select_ablum">选择相册</string>
+    <string name="cover_select_video">选择视频</string>
+    <string name="cover_tail">片尾</string>
+    <string name="crop_free">自由</string>
+    <string name="crop_mirror_reset">还原</string>
+    <string name="crop_reset">还原</string>
+    <string name="crop_rotate"> 旋    转  </string>
+    <string name="default_music">默认音乐</string>
+    <string name="default_ttf"> 默认字体</string>
+    <string name="del">删除</string>
+    <string name="dewatermark">去水印</string>
+    <string name="dialog_download_ing">下载中...</string>
+    <string name="dialog_tips">温馨提示</string>
+    <string name="download_error">无法下载.</string>
+    <string name="download_failed">下载失败</string>
+    <string name="download_more_music">下载更多配乐</string>
+    <string name="download_thread_limit_msg">请耐心等待...</string>
+    <string name="downloaded">已下载</string>
+    <string name="downloading">正在下载资源，请稍等...</string>
+    <string name="draft">存草稿</string>
+    <string name="draft_still_saved">导出后仍保存草稿</string>
+    <string name="drag_for_sort">长按并拖动可调整顺序哟</string>
+    <string name="drag_for_split">拖动选择分割位置</string>
+    <string name="drag_for_sticker">拖动边框,调整贴纸起始位置</string>
+    <string name="drag_for_sub">拖动边框,调整字幕起始位置</string>
+    <string name="drag_into_trash_del">拖进垃圾桶删除</string>
+    <string name="drag_thumb_for_insert_sticker">拖动缩略图,确认贴纸插入位置</string>
+    <string name="drag_thumb_for_insert_sub">拖动缩略图,确认字幕插入位置</string>
+    <string name="duration_fix_format_f">%.1fs</string>
+    <string name="duration_fix_format_int">%ds</string>
+    <string name="edit">编辑</string>
+    <string name="edit_click_split">单击分割</string>
+    <string name="edit_media">编辑媒体</string>
+    <string name="edit_subtitle">编辑字幕</string>
+    <string name="effcet_filter">动感</string>
+    <string name="effcet_time">时间</string>
+    <string name="effect">特效</string>
+    <string name="effect_filter_eraser">橡皮擦</string>
+    <string name="effect_filter_revoke">撤销</string>
+    <string name="effect_hint_filter">长按添加动感特效</string>
+    <string name="effect_hint_filter_click">单击添加动感特效</string>
+    <string name="effect_hint_time">单击添加时间特效</string>
+    <string name="effect_time_repeat">反复</string>
+    <string name="effect_time_slow">慢动作</string>
+    <string name="empty">" "</string>
+    <string name="error_code">错误代码%d</string>
+    <string name="error_preview_crop">无法预览当前剪辑!</string>
+    <string name="error_record_audio_retry">录音失败，请重试!</string>
+    <string name="et_subtitle_ttf">选择字体</string>
+    <string name="exit">退出</string>
+    <string name="exit_black_screen">双击退出黑屏</string>
+    <string name="export">导出</string>
+    <string name="export_canceled">"已取消导出！</string>
+    <string name="export_duration_limit">当前视频时长超过了最长导出时间限制(%d秒)。您可以关闭本提示去调整，或继续导出</string>
+    <string name="export_failed">导出失败...</string>
+    <string name="export_failed_by_appverify">导出失败,导出时授权未通过</string>
+    <string name="export_failed_no_free_space">导出失败,存储空间不足！</string>
+    <string name="export_with_draft">导出后保存一份草稿</string>
+    <string name="exporting">视频导出中，请耐心等待...</string>
+    <string name="filter">滤镜</string>
+    <string name="filter_1_0">原图</string>
+    <string name="filter_1_10">优雅</string>
+    <string name="filter_1_11">暴走</string>
+    <string name="filter_1_12">街拍</string>
+    <string name="filter_1_13">欧洲站</string>
+    <string name="filter_1_14">里约</string>
+    <string name="filter_1_15">流年</string>
+    <string name="filter_1_16">聚光</string>
+    <string name="filter_1_17">候鸟</string>
+    <string name="filter_1_18">云端</string>
+    <string name="filter_1_19">彩虹瀑</string>
+    <string name="filter_1_20">淡雅</string>
+    <string name="filter_1_21">优格</string>
+    <string name="filter_1_22">青春</string>
+    <string name="filter_1_23">胭脂</string>
+    <string name="filter_1_24">精灵</string>
+    <string name="filter_1_25">遐想</string>
+    <string name="filter_1_26">冰冰凉</string>
+    <string name="filter_1_27">牛奶</string>
+    <string name="filter_1_28">塞纳河畔</string>
+    <string name="filter_1_29">清晨</string>
+    <string name="filter_1_30">伊豆</string>
+    <string name="filter_1_31">随想</string>
+    <string name="filter_1_32">窗菲</string>
+    <string name="filter_1_33">近黄昏</string>
+    <string name="filter_1_34">阴天</string>
+    <string name="filter_1_35">檀岛</string>
+    <string name="filter_1_36">节气</string>
+    <string name="filter_1_37">晚霞</string>
+    <string name="filter_1_38">朦胧</string>
+    <string name="filter_1_5">撒野</string>
+    <string name="filter_1_6">阿宝</string>
+    <string name="filter_1_7">梦里</string>
+    <string name="filter_1_8">拿铁</string>
+    <string name="filter_1_9">活力</string>
+    <string name="filter_apply_to_all">应用到所有媒体</string>
+    <string name="filter_bomo">薄暮集</string>
+    <string name="filter_config_brightness">亮度</string>
+    <string name="filter_config_contrast">对比度</string>
+    <string name="filter_config_saturation">饱和度</string>
+    <string name="filter_config_sharpness">锐度</string>
+    <string name="filter_config_vignette">暗角</string>
+    <string name="filter_config_white_balance">白平衡</string>
+    <string name="filter_gete">哥特集</string>
+    <string name="filter_huaijiu">怀旧集</string>
+    <string name="filter_lengdiao">冷调集</string>
+    <string name="filter_lomo">LOMO集</string>
+    <string name="filter_wucha">午茶集</string>
+    <string name="filter_yese">夜色集</string>
+    <string name="filter_yishu">艺术集</string>
+    <string name="fix_video">请选择视频文件</string>
+    <string name="fu_blue">磨皮</string>
+    <string name="fu_color">美白</string>
+    <string name="fu_eye">大眼</string>
+    <string name="fu_thin">瘦脸</string>
+    <string name="graffiti">涂鸦</string>
+    <string name="high">高</string>
+    <string name="history_recently">最近使用</string>
+    <string name="histroymusic">最近使用</string>
+    <string name="image_duration_apply_to_all">确定应用到所有图片吗？</string>
+    <string name="import_duration_limit">视频长度不能大于%d秒</string>
+    <string formatted="false" name="import_info">视频:%d,图片:%d</string>
+    <string formatted="false" name="import_info_photo_only">图片:%d</string>
+    <string formatted="false" name="import_info_video_only">视频:%d</string>
+    <string name="internal_music">内置音乐</string>
+    <string name="isDrafting">正在存入草稿箱....</string>
+    <string name="isdelete">是否删除此媒体项？</string>
+    <string name="isloading">加载中....</string>
+    <string name="just_only_one_image">只有一张图片，不可以删除</string>
+    <string name="just_only_one_scene">只有一个场景，不可以删除</string>
+    <string name="just_only_one_video">至少保留一个视频</string>
+    <string name="last_split_cannt_del">至少保留一段视频</string>
+    <string name="left">返回</string>
+    <string name="level_1">1</string>
+    <string name="level_2">2</string>
+    <string name="level_3">3</string>
+    <string name="level_4">4</string>
+    <string name="level_5">5</string>
+    <string name="level_6">6</string>
+    <string name="livecamera_record_cannot_start">开始录制失败！</string>
+    <string name="livecamera_record_switch_filter_failed">切换滤镜失败！</string>
+    <string name="load_http_failed">加载数据失败</string>
+    <string name="loading">正在加载</string>
+    <string name="local">本地</string>
+    <string name="local_music">本地音乐</string>
+    <string name="local_video">本地视频</string>
+    <string name="localmusic">本地乐库</string>
+    <string name="long_s">%s 秒</string>
+    <string name="lookup1">黑白</string>
+    <string name="lookup10">雨后</string>
+    <string name="lookup2">香草</string>
+    <string name="lookup3">香水</string>
+    <string name="lookup4">香檀</string>
+    <string name="lookup5">飞花</string>
+    <string name="lookup6">颜如玉</string>
+    <string name="lookup7">韶华</string>
+    <string name="lookup8">露丝</string>
+    <string name="lookup9">霓裳</string>
+    <string name="low">低</string>
+    <string name="m_short_mv">%d秒\n\tMV</string>
+    <string name="m_short_mv_no_line">%d秒MV</string>
+    <string name="media_exception">图片或视频格式不正确或不存在</string>
+    <string formatted="false" name="media_num_limit">媒体数目限制：%1d~%1d </string>
+    <string name="media_select">媒体选择</string>
+    <string name="media_un_exceed_num">媒体不能超过%d个</string>
+    <string name="media_volume">视频音量</string>
+    <string name="media_volume1">音量1</string>
+    <string name="media_volume2">音量2</string>
+    <string name="mirror_hor">左右翻转</string>
+    <string name="mirror_ver">垂直翻转</string>
+    <string name="mode_detail">模板详情</string>
+    <string name="more_orientation">比例</string>
+    <string name="mosaic">马赛克</string>
+    <string name="music">配乐</string>
+    <string name="music_default_time">00:00</string>
+    <string name="music_effect_pitch_title">调节音高</string>
+    <string name="music_history_delete">删除最近使用</string>
+    <string name="music_many">多段配乐</string>
+    <string name="music_none">无配乐</string>
+    <string name="music_yun">云音乐</string>
+    <string name="mute">静音</string>
+    <string name="mute_p">已静音</string>
+    <string name="mv">MV</string>
+    <string name="mymusic">我的配乐</string>
+    <string name="next_step">下一步</string>
+    <string name="no">否</string>
+    <string name="no_background_mode">无背景模式</string>
+    <string name="no_media">没有媒体</string>
+    <string name="none">无</string>
+    <string name="normal_play">恢复原视频</string>
+    <string name="not_support_cup_arch">当前功能暂不可用</string>
+    <string name="once_un_exceed_num"> 单次选择媒体不能超过%d个</string>
+    <string name="one_key_make">一键制作</string>
+    <string name="orientation_1_1">1:1</string>
+    <string name="orientation_auto">自动</string>
+    <string name="orientation_landscape">横屏</string>
+    <string name="orientation_portrait">竖屏</string>
+    <string name="orientation_title">选择画面比例</string>
+    <string name="original_attribute">原始属性:</string>
+    <string name="osd_rb_blur">高斯模糊</string>
+    <string name="osd_rb_osd">去水印</string>
+    <string name="osd_rb_pixl">像素化</string>
+    <string name="other_gallery">其他\n相册</string>
+    <string name="p_select_dir">请选择文件夹</string>
+    <string name="partedit">片段编辑</string>
+    <string name="permission_album_error">未允许读取相册！</string>
+    <string name="permission_audio_error">未允许录制音频！</string>
+    <string name="permission_audio_error_p_allow">无法录音,请打开录音权限!</string>
+    <string name="permission_camera_error">未允许使用摄像头！</string>
+    <string name="permission_camera_error_p_allow">相机无法打开,请打开相机权限!</string>
+    <string name="permission_external_storage_error">未允许使用存储功能！</string>
+    <string name="photo_duration">时长</string>
+    <string name="photo_not_found">没有找到图片</string>
+    <string name="photo_save_fail">照片保存失败</string>
+    <string name="photo_save_success">已保存照片</string>
+    <string name="please_check_network">没有可用的网络</string>
+    <string name="please_click">请点击</string>
+    <string name="please_open_wifi">没有可用的网络</string>
+    <string name="prepareMV">正在准备MV...</string>
+    <string name="preview">预览</string>
+    <string name="preview_copy">复制</string>
+    <string name="preview_crop">裁切</string>
+    <string name="preview_del">删除</string>
+    <string name="preview_edit_pic">编辑</string>
+    <string name="preview_error">暂时无法预览，请重试！</string>
+    <string name="preview_mirror">镜像</string>
+    <string name="preview_picture_duration">图片时长</string>
+    <string name="preview_reverse">倒序</string>
+    <string name="preview_rotate">旋转</string>
+    <string name="preview_sort">调序</string>
+    <string name="preview_speed">变速</string>
+    <string name="preview_spilt">分割</string>
+    <string name="preview_text">文字</string>
+    <string name="preview_trim">截取</string>
+    <string name="priview_title">预览</string>
+    <string name="proportion_169">胶片</string>
+    <string name="proportion_16x9">16:9</string>
+    <string name="proportion_1x1">1:1</string>
+    <string name="proportion_3x4">3:4</string>
+    <string name="proportion_4x3">4:3</string>
+    <string name="proportion_916">竖屏</string>
+    <string name="proportion_9x16">9:16</string>
+    <string name="proportion_change_to_auto">有横屏视频,竖屏画面效果不佳,系统将选择最佳画面</string>
+    <string name="proportion_ori">原比例</string>
+    <string name="proportion_square">正方形</string>
+    <string name="quik_lottie1">世界那么大</string>
+    <string name="quik_lottie2">因为有你而与众不同</string>
+    <string name="quik_lottie_text">世界那么大\n因为有你而与众不同</string>
+    <string name="quit_edit">确定要放弃编辑吗？</string>
+    <string name="quit_partedit">您确定要放弃片段编辑吗？</string>
+    <string name="record_audio_too_short_retry">录音时间太短，请重试!</string>
+    <string name="record_bitrate">码率(kbps)</string>
+    <string name="record_default_time">00:00.0</string>
+    <string name="record_no_external_storage">没有存储卡或存储卡未加载！</string>
+    <string name="record_size">分辨率</string>
+    <string name="release_hand_for_del">松开删除</string>
+    <string name="remove_item">是否删除此媒体项？</string>
+    <string name="replace">替换</string>
+    <string name="reverse_cancel">视频尚未倒序完成，是否取消？</string>
+    <string name="reverse_play">倒放</string>
+    <string name="reversing">倒序处理中，请稍后...</string>
+    <string name="right">完成</string>
+    <string name="scan_media">扫描音乐</string>
+    <string name="scan_music_file_end_num">新增%d个音乐文件</string>
+    <string name="scan_music_file_end_num_0">未找到新音乐</string>
+    <string name="scan_video">扫描视频</string>
+    <string name="scan_video_file_end_num">新增%d个视频文件</string>
+    <string name="scan_video_file_end_num_0">未找到新视频</string>
+    <string name="sd_not_enough_record">内存空间不足，无法录制视频！</string>
+    <string name="sd_umount">当前存储卡尚未挂载</string>
+    <string name="select_ae_enable_repeatlimit">图片(至少%1$d张): %2$d </string>
+    <string name="select_ae_media_limit">视频: %1$d/%2$d 图片:  %3$d/%4$d </string>
+    <string name="select_ae_media_no_pic_limit">视频/图片: %1$d/%2$d </string>
+    <string name="select_ae_picture_limit">图片:  %1$d/%2$d </string>
+    <string name="select_ae_video_limit">视频: %1$d/%2$d </string>
+    <string name="select_camera_photo">拍照</string>
+    <string name="select_camera_video">录像</string>
+    <string name="select_media_at_least_limit">至少选择%d个媒体</string>
+    <string name="select_media_hint">请选择媒体!</string>
+    <string name="select_media_limit">单次选择媒体不能超过%d个</string>
+    <string name="select_media_title_photo">照片</string>
+    <string name="select_media_title_video">视频</string>
+    <string name="select_medias">选择媒体资源</string>
+    <string name="select_picture_limit">最多只能选择%d张图片</string>
+    <string name="select_video_limit">最多只能选择%d个视频</string>
+    <string name="setting">设置</string>
+    <string name="show_style_item_flash_black">闪黑</string>
+    <string name="show_style_item_flash_white">闪白</string>
+    <string name="show_style_item_recovery">淡入</string>
+    <string name="show_style_item_to_down">下推</string>
+    <string name="show_style_item_to_left">左推</string>
+    <string name="show_style_item_to_right">右推</string>
+    <string name="show_style_item_to_up">上推</string>
+    <string name="sound">音效</string>
+    <string name="sound_effect">变声</string>
+    <string name="sound_effect1">第一个视频音效:</string>
+    <string name="sound_effect2">第二个视频音效:</string>
+    <string name="sp_filter_1">原图</string>
+    <string name="sp_filter_10">描摹</string>
+    <string name="sp_filter_2">褪色</string>
+    <string name="sp_filter_3">明暗</string>
+    <string name="sp_filter_4">空白</string>
+    <string name="sp_filter_5">光年</string>
+    <string name="sp_filter_6">印记</string>
+    <string name="sp_filter_7">火花</string>
+    <string name="sp_filter_8">流云</string>
+    <string name="sp_filter_9">清欢</string>
+    <string name="splice_border">边框</string>
+    <string name="splice_layout">布局</string>
+    <string name="splice_music">音乐</string>
+    <string name="splice_order">播放顺序</string>
+    <string name="splice_order_player">播放顺序</string>
+    <string name="splice_order_title">播放模式</string>
+    <string name="splice_order_title1">同时播放</string>
+    <string name="splice_order_title2">顺序播放</string>
+    <string name="split_duration_less_than">分割视频的时间不能低于%.1f秒</string>
+    <string name="st_anim_apply_to_all">应用动画到所有字幕</string>
+    <string name="st_color_apply_to_all">应用颜色到所有字幕</string>
+    <string name="st_font_apply_to_all">应用字体到所有字幕</string>
+    <string name="st_position_apply_to_all">应用位置到所有字幕</string>
+    <string name="st_size_apply_to_all">应用大小到所有字幕</string>
+    <string name="st_stroke_apply_to_all">应用描边到所有字幕</string>
+    <string name="st_style_apply_to_all">应用样式到所有字幕</string>
+    <string name="sticker">贴纸</string>
+    <string name="sticker_edit">编辑贴纸</string>
+    <string name="stop">停止</string>
+    <string name="stop_record">停止</string>
+    <string name="strength">强度</string>
+    <string name="sub_hint">点击输入文字</string>
+    <string name="subtitle">文字</string>
+    <string name="subtitle_align">对齐</string>
+    <string name="subtitle_alpha">透明度</string>
+    <string name="subtitle_anim">动画</string>
+    <string name="subtitle_color">颜色</string>
+    <string name="subtitle_default_text">点击输入文字</string>
+    <string name="subtitle_effect_edit">调整</string>
+    <string name="subtitle_font_style">字体</string>
+    <string name="subtitle_progress_default">0.0</string>
+    <string name="subtitle_seekbar_stroke">描边 : </string>
+    <string name="subtitle_size">大小</string>
+    <string name="subtitle_size_large">大</string>
+    <string name="subtitle_size_small">小</string>
+    <string name="subtitle_stroke">描边</string>
+    <string name="subtitle_style">样式</string>
+    <string name="subtitle_thin">细</string>
+    <string name="subtitle_wide">粗</string>
+    <string name="sure">确定</string>
+    <string name="sure_delete">确认删除吗?</string>
+    <string name="temp">模板</string>
+    <string name="text_style_bold">粗体</string>
+    <string name="text_style_italic">斜体</string>
+    <string name="text_style_shadow">阴影</string>
+    <string name="theme">主题</string>
+    <string name="timeline">时间线</string>
+    <string name="timeout">请求超时</string>
+    <string name="toning">调色</string>
+    <string name="toning_all">应用于全部片段</string>
+    <string name="toning_diff">对比</string>
+    <string name="toning_diff_msg">原始效果</string>
+    <string name="toning_reset">还原</string>
+    <string name="toning_reset_msg">确认要重置吗?</string>
+    <string name="trans_need_two_medias">转场至少需要两个图片或视频！</string>
+    <string name="transition">转场</string>
+    <string name="transition_apply_to_all">应用于全部镜头</string>
+    <string name="transition_default">随机转场</string>
+    <string name="transition_default_duration">1.00秒</string>
+    <string name="transition_random">随机</string>
+    <string name="transition_type_base">基础</string>
+    <string name="transition_type_chachu">擦除</string>
+    <string name="trim_construct">修剪</string>
+    <string name="trim_cut_off">剪除</string>
+    <string name="trim_support_video_only">截取功能只支持视频文件</string>
+    <string name="trim_video_area">请选择区域</string>
+    <string name="trim_video_delete">此操作将删除视频未选择部分</string>
+    <string name="trim_video_prompt">截取时间和剩余时间应该大于1秒</string>
+    <string name="un_allow_video_photo">未允许读取图片、视频！</string>
+    <string name="unsupport_video_o_photo">不支持的图片或视频！</string>
+    <string name="up_load_more">上拉加载更多</string>
+    <string name="version_lite">当前版本缺少资源不支持该功能</string>
+    <string name="videoVoice">原音</string>
+    <string name="video_duration_too_short_to_split">视频小于%.1f秒，不能分割</string>
+    <string name="video_duration_too_short_to_transition">视频小于%.1f秒，无法添加转场</string>
+    <string name="video_duration_too_short_to_trim">视频小于%.1f秒，无法截取</string>
+    <string name="video_edit">视频编辑</string>
+    <string name="video_height">视频高:</string>
+    <string name="video_not_found">没有找到视频</string>
+    <string name="video_save_failed">视频保存失败</string>
+    <string name="video_save_success">已保存视频</string>
+    <string name="video_size_1080">导出超清 1080P</string>
+    <string name="video_size_480">导出标清 480P</string>
+    <string name="video_size_720">导出高清 720P</string>
+    <string name="video_speed_duration_too_short_to_change">视频时长过短，不能变速</string>
+    <string name="video_transcoding">转码</string>
+    <string name="video_voice_n">原音开</string>
+    <string name="video_voice_p">原音关</string>
+    <string name="video_width">视频宽:</string>
+    <string name="voice">声音</string>
+    <string name="volume">音量</string>
+    <string name="wait">请稍候...</string>
+    <string name="white">白色</string>
+    <string name="yes">是</string>
+    <string name="yunmusic_sign">授权证书</string>
+    <string name="zishuo">字说</string>
+    <string name="zishuo_audition">试听效果</string>
+    <string name="zishuo_custom_inscription">自定义题词</string>
+    <string name="zishuo_delete">删除</string>
+    <string name="zishuo_horizontal_text">横排文字</string>
+    <string name="zishuo_import">相册视频</string>
+    <string name="zishuo_input_hint">写下你想说的话。(不同的断句方式，朗读效果不同)</string>
+    <string name="zishuo_inscription">使用</string>
+    <string name="zishuo_inscription_detail">详情</string>
+    <string name="zishuo_inscription_library">题词库</string>
+    <string name="zishuo_more_anim">更多动画</string>
+    <string name="zishuo_rotate_text">旋转文字</string>
+    <string name="zishuo_speed_fast">快</string>
+    <string name="zishuo_speed_slow">慢</string>
+    <string name="zishuo_speed_standard">标准</string>
+    <string name="zishuo_speed_very_fast">极快</string>
+    <string name="zishuo_speed_very_slow">极慢</string>
+    <string name="zishuo_stroke">描边</string>
+    <string name="zishuo_style">风格</string>
+    <string name="zishuo_text_transform_voice">文字转语音</string>
+    <string name="zishuo_vertical_text">竖排文字</string>
+    <string name="zishuo_voice_transform_text">3分钟</string>
+    <string name="zoom_out_switch">启用动画(仅图片)</string>
+    <style name="FliterBucketStyle">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">50dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:button">@null</item>
+        <item name="android:background">@drawable/item_fliter_underline</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:textColor">@drawable/edit_menu_color</item>
+    </style>
+    <style name="OrientationDialogStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">bottom</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="Theme.rd" parent="@android:style/Theme">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="Theme.rd.disableSplitTouch" parent="@android:style/Theme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowEnableSplitTouch" ns1:ignore="NewApi">false</item>
+    </style>
+    <style name="Theme.rd.fullscreen" parent="@style/Theme.rd">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="Theme.rd.main" parent="@android:style/Theme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowEnableSplitTouch" ns1:ignore="NewApi">false</item>
+    </style>
+    <style name="Theme.rd.main2" parent="@style/Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:windowEnableSplitTouch" ns1:ignore="NewApi">false</item>
+    </style>
+    <style name="TimerTextStyle">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">14.0dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:shadowColor">#ff7f7f7f</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">4</item>
+    </style>
+    <style name="alert_dialog_bg_style">
+        <item name="android:background">@drawable/alert_dialog_bg</item>
+    </style>
+    <style name="alert_dialog_negtive_btn_text_style" parent="android:Widget.TextView">
+        <item name="android:textColor">@drawable/alert_button_text_color</item>
+        <item name="android:textSize" ns1:ignore="SpUsage">16dp</item>
+    </style>
+    <style name="alert_dialog_positive_btn_text_style" parent="android:Widget.TextView">
+        <item name="android:textColor">@drawable/alert_button_text_color</item>
+        <item name="android:textSize" ns1:ignore="SpUsage">16dp</item>
+    </style>
+    <style name="alert_listview_cancel_text_style" parent="android:Widget.TextView">
+        <item name="android:textColor">@drawable/alert_button_text_color</item>
+        <item name="android:textSize" ns1:ignore="SpUsage">
+            @dimen/main_classify_title_left_text_size
+        </item>
+    </style>
+    <style name="alert_listview_dialog_text_style" parent="android:Widget.TextView">
+        <item name="android:textColor">@drawable/alert_button_text_color</item>
+        <item name="android:textSize" ns1:ignore="SpUsage">
+            @dimen/main_classify_title_left_text_size
+        </item>
+    </style>
+    <style name="alert_listview_text_style" parent="android:Widget.TextView">
+        <item name="android:textColor">@drawable/alert_button_text_color</item>
+        <item name="android:textSize" ns1:ignore="SpUsage">
+            @dimen/main_classify_title_left_text_size
+        </item>
+    </style>
+    <style name="audio_text_style">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="background_color_style">
+        <item name="android:button">@null</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/fu_menu_text_color</item>
+    </style>
+    <style name="baseline_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/baseline_color</item>
+    </style>
+    <style name="caption_anim_item_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:checked">false</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment" ns1:ignore="NewApi">center</item>
+        <item name="android:textColor">@drawable/subtitle_apply_to_all_text_color</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:textSize">13dp</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:background">@drawable/caption_anim_item_bg</item>
+
+    </style>
+    <style name="cb_apply_to_all_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_13</item>
+        <item name="android:textColor">@color/transparent_white</item>
+        <item name="android:button">@drawable/toning_all</item>
+    </style>
+    <style name="config_baseline_style" parent="@style/baseline_style">
+        <item name="android:background">@color/transparent_black80</item>
+        <item name="android:layout_height">0.05dp</item>
+    </style>
+    <style name="crop_radiogroup_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@drawable/edit_proportion_text_color</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:textSize">@dimen/text_size_11.5</item>
+    </style>
+    <style name="crop_rotate_mirror_style">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+    <style name="default_audio_button">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/text_size_12</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:background">@null</item>
+        <item name="android:padding">0dp</item>
+    </style>
+    <style name="dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@drawable/dialog_trans</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowAnimationStyle">@style/dialogNoAnimation</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:background">@drawable/dialog_trans</item>
+    </style>
+    <style name="dialogNoAnimation" parent="android:Animation.Dialog">
+        <item name="android:windowEnterAnimation">@null</item>
+        <item name="android:windowExitAnimation">@null</item>
+    </style>
+    <style name="dialogNoDim" parent="dialog">
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <style name="edit_menu" parent="@style/menu_style">
+        <item name="android:button">@null</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">40dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:textColor">@drawable/edit_menu_color</item>
+        <item name="android:drawablePadding">-5dp</item>
+    </style>
+    <style name="edit_menu_style" parent="@style/menu_style">
+        <item name="android:button">@null</item>
+        <item name="android:minWidth">40dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@drawable/edit_menu_color</item>
+    </style>
+    <style name="effectAniButtonStyle">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginTop">7dp</item>
+        <item name="android:layout_marginLeft">7dp</item>
+        <item name="android:layout_marginRight">7dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+    <style name="effectButtonStyle">
+        <item name="android:textSize">12.5dp</item>
+        <item name="android:textColor">@color/color_effect_item_text</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:padding">7dp</item>
+    </style>
+    <style name="effectLinearLayoutStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="effectTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textColor">@color/transparent_white</item>
+        <item name="android:textSize">10dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+    <style name="filter_config_menu_title">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/transparent_white</item>
+        <item name="android:layout_width">35dp</item>
+        <item name="android:gravity">right|center_vertical</item>
+        <item name="android:layout_gravity">center|right</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:background">@null</item>
+    </style>
+    <style name="filter_config_sbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">50dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:max">100</item>
+        <item name="android:progress">50</item>
+    </style>
+    <style name="lib.TabLayout" parent="android:Widget">
+        <!--背景色-->
+        <item name="tabBackground">@color/transparent</item>
+
+        <!--<item name="tabIndicatorFullWidth">false</item>-->
+        <!--被选中时线的颜色-->
+        <item name="tabIndicatorColor">@color/main_orange</item>
+        <!--线的高度-->
+        <item name="tabIndicatorHeight">3dp</item>
+        <!--默认属性-->
+        <item name="tabTextAppearance">@style/TextAppearance.Design.Tab</item>
+        <!--选中的字体颜色-->
+        <item name="tabSelectedTextColor">@color/main_orange</item>
+    </style>
+    <style name="list_alert_cancel_text_style" parent="android:Widget.TextView">
+        <item name="android:textColor">@drawable/alert_button_text_color</item>
+        <item name="android:textSize" ns1:ignore="SpUsage">
+            @dimen/main_classify_title_left_text_size
+        </item>
+    </style>
+    <style name="listviewDialog" parent="dialog">
+        <item name="android:windowAnimationStyle">@style/listviewDialogAnimation</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:gravity">bottom</item>
+    </style>
+    <style name="listviewDialogAnimation" parent="android:Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/slide_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_out</item>
+    </style>
+    <style name="listviewStyle_trans">
+        <item name="android:cacheColorHint">@color/transparent</item>
+        <item name="android:divider">@null</item>
+        <item name="android:listSelector">@color/transparent</item>
+        <item name="android:background">@null</item>
+    </style>
+    <style name="main_entry_button" parent="default_audio_button">
+        <item name="android:textSize">@dimen/text_size_11</item>
+        <item name="android:textColor">@drawable/normal_bottom_button_text_color</item>
+        <item name="android:background">@null</item>
+        <item name="android:drawablePadding">-14dp</item>
+    </style>
+    <style name="main_entry_no_videos" parent="android:Widget.TextView">
+        <item name="android:drawableTop">@drawable/ic_gallery_empty1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/not_found_text_color</item>
+        <item name="android:textSize">@dimen/text_size_21</item>
+        <item name="android:background">@null</item>
+        <item name="android:drawablePadding">@dimen/text_size_10</item>
+    </style>
+    <style name="main_text_style">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="media_timeline_item">
+        <item name="android:longClickable">true</item>
+    </style>
+    <style name="menu_style" parent="@style/priview_text_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minWidth">55dp</item>
+        <item name="android:background">@null</item>
+    </style>
+    <style name="music_library_titlemenu">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:button">@null</item>
+        <item name="android:background">@null</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:textColor">@drawable/select_camera_popwin_textcolor</item>
+        <item name="android:textSize">@dimen/text_size_13</item>
+    </style>
+    <style name="music_radio_button_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:textColor">@drawable/edit_text_color</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/music_radiobutton_backgroud</item>
+        <item name="android:button">@null</item>
+        <item name="android:drawablePadding">@dimen/dimen_10</item>
+        <item name="android:paddingBottom">@dimen/dimen_10</item>
+    </style>
+    <style name="partedit_add_btn_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:drawablePadding">3dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="pop_wind_style">
+        <item name="android:windowEnterAnimation">@anim/pop_wind_show</item>
+        <item name="android:windowExitAnimation">@anim/pop_wind_hide</item>
+    </style>
+    <style name="priview_text_style">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="public_shadow_style">
+        <item name="android:shadowRadius">1</item>
+        <item name="android:shadowColor">@color/transparent_black20</item>
+    </style>
+    <style name="public_title_bar_button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">30dp</item>
+        <item name="android:paddingLeft">3.3dp</item>
+        <item name="android:paddingRight">3.3dp</item>
+        <item name="android:paddingTop">3.3dp</item>
+        <item name="android:paddingBottom">5.5dp</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@drawable/main_button_text_color</item>
+    </style>
+    <style name="public_titlebar_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/public_titlebar_minheight</item>
+    </style>
+    <style name="public_titlebar_style_new">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/public_titlebar_minheight</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="rb_proportion_style" parent="@style/menu_style">
+        <item name="android:button">@null</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@drawable/edit_menu_color</item>
+    </style>
+    <style name="rb_splice_order_style">
+        <item name="android:background">@drawable/shape_rb_button</item>
+        <item name="android:button">@null</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">14dp</item>
+        <!--<item name="android:paddingLeft">15dp</item>-->
+        <!--<item name="android:paddingRight">15dp</item>-->
+        <!--<item name="android:paddingRight">15dp</item>-->
+        <!--<item name="android:textColor">@drawable/rb_splice_order_textcolor</item>-->
+
+    </style>
+    <style name="record_size_rb_style">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:button">@null</item>
+        <item name="android:paddingLeft">3dp</item>
+        <item name="android:minHeight">45dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+    </style>
+    <style name="root_menu" parent="@style/menu_style">
+        <item name="android:button">@null</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:background">@drawable/root_menu_bg</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@drawable/edit_menu_color</item>
+    </style>
+    <style name="seekbar_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:max">100</item>
+        <item name="android:progressDrawable">@drawable/subtitle_size_progress</item>
+        <item name="android:thumb">@drawable/subtitle_size_thumb</item>
+        <item name="android:thumbOffset">@dimen/rd_sbar_thumb_offset</item>
+        <item name="android:progress">50</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:minHeight">3dp</item>
+        <item name="android:minWidth">3dp</item>
+        <item name="android:maxWidth">3dp</item>
+        <item name="android:maxHeight">3dp</item>
+    </style>
+    <style name="selectDialog" parent="dialog">
+        <item name="android:windowBackground">@drawable/alert_dialog_bg</item>
+        <item name="android:maxWidth">300dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="sp_iv_music_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="sp_rg_music_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@drawable/sp_music_text_color</item>
+        <item name="android:button">@null</item>
+    </style>
+    <style name="speed_line_style">
+        <item name="android:minHeight">100dp</item>
+        <item name="android:layout_width">2dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+    <style name="speed_tv_style">
+        <item name="android:minHeight">100dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/speed_line_button_text_color</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/speed_line_button_back_color</item>
+    </style>
+    <style name="splice_mix_edit_menu_style">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_13</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">65dp</item>
+        <item name="android:layout_height">65dp</item>
+        <item name="android:drawablePadding">-10dp</item>
+        <!--<item name="android:background">@drawable/splice_edit_menu_bg</item>-->
+    </style>
+    <style name="sticker_radio_btn_style" parent="@style/subtitle_menu_style">
+        <item name="android:button">@null</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:textColor">@drawable/edit_menu_color</item>
+        <item name="android:background">@drawable/item_sticker_underline</item>
+    </style>
+    <style name="styleEditorDuration" parent="android:Widget.TextView">
+        <item name="android:background">@drawable/transparent_btn_bg</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:paddingLeft">3dp</item>
+        <item name="android:paddingRight">3dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+    </style>
+    <style name="sub_menu_rbtn_style" parent="@style/subtitle_menu_style">
+        <item name="android:textColor">@drawable/subtitle_menu_text_color</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">0sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="subtitle_menu_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@drawable/edit_menu_color</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@null</item>
+        <item name="android:button">@null</item>
+    </style>
+    <style name="subtitle_position_button_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:background">@null</item>
+    </style>
+    <style name="subtitle_switch_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:button">@null</item>
+    </style>
+    <style name="transition_style">
+        <item name="android:button">@null</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@drawable/edit_text_color</item>
+        <item name="android:minWidth">55dp</item>
+        <item name="android:background">@null</item>
+        <item name="android:drawablePadding">5dp</item>
+    </style>
+    <style name="video_list_grid_view_style" parent="android:Widget.GridView">
+        <item name="android:cacheColorHint">@color/transparent</item>
+        <item name="android:columnWidth">@dimen/video_list_grid_item_width</item>
+        <item name="android:alwaysDrawnWithCache">true</item>
+        <item name="android:fadingEdge">none</item>
+        <item name="android:horizontalSpacing">@dimen/video_list_grid_item_space_size</item>
+        <item name="android:listSelector">@color/transparent</item>
+        <item name="android:numColumns">auto_fit</item>
+
+        <item name="android:verticalSpacing">@dimen/video_list_grid_item_space_size</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="voiceFactorSeekbarStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:max">100</item>
+        <item name="android:maxHeight">2.0dip</item>
+        <item name="android:minHeight">2.0dip</item>
+        <item name="android:progressDrawable">@drawable/voice_seekbar_progress</item>
+        <item name="android:thumb">@drawable/voice_seekbar_thumb</item>
+    </style>
+</resources>

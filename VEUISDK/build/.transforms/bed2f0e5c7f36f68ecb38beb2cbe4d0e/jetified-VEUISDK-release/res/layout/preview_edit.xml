@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/preview_edit_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/fragment_content_bg"
+                android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlEditMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+        <com.veuisdk.ui.ReboundHScrollView
+            android:id="@+id/clip_part_menu_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:scrollbars="none"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.vecore.base.lib.ui.ExtButton
+                    android:id="@+id/preview_trim"
+                    style="@style/edit_menu"
+                    android:drawableTop="@drawable/intercept_button"
+                    android:onClick="onPreviewOptionClick"
+                    android:text="@string/preview_trim"
+                    android:visibility="gone"/>
+
+                <com.vecore.base.lib.ui.ExtButton
+                    android:id="@+id/preview_spilt"
+                    style="@style/edit_menu"
+                    android:drawableTop="@drawable/splite"
+                    android:onClick="onPreviewOptionClick"
+                    android:text="@string/preview_spilt"
+                    android:visibility="gone"/>
+
+                <com.vecore.base.lib.ui.ExtButton
+                    android:id="@+id/preview_edit"
+                    style="@style/edit_menu"
+                    android:drawableTop="@drawable/edit_button"
+                    android:onClick="onPreviewOptionClick"
+                    android:text="@string/preview_edit_pic"
+                    android:visibility="gone"/>
+
+                <com.vecore.base.lib.ui.ExtButton
+                    android:id="@+id/preview_filter"
+                    style="@style/edit_menu"
+                    android:drawableTop="@drawable/edit_filter"
+                    android:onClick="onPreviewOptionClick"
+                    android:text="@string/filter"
+                    android:visibility="gone"/>
+
+                <com.vecore.base.lib.ui.ExtButton
+                    android:id="@+id/preview_toning"
+                    style="@style/edit_menu"
+                    android:drawableTop="@drawable/preview_toning"
+                    android:onClick="onPreviewOptionClick"
+                    android:text="@string/toning"
+                    android:visibility="gone"/>
+
+                <com.vecore.base.lib.ui.ExtButton
+                    android:id="@+id/preview_effect"
+                    style="@style/edit_menu"
+                    android:drawableTop="@drawable/rb_effect"
+                    android:onClick="onPreviewOptionClick"
+                    android:text="@string/effect"
+                    android:visibility="gone"/>
+
+                <com.vecore.base.lib.ui.ExtButton
+                    android:id="@+id/preview_speed"
+                    style="@style/edit_menu"
+                    android:drawableTop="@drawable/speed"
+                    android:onClick="onPreviewOptionClick"
+                    android:text="@string/preview_speed"
+                    android:visibility="gone"/>
+
+                <com.vecore.base.lib.ui.ExtButton
+                    android:id="@+id/preview_duration"
+                    style="@style/edit_menu"
+                    android:drawableTop="@drawable/speed"
+                    android:onClick="onPreviewOptionClick"
+                    android:text="@string/photo_duration"
+                    android:visibility="gone"/>
+
+                <com.vecore.base.lib.ui.ExtButton
+                    android:id="@+id/preview_text"
+                    style="@style/edit_menu"
+                    android:drawableTop="@drawable/edit"
+                    android:onClick="onPreviewOptionClick"
+                    android:text="@string/preview_text"
+                    android:visibility="gone"/>
+
+                <com.vecore.base.lib.ui.ExtButton
+                    android:id="@+id/preview_copy"
+                    style="@style/edit_menu"
+                    android:drawableTop="@drawable/copy"
+                    android:onClick="onPreviewOptionClick"
+                    android:text="@string/preview_copy"
+                    android:visibility="gone"/>
+
+                <com.vecore.base.lib.ui.ExtButton
+                    android:id="@+id/preview_reverse"
+                    style="@style/edit_menu"
+                    android:drawableTop="@drawable/reverse"
+                    android:onClick="onPreviewOptionClick"
+                    android:text="@string/preview_reverse"
+                    android:visibility="gone"/>
+
+                <com.vecore.base.lib.ui.ExtButton
+                    android:id="@+id/preview_transition_menu"
+                    style="@style/edit_menu"
+                    android:drawableTop="@drawable/addmenu_transition"
+                    android:onClick="onPreviewOptionClick"
+                    android:text="@string/transition"
+                    android:visibility="gone"/>
+
+                <com.vecore.base.lib.ui.ExtButton
+                    android:id="@+id/preview_sort"
+                    style="@style/edit_menu"
+                    android:drawableTop="@drawable/sort"
+                    android:onClick="onPreviewOptionClick"
+                    android:text="@string/preview_sort"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </com.veuisdk.ui.ReboundHScrollView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/clip_part_menu_layout"
+            android:clipChildren="false"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rl_drag_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:clipChildren="false"
+                        android:orientation="vertical"
+                        android:paddingRight="2dp">
+
+                        <com.veuisdk.ui.DraggableAddGridView
+                            android:id="@+id/gridVideosDstArray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:scrollbars="none"/>
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="11dp"
+                        android:layout_height="@dimen/priview_item_height_plus"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/rdveuisdk_menu_gradient_bg">
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/ivParteditAdd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/btn_partedit_add"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

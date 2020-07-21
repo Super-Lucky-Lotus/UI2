@@ -8,17 +8,21 @@ MobSDK{
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.0"
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
 
     defaultConfig {
         applicationId "com.example.superluckylotus"
-        minSdkVersion 16
-        targetSdkVersion 30
+        minSdkVersion 18
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a','x86'
+        }
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -40,6 +44,8 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
@@ -47,6 +53,24 @@ dependencies {
     //    compile fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':pickerview')
     implementation project(':wheelview')
+    implementation project(':VECore')
+    implementation project(':VEUISDK')
+    implementation 'com.facebook.fresco:fresco:1.3.0'
+    implementation 'com.facebook.fresco:webpsupport:1.3.0'
+
+    implementation 'com.squareup.okio:okio:1.13.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    implementation 'com.alibaba:fastjson:1.2.9'
+
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:26.1.0'
+    //noinspection GradleCompatible
+//    implementation 'com.android.support:cardview-v7:26.1.0'
+    implementation 'com.android.support:multidex:1.0.3'
 
 
 }

@@ -1,3 +1,5 @@
+include ':VEUISDK'
+include ':VECore'
 include ':pickerview'
 include ':wheelview'
 include ':app'

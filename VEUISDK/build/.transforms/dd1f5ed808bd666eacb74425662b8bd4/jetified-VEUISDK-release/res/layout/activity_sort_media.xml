@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/public_menu_back_color"
+    android:orientation="vertical" >
+
+    <include layout="@layout/rdveuisdk_public_title_bar" />
+
+    <com.veuisdk.ui.PriviewLayout
+        android:id="@+id/rootPriviewLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <com.veuisdk.ui.PriviewLinearLayout
+                android:id="@+id/priviewLayoutContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <com.veuisdk.ui.DraggableGridView
+                    android:id="@+id/gridSceneDstArray"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:scrollbars="none" />
+            </com.veuisdk.ui.PriviewLinearLayout>
+
+        </RelativeLayout>
+
+        <!-- 可拖动的层 -->
+
+        <com.veuisdk.ui.DraggedTrashLayout
+            android:id="@+id/thelinearDraggedLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:splitMotionEvents="false"
+            android:visibility="gone" >
+
+            <com.veuisdk.ui.DraggedView
+                android:id="@+id/draggedView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.veuisdk.ui.DraggedTrashLayout>
+    </com.veuisdk.ui.PriviewLayout>
+
+    <include layout="@layout/public_menu" />
+
+</LinearLayout>

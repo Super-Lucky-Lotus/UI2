@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:extCircle="http://schemas.android.com/apk/res-auto"
+              xmlns:fresco="http://schemas.android.com/apk/res-auto"
+              android:layout_width="42dp"
+              android:layout_height="42dp">
+
+    <ImageView
+        android:id="@+id/icon"
+        style="@style/effectAniButtonStyle"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@null" />
+
+    <!--这个是新华网app使用的 因为目前新华网的APP没有同步到使用新的贴纸资源，先临时使用旧资源旧资源png图片用SimpleDraweeView加载-->
+    <com.facebook.drawee.view.SimpleDraweeView
+        xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        xmlns:extCircle="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sdv_icon"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginBottom="4dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@null"
+        extCircle:circleBgColor="@color/transparent"
+        extCircle:circleBorderColor="@color/main_orange"
+        extCircle:circleChecked="false"
+        fresco:actualImageScaleType="focusCrop"
+        fresco:failureImageScaleType="centerInside"
+        fresco:placeholderImageScaleType="fitCenter"
+        fresco:roundAsCircle="false" />
+
+    <ImageView
+        android:id="@+id/prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/prompt_point"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="3dp"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_item_checked"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="3dp"
+        android:visibility="gone"/>
+
+
+</RelativeLayout>

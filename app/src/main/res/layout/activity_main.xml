@@ -42,8 +42,8 @@
 
         <View
             android:layout_width="120dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal" />
 
         <RadioButton
             android:id="@+id/notice_tab"

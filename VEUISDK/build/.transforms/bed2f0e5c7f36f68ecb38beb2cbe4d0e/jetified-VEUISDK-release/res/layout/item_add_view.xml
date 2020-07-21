@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/priview_item_height_plus">
+
+        <ImageView
+            android:id="@+id/ivAddItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:background="@drawable/item_edit_add_normal"/>
+
+
+        <com.vecore.base.lib.ui.ExtTextView
+            android:id="@+id/tvTransitionTitle"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/add_item_transition"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:focusableInTouchMode="true"
+            android:focusable="true"
+            android:singleLine="true"
+            android:text="adasdfa"
+            android:textColor="@drawable/add_item_text_color"
+            android:textSize="10dp"/>
+
+        <!--android:text="@string/none"-->
+        <RelativeLayout
+            android:id="@+id/rl_extra_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/ivExtraItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/edit_add_video_button"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tvItemSort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ivExtraItem"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="4dp"
+                android:text="@string/preview_sort"
+                android:textColor="@drawable/sort_text_color"
+                android:textSize="@dimen/text_size_11"
+                android:visibility="gone"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</FrameLayout>
