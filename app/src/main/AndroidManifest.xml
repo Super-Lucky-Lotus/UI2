@@ -118,6 +118,35 @@
         <activity
             android:name=".RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".ShootActivity"
+            android:theme="@style/AlertNoActionBar" >
+        </activity>
+        <activity
+            android:name=".ShootSdk.VideoPlayerActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.fullscreen">
+        </activity>
+        <activity
+            android:name=".ShootSdk.DialogActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/dialogActivityStyle">
+        </activity>
+        <activity
+            android:name=".ShootSdk.AlbumActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.main">
+        </activity>
+
+        <activity
+            android:name=".ShootSdk.DraftListActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.rd.main"/>
     </application>
 
 </manifest>

@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShootDialog">
+    tools:context=".ShootActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:id="@+id/background111"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:background="#fff7a2"
-        android:orientation="horizontal">
+        android:background="#fff7a2">
 
 
         <LinearLayout
@@ -25,7 +25,8 @@
             <ImageView
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:background="@drawable/add_sketch" />
+                android:background="@drawable/add_sketch"
+                android:clickable="false" />
 
             <TextView
                 android:layout_width="70dp"
@@ -45,9 +46,9 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_gravity="center"
                 android:layout_width="65dp"
-                android:layout_height="65dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
                 android:background="@drawable/add_shoot" />
 
             <TextView

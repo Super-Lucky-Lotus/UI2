@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.veuisdk.ui.SpecialItemFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:rd="http://schemas.android.com/apk/res-auto"
+    android:layout_width="70dp"
+    android:layout_height="70dp"
+    android:layout_gravity="center_vertical"
+    android:layout_marginLeft="@dimen/dimen_15">
+
+    <com.veuisdk.ui.ExtListItemStyle
+        android:id="@+id/item_border"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@null"
+        android:src="@null"
+        rd:extBorderLineWidth="2dp"
+        rd:extBorderRoundRadius="3dp"/>
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="3dp"
+        android:background="@color/black"/>
+
+    <!--这个是新华网app使用的 因为目前新华网的APP没有同步到使用新的贴纸资源，先临时使用旧资源旧资源png图片用SimpleDraweeView加载-->
+    <com.facebook.drawee.view.SimpleDraweeView
+        xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        xmlns:extCircle="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sdv_icon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:background="@color/black"
+        android:layout_margin="3dp"
+        extCircle:circleBgColor="@color/transparent"
+        extCircle:circleBorderColor="@color/main_orange"
+        extCircle:circleChecked="false"
+        fresco:actualImageScaleType="focusCrop"
+        fresco:failureImageScaleType="centerInside"
+        fresco:placeholderImageScaleType="fitCenter"
+        fresco:roundAsCircle="false" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:minHeight="25dp"
+        android:minWidth="25dp">
+
+        <com.veuisdk.ui.CircleProgressBarView
+            android:id="@+id/ttf_pbar"
+            android:layout_width="@dimen/down_width"
+            android:layout_height="@dimen/down_width"
+            android:visibility="gone"/>
+    </FrameLayout>
+
+    <com.veuisdk.ui.CircleProgressBar
+        android:id="@+id/tv_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        rd:extindetermiate="true"
+        rd:extindetermiateDrawable="@drawable/spinner_black_48"
+        rd:extprogressDrawable="@drawable/progress"
+        android:layout_margin="22dp"/>
+
+</com.veuisdk.ui.SpecialItemFrameLayout>

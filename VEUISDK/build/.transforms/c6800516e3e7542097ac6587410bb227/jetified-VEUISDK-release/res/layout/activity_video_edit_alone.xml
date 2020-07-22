@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.veuisdk.ui.NoneMultiTouchLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    >
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                layout="@layout/rdveuisdk_public_title_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"/>
+
+            <RelativeLayout
+                android:id="@+id/rlPreviewLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/tmp"
+                android:layout_below="@+id/titlebar_layout"
+                android:background="@color/black">
+
+                <!--播放器-->
+                <com.vecore.base.lib.ui.PreviewFrameLayout
+                    android:id="@+id/rlPlayerContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true">
+
+                    <com.vecore.VirtualVideoView
+                        android:id="@+id/epvPreview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                    <com.vecore.base.lib.ui.PreviewFrameLayout
+                        android:id="@+id/rlPreview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <FrameLayout
+                            android:id="@+id/linear_words"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"/>
+
+                        <com.veuisdk.ui.ProgressView
+                            android:id="@+id/progressView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="gone"
+                            android:layout_alignParentBottom="true"/>
+
+                        <com.veuisdk.ui.PaintView
+                            android:id="@+id/paintView"
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+                    </com.vecore.base.lib.ui.PreviewFrameLayout>
+
+                </com.vecore.base.lib.ui.PreviewFrameLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/tmp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fragment_base_height"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+        <!-- 为了解决文字-打开输入法，不会顶到播放器上滑-->
+        <RelativeLayout
+            android:id="@+id/rlEditorMenuAndSubLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fragment_base_height"
+            android:gravity="bottom"
+            android:background="@color/edit_menu_bg"
+            android:layout_gravity="bottom"
+            >
+
+            <include layout="@layout/edit_video_menu"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/galleryFragmentParent"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/mixContainer"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+    </FrameLayout>
+
+</com.veuisdk.ui.NoneMultiTouchLinearLayout>
