@@ -53,18 +53,17 @@
         android:hint="添加描述并选择合适的分类"
         android:inputType="textPersonName"
         android:paddingLeft="10dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView8"
+        app:layout_constraintEnd_toStartOf="@+id/iv_videocover"
         app:layout_constraintHorizontal_bias="0.39"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView28" />
 
     <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="97dp"
-        android:layout_height="141dp"
+        android:id="@+id/iv_videocover"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
         android:background="#CFCFCF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_post" />
@@ -118,4 +117,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView10"
         app:srcCompat="@drawable/like_selector" />
+
+    <Button
+        android:id="@+id/btn_choosevideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="#ffcd74 "
+        android:text="选择视频"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_videocover" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,12 +1,22 @@
 package com.example.superluckylotus;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentResolver;
 import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.media.MediaMetadataRetriever;
+import android.media.ThumbnailUtils;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -15,10 +25,12 @@ import android.widget.Toast;
 import com.bigkoo.pickerview.builder.OptionsPickerBuilder;
 import com.bigkoo.pickerview.listener.OnOptionsSelectListener;
 import com.bigkoo.pickerview.view.OptionsPickerView;
+import com.facebook.imageutils.BitmapUtil;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +39,11 @@ public class VideoPostActivity extends AppCompatActivity {
     Button mChoosePlace;
     ImageView mPost;
     ImageView mBacktocut;
+    ImageView mVideoCover;
+    Button mChooseVideo;
+
+    private Uri upload;//视频路径
+
 
 
     private List<JsonBean> options1Items = new ArrayList<>();
@@ -46,6 +63,8 @@ public class VideoPostActivity extends AppCompatActivity {
         mChoosePlace=findViewById(R.id.btn_place);
         mBacktocut=findViewById(R.id.btn_backtovideocut);
         mPost=findViewById(R.id.btn_post);
+        mChooseVideo=findViewById(R.id.btn_choosevideo);
+        mVideoCover=findViewById(R.id.iv_videocover);
         mHandler.sendEmptyMessage(MSG_LOAD_DATA);//加载数据
         setListeners();
     }
@@ -191,6 +210,7 @@ public class VideoPostActivity extends AppCompatActivity {
         mPost.setOnClickListener(onClick);
         mChoosePlace.setOnClickListener(onClick);
         mBacktocut.setOnClickListener(onClick);
+        mChooseVideo.setOnClickListener(onClick);
     }
 
     class OnClick implements View.OnClickListener{
@@ -211,12 +231,59 @@ public class VideoPostActivity extends AppCompatActivity {
                     startActivity(intent);
                     break;
                 case R.id.btn_backtovideocut:
-//                    intent = new Intent(VideoPostActivity.this,VideoCutActivity.class);
-//                   startActivity(intent);
+                    intent = new Intent(VideoPostActivity.this,MainActivity.class);
+                    startActivity(intent);
                     break;
+                case R.id.btn_choosevideo:
+                    Intent intent2=new Intent(Intent.ACTION_GET_CONTENT);
+                    intent2.setType("*/*");
+                    intent2.addCategory(Intent.CATEGORY_OPENABLE);
+                    startActivityForResult(intent2,50);
             }
 
         }
     }
+
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 50 && resultCode == RESULT_OK) {//从图库选择图片
+            String[] proj = {MediaStore.Video.Media.DATA};
+            // 获取选中图片的路径
+            Cursor cursor = this.getContentResolver().query(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, proj, null, null, null);
+            while (cursor.moveToNext()) {
+                //视频地址
+                String path = cursor
+                        .getString(cursor
+                                .getColumnIndexOrThrow(MediaStore.Video.Media.DATA));
+                Bitmap bitmap = getVideoThumbnail(path);
+                mVideoCover.setImageBitmap(bitmap);
+            }
+            cursor.close();
+        }
+    }
+
+    // 获取视频缩略图
+    public Bitmap getVideoThumbnail(String filePath) {
+        Bitmap b=null;
+        MediaMetadataRetriever retriever = new MediaMetadataRetriever();
+        try {
+            retriever.setDataSource(filePath);
+            b=retriever.getFrameAtTime();
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+
+        } finally {
+            try {
+                retriever.release();
+            } catch (RuntimeException e) {
+                e.printStackTrace();
+            }
+        }
+        return b;
+    }
+
+
 
 }

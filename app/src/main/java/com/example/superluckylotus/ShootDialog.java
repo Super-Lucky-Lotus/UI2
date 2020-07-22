@@ -2,6 +2,7 @@ package com.example.superluckylotus;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -39,6 +40,14 @@ public class ShootDialog {
         shoot=view.findViewById(R.id.add_shoot);
         sketch=view.findViewById(R.id.add_sketch);
         release=view.findViewById(R.id.add_release);
+
+        release.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(mContext,VideoPostActivity.class);
+                mContext.startActivity(intent);
+            }
+        });
 
 
         pWindow.showAtLocation(v, Gravity.BOTTOM, 0, 0);
