@@ -211,8 +211,8 @@ public class VideoPostActivity extends AppCompatActivity {
                     startActivity(intent);
                     break;
                 case R.id.btn_backtovideocut:
-                    intent = new Intent(VideoPostActivity.this,VideoCutActivity.class);
-                    startActivity(intent);
+//                    intent = new Intent(VideoPostActivity.this,VideoCutActivity.class);
+//                   startActivity(intent);
                     break;
             }
 

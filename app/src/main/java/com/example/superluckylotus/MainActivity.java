@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity  {
     private NearFragment nearFragment;
     private NoticeFragment noticeFragment;
     private final String TAG = "MainActivity";
-    private FragmentManager fm;
+    private ShootDialog sd;
 
 
     private Button near_Btn;
@@ -219,7 +219,15 @@ public class MainActivity extends AppCompatActivity  {
         requestWindowFeature(Window.FEATURE_NO_TITLE); //没有标题栏
         setContentView(R.layout.activity_main);
         shoot_Btn = (Button)findViewById(R.id.btn_addshoot);
-        setListeners();
+        //setListeners();
+
+        sd=new ShootDialog(MainActivity.this);
+        shoot_Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sd.popupWindowDialog(view);
+            }
+        });
 
         //实例化EarthFragment
         earthFragment = new EarthFragment();
@@ -304,7 +312,8 @@ public class MainActivity extends AppCompatActivity  {
         authpackArr = authpack.A();
     }
 
-    private void setListeners(){
+
+   /* private void setListeners(){
         OnClick onClick = new OnClick();
         shoot_Btn.setOnClickListener(onClick);
     }
@@ -318,12 +327,13 @@ public class MainActivity extends AppCompatActivity  {
                 case R.id.btn_addshoot:
 //                    intent = new Intent(MainActivity.this,ShootActivity.class);
 //                    startActivity(intent);
-                    onVideo(v);
+                    //onVideo(v);
+                    sd.popupWindowDialog(v);
                     break;
             }
 
         }
-    }
+    }*/
 
     /**
      * 导出测试资源
