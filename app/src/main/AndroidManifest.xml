@@ -53,12 +53,6 @@
             android:name=".SingleVideoActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".VideoCutActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".MusicActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".VideoPostActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -102,9 +96,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Reg_infoActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ShootActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SettingActivity"
