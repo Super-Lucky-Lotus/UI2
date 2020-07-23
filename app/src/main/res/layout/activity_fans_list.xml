@@ -75,100 +75,17 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="85dp"
-                android:background="#fff7a2"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/Fans_pic1"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="5dp"
-                    android:background="#CCCCFF"
-                    android:text="头像"
-                    android:textColor="#FFFFFF" />
-
-                <TextView
-                    android:id="@+id/Fans1_tv"
-                    android:layout_width="240dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="1dp"
-                    android:text="UserName1"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#cca266 "
-                    android:textSize="23sp" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="85dp"
-                android:background="#fff7a2"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/Fans_pic2"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="5dp"
-                    android:background="#FFCCCC"
-                    android:text="头像"
-                    android:textColor="#FFFFFF" />
-
-                <TextView
-                    android:id="@+id/Fans2_tv"
-                    android:layout_width="240dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="1dp"
-                    android:text="UserName2"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#cca266 "
-                    android:textSize="23sp" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="85dp"
-                android:background="#fff7a2"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/Fans_pic3"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="5dp"
-                    android:background="#CCCCFF"
-                    android:text="头像"
-                    android:textColor="#FFFFFF" />
-
-                <TextView
-                    android:id="@+id/Fans3_tv"
-                    android:layout_width="240dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="1dp"
-                    android:text="UserName3"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#cca266 "
-                    android:textSize="23sp" />
-
-
-            </LinearLayout>
-
-
         </LinearLayout>
 
     </ScrollView>
+
+    <ListView
+        android:id="@+id/list_fans"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+    </ListView>
 
     <TextView
         android:layout_width="wrap_content"

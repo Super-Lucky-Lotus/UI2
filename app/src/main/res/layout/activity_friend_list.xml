@@ -91,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <include layout="@layout/item_frilist"/>
+
 
             </LinearLayout>
 
@@ -101,7 +101,7 @@
     </ScrollView>
 
     <ListView
-        android:id="@+id/fri_listv"
+        android:id="@+id/list_friend"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1">

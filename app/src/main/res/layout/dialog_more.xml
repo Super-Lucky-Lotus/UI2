@@ -64,6 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/collect_selector"
+            android:checked="false"
             android:textOff=""
             android:textOn="" />
 

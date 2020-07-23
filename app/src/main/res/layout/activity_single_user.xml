@@ -80,6 +80,7 @@
             </LinearLayout>
 
             <ToggleButton
+                android:id="@+id/single_user_add_friend"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_vertical"
@@ -90,6 +91,7 @@
                 android:textOn="好友" />
 
             <ToggleButton
+                android:id="@+id/single_user_follow"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_vertical"

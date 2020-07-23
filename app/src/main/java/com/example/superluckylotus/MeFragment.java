@@ -69,15 +69,6 @@ public class MeFragment extends Fragment {
     private Button fri_num_btn;
     private Button fans_num_btn;
     private Button follow_num_btn;
-    private ImageView video1_btn;
-    private ImageView video2_btn;
-    private ImageView video3_btn;
-    private ImageView video4_btn;
-    private ImageView video5_btn;
-    private ImageView video6_btn;
-    private ImageView video7_btn;
-    private ImageView video8_btn;
-    private ImageView video9_btn;
     protected TextView textView1;
     protected TextView textView2;
     protected TextView textView3;
@@ -98,30 +89,12 @@ public class MeFragment extends Fragment {
         fri_num_btn = (Button) view.findViewById(R.id.num_friend_btn);
         fans_num_btn = (Button) view.findViewById(R.id.num_fans_btn);
         follow_num_btn = (Button) view.findViewById(R.id.num_follow_btn);
-        video1_btn = (ImageView) view.findViewById(R.id.video1);
-        video2_btn = (ImageView) view.findViewById(R.id.video2);
-        video3_btn = (ImageView) view.findViewById(R.id.video3);
-        video4_btn = (ImageView) view.findViewById(R.id.video4);
-        video5_btn = (ImageView) view.findViewById(R.id.video5);
-        video6_btn = (ImageView) view.findViewById(R.id.video6);
-        video7_btn = (ImageView) view.findViewById(R.id.video7);
-        video8_btn = (ImageView) view.findViewById(R.id.video8);
-        video9_btn = (ImageView) view.findViewById(R.id.video9);
         OnClick onclick = new OnClick();
         mInfo.setOnClickListener(onclick);
         find_fri_btn.setOnClickListener(onclick);
         fri_num_btn.setOnClickListener(onclick);
         fans_num_btn.setOnClickListener(onclick);
         follow_num_btn.setOnClickListener(onclick);
-        video1_btn.setOnClickListener(onclick);
-        video2_btn.setOnClickListener(onclick);
-        video3_btn.setOnClickListener(onclick);
-        video4_btn.setOnClickListener(onclick);
-        video5_btn.setOnClickListener(onclick);
-        video6_btn.setOnClickListener(onclick);
-        video7_btn.setOnClickListener(onclick);
-        video8_btn.setOnClickListener(onclick);
-        video9_btn.setOnClickListener(onclick);
         start();
         return view;
     }
@@ -190,17 +163,6 @@ public class MeFragment extends Fragment {
                     break;
                 case R.id.num_follow_btn:
                     intent.setClass(getActivity(), FollowListActivity.class);
-                    break;
-                case R.id.video1:
-                case R.id.video2:
-                case R.id.video3:
-                case R.id.video4:
-                case R.id.video5:
-                case R.id.video6:
-                case R.id.video7:
-                case R.id.video8:
-                case R.id.video9:
-                    intent.setClass(getActivity(), SingleVideoActivity.class);
                     break;
             }
             getActivity().startActivity(intent);

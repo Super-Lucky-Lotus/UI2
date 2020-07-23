@@ -3,8 +3,10 @@ package com.example.superluckylotus;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,8 +15,16 @@ import android.widget.Button;
 import android.widget.PopupWindow;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
+
+import org.json.JSONException;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static com.mob.tools.utils.DeviceHelper.getApplication;
 
 public class MoreDialog  {
     private Context mContext;
@@ -38,16 +48,61 @@ public class MoreDialog  {
         //pWindow.setAnimationStyle(R.style.myAnimationstyle);// 设置动画
 
         Button mPay;
-        Button mCollect;
+        final ToggleButton mCollect;
         Button mUninterested;
+        Phone phoneObj = (Phone)getApplication();
+        final String phone = phoneObj.getPhone();
         mCollect=view.findViewById(R.id.btn_collect);
         mPay=view.findViewById(R.id.btn_pay);
         mUninterested=view.findViewById(R.id.btn_uninterested);
         mCollect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(mContext,"收藏",Toast.LENGTH_SHORT);
-                //pWindow.dismiss();
+                String path;
+                if(mCollect.isChecked()) {
+                    path = "http://139.219.4.34/addfavorite/";
+                    mCollect.setChecked(true);
+                }
+                else {
+                    path="http://139.219.4.34/removefavorite/";
+                    mCollect.setChecked(false);
+                }
+
+                Map<String, String> userParams = new HashMap<String, String>();//将数据放在map里，便于取出传递
+                userParams.put("video_path", "media\\video\\faf0fb3837.mp4");
+                userParams.put("phone", phone);
+
+                HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
+                    @Override
+                    public void onSuccess(String result) throws JSONException {
+                        //JSONObject result_json = new JSONObject(result);
+                        //String get = result_json.getString("msg");
+                        //int num = result_json.getInt("num");
+                        Log.v("MoreDialog", result);
+                        // if (get.equals("success")) {
+                        // for (int i = 1; i < num; i++) {
+                        //   String username = result_json.getString("User" + i + "Name");
+                        // String description = result_json.getString("User" + i + "Description");
+                        // String time = result_json.getString("User" + i + "Time");
+                        // String tage = result_json.getString("User" + i + "Tage");
+                        //}
+                        //} else {
+                        //  Toast.makeText(SearchResultActivity.this, "没有搜到相关信息!", Toast.LENGTH_SHORT).show();
+                        // }
+                    }
+
+                    @Override
+                    public void onError(Exception e) {
+                        Log.v("MoreDialog", "连接失败！");
+
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                    }
+
+                });
             }
         });
         mPay.setOnClickListener(new View.OnClickListener() {

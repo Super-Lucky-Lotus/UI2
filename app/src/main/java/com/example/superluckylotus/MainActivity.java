@@ -34,6 +34,13 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.baidu.location.BDLocationListener;
+import com.baidu.location.LocationClient;
+import com.baidu.location.BDAbstractLocationListener;
+import com.baidu.location.BDLocation;
+import com.baidu.location.LocationClientOption;
+
+
 import com.example.superluckylotus.ShootSdk.CameraWatermarkBuilder;
 import com.example.superluckylotus.ShootSdk.authpack;
 import com.example.superluckylotus.ShootSdk.dialog.AudioConfigDialog;
@@ -91,6 +98,16 @@ public class MainActivity extends AppCompatActivity  {
     private Button me_Btn;
     private Button shoot_Btn;
     private Button earth_Btn;
+
+
+
+    //声明LocationClient类，定位服务客户对象
+    public LocationClient mLocationClient = null;
+    //声明重写的监听类
+    private MyLocationListener mLocationListener = new MyLocationListener();
+    //是否首次定位
+    private boolean isFirstLoc = true;
+
 
 
 
@@ -187,9 +204,46 @@ public class MainActivity extends AppCompatActivity  {
             }
         });
 
+     //   mLocationClient.start();
+        initLocation();
+        mLocationClient.start();
+
     }
 
 
+
+    private void initLocation(){
+        mLocationClient = new LocationClient((getApplicationContext()));
+        mLocationListener = new MyLocationListener();
+
+        //注册监听器
+        mLocationClient.registerLocationListener(mLocationListener);
+
+        //设置定位参数
+        LocationClientOption option = new LocationClientOption();
+        //设置坐标类型
+        option.setCoorType("bd09ll");
+        //设置是否需要地址信息，默认为无地址
+        option.setIsNeedAddress(true);
+        //设置是否打开gps进行定位
+        option.setOpenGps(true);
+        //设置扫描间隔为0
+        option.setScanSpan(0);
+        //传入设置好的信息
+        mLocationClient.setLocOption(option);
+    }
+
+
+
+    //重写百度地图监听类
+    public class MyLocationListener extends BDAbstractLocationListener {
+
+        @Override
+        public void onReceiveLocation(BDLocation location){
+            Toast.makeText(getApplicationContext(),"定位成功",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),String.valueOf(location.getCity()),Toast.LENGTH_SHORT).show();
+        }
+    }
 
 
 }

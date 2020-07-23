@@ -43,69 +43,26 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/n_fans_frame"
+            <ListView
+                android:id="@+id/list_new_fans"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:background="#fff7a2 "
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
-                <Button
-                    android:id="@+id/fansUser_pic"
-                    android:layout_width="50dp"
-                    android:layout_height="90dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="#CCCCFF"
-                    android:text="头像"
-                    android:textColor="#FFFFFF" />
+            </ListView>
 
-                <LinearLayout
-                    android:layout_width="240dp"
-                    android:layout_height="80dp"
-                    android:layout_marginTop="20dp"
-                    android:orientation="vertical">
-
-
-                    <TextView
-                        android:id="@+id/newfans_tv"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="UserName"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:textColor="#cca266" />
-
-                    <TextView
-                        android:id="@+id/newfansDes_tv"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="用户简介"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:textColor="#cca266" />
-                </LinearLayout>
-
-                <ToggleButton
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/focus_selector"
-                    android:checked="false"
-                    android:textOff="关注"
-                    android:textOn="已关注" />
-
-
-            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="暂时没有更多新粉丝了"
+                android:textColor="#cca266"
+                android:textSize="15sp" />
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
-                android:layout_below="@id/n_fans_frame"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/line" />
 
@@ -119,125 +76,24 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="#FFFFFF" />
 
-            <LinearLayout
-                android:id="@+id/n_fans_frame1"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:background="#fff7a2 "
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/fansUser_pic1"
-                    android:layout_width="50dp"
-                    android:layout_height="90dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="#FFCCCC"
-                    android:text="头像"
-                    android:textColor="#FFFFFF" />
-
-                <LinearLayout
-                    android:layout_width="240dp"
-                    android:layout_height="80dp"
-                    android:layout_marginTop="20dp"
-                    android:orientation="vertical">
-
-
-                    <TextView
-                        android:id="@+id/fans1_tv"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="UserName1"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:textColor="#cca266" />
-
-                    <TextView
-                        android:id="@+id/fansDes1_tv"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="用户简介"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:textColor="#cca266" />
-                </LinearLayout>
-
-                <ToggleButton
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/focus_selector"
-                    android:checked="true"
-                    android:textOff="关注"
-                    android:textOn="已关注" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/n_fans_frame2"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:background="#fff7a2 "
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/fansUser_pic2"
-                    android:layout_width="50dp"
-                    android:layout_height="90dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="#FFCCCC"
-                    android:text="头像"
-                    android:textColor="#FFFFFF" />
-
-                <LinearLayout
-                    android:layout_width="240dp"
-                    android:layout_height="80dp"
-                    android:layout_marginTop="20dp"
-                    android:orientation="vertical">
-
-
-                    <TextView
-                        android:id="@+id/fans2_tv"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="UserName2"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:textColor="#cca266" />
-
-                    <TextView
-                        android:id="@+id/fansDes2_tv"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="用户简介"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:textColor="#cca266" />
-                </LinearLayout>
-
-                <ToggleButton
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/focus_selector"
-                    android:checked="false"
-                    android:textOff="关注"
-                    android:textOn="已关注" />
-
-
-            </LinearLayout>
-
         </LinearLayout>
 
-
     </ScrollView>
+
+    <ListView
+        android:id="@+id/list_old_fans"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+    </ListView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="暂时没有更多了"
+        android:textColor="#cca266"
+        android:textSize="15sp" />
 
 </LinearLayout>

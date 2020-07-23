@@ -25,11 +25,11 @@
             android:src="@drawable/near" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tv_city"
             android:layout_width="80dp"
             android:layout_height="30dp"
             android:layout_marginRight="140dp"
-            android:text="深圳"
+            android:text="定位"
             android:textColor="#cca266"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
     </LinearLayout>
