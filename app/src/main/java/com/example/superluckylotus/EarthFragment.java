@@ -7,17 +7,27 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.ToggleButton;
 import android.widget.VideoView;
 
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.OrientationHelper;
 import androidx.recyclerview.widget.RecyclerView;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static com.mob.tools.utils.DeviceHelper.getApplication;
 
 
 /**
@@ -59,6 +69,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class EarthFragment extends Fragment {
 
     private Button turnSearchPage_btn;
+    private ToggleButton mLike;
     private Button mMore;
     private Button mComment;
     private Button mShare;
@@ -118,9 +129,91 @@ public class EarthFragment extends Fragment {
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_video,parent,false);
+            mLike = view.findViewById(R.id.video_like);
             mMore=view.findViewById(R.id.video_more);
             mComment=view.findViewById(R.id.video_comment);
             mShare=view.findViewById(R.id.video_share);
+            mLike.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Phone phoneObj = (Phone)getApplication();
+                    final String phone = phoneObj.getPhone();
+                    String path;
+                    if(mLike.isChecked()) {
+                        path = "http://139.219.4.34/addlike/";
+                    }
+                    else{
+                        path = "http://139.219.4.34/cancellike/";
+                    }
+                    Map<String, String> userParams = new HashMap<String, String>();//将数据放在map里，便于取出传递
+                    userParams.put("phone",phone);
+                    userParams.put("video_path","media\\video\\faf0fb3837.mp4");
+
+                    HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
+                        @Override
+                        public void onSuccess(String result) throws JSONException {
+                            JSONObject result_json = new JSONObject(result);
+                            String get = result_json.getString("msg");
+                            //int num = result_json.getInt("num");
+                            Log.v("EarthFragment", result);
+                            //if (get.equals("success")) {
+                            //  for (int i = 1; i < num; i++) {
+                            //    String username = result_json.getString("Fan" + i + "Name");
+                            //  String time = result_json.getString("time" + i);
+                            //Log.v("GetLikesActivity", username);
+                            // }
+                            //} else {
+                            //  Log.v("CommentDialog","没有评论！");
+                            //}
+                        }
+
+                        @Override
+                        public void onError(Exception e) {
+                            Log.v("EarthFragment", "连接失败！");
+                        }
+
+                        @Override
+                        public void onFinish() {
+                        }
+
+                    });
+                }
+                //Phone phoneObj = (Phone)getApplication();
+                //final String phone = phoneObj.getPhone();
+                //String path = "http://139.219.4.34/cancellike/";
+                //Map<String, String> userParams = new HashMap<String, String>();//将数据放在map里，便于取出传递
+                //    userParams.put("phone",phone);
+                //    userParams.put("video_path","media\\video\\faf0fb3837.mp4");
+
+                //  HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
+                //@Override
+                //public void onSuccess(String result) throws JSONException {
+                //   JSONObject result_json = new JSONObject(result);
+                //  String get = result_json.getString("msg");
+                //int num = result_json.getInt("num");
+                //  Log.v("EarthFragment", result);
+                //if (get.equals("success")) {
+                //  for (int i = 1; i < num; i++) {
+                //    String username = result_json.getString("Fan" + i + "Name");
+                //  String time = result_json.getString("time" + i);
+                //Log.v("GetLikesActivity", username);
+                // }
+                //} else {
+                //  Log.v("CommentDialog","没有评论！");
+                //}
+                //}
+
+                //@Override
+                //public void onError(Exception e) {
+                //  Log.v("EarthFragment", "连接失败！");
+                //}
+
+                //@Override
+                // public void onFinish() {
+                //}
+
+                //});
+            });
             mMore.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

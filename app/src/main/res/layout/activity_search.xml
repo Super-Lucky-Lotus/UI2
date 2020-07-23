@@ -61,41 +61,41 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/record_tv1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="1 宠物"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#cca266" />
 
                 <TextView
+                    android:id="@+id/record_tv3"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal"
-                    android:text="3 音乐"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#cca266" />
 
                 <TextView
+                    android:id="@+id/record_tv5"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal"
-                    android:text="5 生活"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#cca266" />
 
                 <TextView
+                    android:id="@+id/record_tv7"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal"
-                    android:text="7 科技"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#cca266" />
 
                 <TextView
+                    android:id="@+id/record_tv9"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal"
-                    android:text="9 社会"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#cca266" />
 
@@ -119,42 +119,42 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/record_tv2"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal"
-                    android:text="2 时尚"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#cca266" />
 
                 <TextView
+                    android:id="@+id/record_tv4"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal"
-                    android:text="4 体育"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#cca266" />
 
                 <TextView
+                    android:id="@+id/record_tv6"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal"
-                    android:text="6 文化"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#cca266" />
 
                 <TextView
+                    android:id="@+id/record_tv8"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal"
-                    android:text="8 影视"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#cca266" />
 
                 <TextView
+                    android:id="@+id/record_tv10"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal"
-                    android:text="10 儿童"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#cca266" />
 
