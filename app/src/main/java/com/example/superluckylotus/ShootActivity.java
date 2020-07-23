@@ -33,6 +33,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.superluckylotus.ShootSdk.CameraWatermarkBuilder;
 import com.example.superluckylotus.ShootSdk.DraftListActivity;
+import com.example.superluckylotus.ShootSdk.FunctionHandler;
 import com.example.superluckylotus.ShootSdk.authpack;
 import com.example.superluckylotus.ShootSdk.dialog.AudioConfigDialog;
 import com.example.superluckylotus.ShootSdk.dialog.ConfigData;
@@ -195,27 +196,8 @@ public class ShootActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setFinishOnTouchOutside(true);
         setContentView(R.layout.dialog_shoot);
-
-//        LinearLayout li = findViewById(R.id.background111);
-//        //方法1
-//        int w = View.MeasureSpec.makeMeasureSpec(0,
-//                View.MeasureSpec.UNSPECIFIED);
-//        int h = View.MeasureSpec.makeMeasureSpec(0,
-//                View.MeasureSpec.UNSPECIFIED);
-//        li.measure(w, h);
-//        int li_height = li.getMeasuredHeight();
-//        int li_width = li.getMeasuredWidth();
-//
-//        WindowManager.LayoutParams params = getWindow().getAttributes();
-//        params.height = li_height;
-////                (int) (getWindowManager().getDefaultDisplay().getHeight() * 0.3); // 高度设置为屏幕的0.3
-////
-//        params.width = li_width;
-////                (int) (getWindowManager().getDefaultDisplay().getWidth() * 0.8); // 宽度设置为屏幕的0.8
-////
-//        getWindow().setAttributes(params);
-
         //设置进出动画
         overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 
@@ -277,29 +259,6 @@ public class ShootActivity extends AppCompatActivity {
         registerAllResultHandlers();
         authpackArr = authpack.A();
     }
-
-//       private void setListeners(){
-//        OnClick onClick = new OnClick();
-//        shoot_Btn.setOnClickListener(onClick);
-//    }
-//
-//   private class OnClick implements View.OnClickListener{
-//
-//       @Override
-//        public void onClick(View v){
-//           Intent intent = null;
-//            switch (v.getId()){
-//                case R.id.btn_addshoot:
-//                    intent = new Intent(MainActivity.this,ShootActivity.class);
-//                   startActivity(intent);
-//                   //onVideo(v);
-//                sd.popupWindowDialog(v);
-//                    break;
-//           }
-//
-//        }
-//    }
-
 
     public void onDialog(View v) {
         switch (v.getId()) {
@@ -1343,7 +1302,12 @@ public class ShootActivity extends AppCompatActivity {
                 albumResultHandler);
         registerActivityResultHandler(CAMERA_ALBUM_REQUEST_CODE,
                 cameraAlbumResultHandler);
-
+        //照片电影
+        registerActivityResultHandler(ALBUM_ANIMATION_REQUEST_CODE,
+                ablumAnimationResultHandler);
+        //异形显示(顶点动画)
+        registerActivityResultHandler(ALBUM_POINTF_REQUEST_CODE,
+                ablumPointFResultHandler);
 
         //quik
         registerActivityResultHandler(ALBUM_QUIK_REQUEST_CODE,
@@ -1377,7 +1341,14 @@ public class ShootActivity extends AppCompatActivity {
                 shortvideoTrimResultHandler);
         registerActivityResultHandler(ALBUM_REQUEST_EXPORT_CODE, albumExportResultHandler);
 
+        //简单功能
+        mFunctionHandler = new FunctionHandler();
+        mFunctionHandler.registerActivityResultHandler(registeredActivityResultHandlers);
+
+
     }
+
+    private FunctionHandler mFunctionHandler;
 
     /**
      * 注册响应activity result
@@ -1456,9 +1427,9 @@ public class ShootActivity extends AppCompatActivity {
                 // 设置隐藏拍摄功能（全部隐藏将强制开启视频拍摄）
                 .hideMV(false).hidePhoto(true).hideRec(true)
                 // 设置mv最小时长
-                .setCameraMVMinTime(3)
+                .setCameraMVMinTime(1)
                 // 设置mv最大时长
-                .setCameraMVMaxTime(15)
+                .setCameraMVMaxTime(30)
                 //录制的云音乐
                 .setCloudMusicUrl(configData.enableNewApi ? configData.customApi : "")
                 //滤镜(lookup)
@@ -1543,10 +1514,35 @@ public class ShootActivity extends AppCompatActivity {
                 // 设置是否显示1：1按钮
                 .enable1x1(false)
                 // 设置定长截取时间
-                .setTrimDuration(15).get();
+                .setTrimDuration(30).get();
         getSdkService().initConfiguration(null, uiConfig,
                 cameraConfig);
         getSdkService().initTrimConfiguration(trimConfig);
     }
+
+    @SuppressLint("NewApi")
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case REQUEST_CODE_EXTERNAL_STORAGE_PERMISSIONS: {
+                for (int i = 0; i < permissions.length; i++) {
+                    if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
+                        Toast.makeText(this, "Not allowed to read and write storage！", Toast.LENGTH_SHORT).show();
+                        finish();
+                        return;
+                    }
+                }
+                if (!SdkEntry.isInitialized()) {
+                    ((Phone) getApplication()).initializeSdk();
+                }
+                exportDemoResource();
+            }
+            break;
+            default:
+                break;
+        }
+    }
+
 
 }
