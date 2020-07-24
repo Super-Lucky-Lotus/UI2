@@ -84,6 +84,7 @@ import static com.veuisdk.manager.CameraConfiguration.SQUARE_SCREEN_CAN_CHANGE;
 
 public class MainActivity extends AppCompatActivity  {
 
+    public static String city;
     private RadioGroup mTabRadioGroup;
     private MeFragment meFragment;
     private EarthFragment earthFragment;
@@ -242,6 +243,7 @@ public class MainActivity extends AppCompatActivity  {
         public void onReceiveLocation(BDLocation location){
             Toast.makeText(getApplicationContext(),"定位成功",Toast.LENGTH_SHORT).show();
             Toast.makeText(getApplicationContext(),String.valueOf(location.getCity()),Toast.LENGTH_SHORT).show();
+            city=String.valueOf(location.getCity());
         }
     }
 
