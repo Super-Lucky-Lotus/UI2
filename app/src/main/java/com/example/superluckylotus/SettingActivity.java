@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -58,10 +59,11 @@ public class SettingActivity extends AppCompatActivity {
     protected String region = "";
     protected String birthday = "";
     protected String description = "";
+    protected String photo = "";
     ImageButton mBackBtn;
     LinearLayout mChangename;
     LinearLayout mChangepassword;
-    ImageButton mChangephoto;
+    MyImageView mChangephoto;
     LinearLayout mChangeintro;
     LinearLayout mChangebirthday;
     LinearLayout mChangesex;
@@ -73,6 +75,7 @@ public class SettingActivity extends AppCompatActivity {
     protected TextView textView4;
     protected TextView textView5;
     protected TextView textView6;
+    protected MyImageView My_pic;
     TextView mTvSex;
     TextView mTvBirthday;
     TextView mTvAddress;
@@ -100,11 +103,12 @@ public class SettingActivity extends AppCompatActivity {
         textView4 = (TextView)findViewById(R.id.tv_address);
         textView5 = (TextView)findViewById(R.id.textView18);
         textView6 = (TextView)findViewById(R.id.tv_birthday);
+        My_pic = (MyImageView) findViewById(R.id.changephoto);
         mBackBtn=(ImageButton)findViewById(R.id.back);
         mChangeintro=(LinearLayout)findViewById(R.id.changeintro);
         mChangename=(LinearLayout)findViewById(R.id.changename);
         mChangepassword=(LinearLayout)findViewById(R.id.changepassword);
-        mChangephoto=(ImageButton) findViewById(R.id.changephoto);
+        mChangephoto=(MyImageView) findViewById(R.id.changephoto);
         mChangebirthday=(LinearLayout)findViewById(R.id.changebirthday);
         mChangesex=(LinearLayout)findViewById(R.id.changesex) ;
         mChangeaddress=(LinearLayout)findViewById(R.id.changeaddress);
@@ -134,12 +138,16 @@ public class SettingActivity extends AppCompatActivity {
                     String get = result_json.getString("msg");
                     Log.v("SettingActivity",result);
                     if (get.equals("success")) {
+                        photo = result_json.getString("face_image");
                         nickname = result_json.getString("nickname");
                         password = result_json.getString("password");
                         gender= result_json.getString("gender");
                         region = result_json.getString("region");
                         description = result_json.getString("description");
                         birthday = result_json.getString("birthday");
+                        if(!photo.equals("")) {
+                            My_pic.setImageURL(photo);
+                        }
                         textView1.setText(nickname);
                         textView2.setText(password);
                         textView3.setText(gender);
@@ -366,7 +374,7 @@ public class SettingActivity extends AppCompatActivity {
     }
 
     private void setListeners(){
-        SettingActivity.OnClick onClick = new SettingActivity.OnClick();
+        OnClick onClick = new OnClick();
         mBackBtn.setOnClickListener(onClick);
         mChangeintro.setOnClickListener(onClick);
         mChangephoto.setOnClickListener(onClick);
@@ -376,6 +384,7 @@ public class SettingActivity extends AppCompatActivity {
         mChangesex.setOnClickListener(onClick);
         mChangeaddress.setOnClickListener(onClick);
         mPreserve.setOnClickListener(onClick);
+        My_pic.setOnClickListener(onClick);
     }
 
     class OnClick implements View.OnClickListener{
@@ -405,6 +414,7 @@ public class SettingActivity extends AppCompatActivity {
                     break;
                 case R.id.changephoto:
                     intent = new Intent(SettingActivity.this,ChangePhotoActivity.class);
+                    intent.putExtra("pic_url",photo);
                     startActivity(intent);
                     break;
                 case R.id.changepassword:

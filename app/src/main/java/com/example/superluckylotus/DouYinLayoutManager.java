@@ -94,6 +94,12 @@ public class DouYinLayoutManager extends LinearLayoutManager implements Recycler
                 //当前显示的item
                 View snapView = pagerSnapHelper.findSnapView(this);
                 if (onViewPagerListener != null){
+                    if ( findLastVisibleItemPosition()==getItemCount()-1){
+                        int position = getPosition(snapView);
+                        String[] a ={"http://139.219.4.34/media\\video\\543c4fa467.mp4", "http://139.219.4.34/media\\video\\543c4fa467.mp4",
+                                "http://139.219.4.34/media\\video\\543c4fa467.mp4", "http://139.219.4.34/media\\video\\543c4fa467.mp4"};
+                        onViewPagerListener.onaddVideos(a,snapView,position);
+                    }
                     onViewPagerListener.onPageSelected(false,snapView);
                 }
                 break;

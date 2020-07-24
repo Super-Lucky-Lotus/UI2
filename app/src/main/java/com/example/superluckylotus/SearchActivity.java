@@ -81,9 +81,9 @@ public class SearchActivity extends AppCompatActivity {
             public void onSuccess(String result) throws JSONException {
                 JSONObject result_json = new JSONObject(result);
                 String get = result_json.getString("msg");
-                int num = result_json.getInt("num");
                 Log.v("SearchActivity", result);
                 if (get.equals("success")) {
+                    int num = result_json.getInt("num");
                     for (int i = 1; i < num; i++) {
                         String record = result_json.getString("Record" + i);
                         if(i == 1){

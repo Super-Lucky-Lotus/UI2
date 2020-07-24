@@ -22,7 +22,7 @@
         android:layout_marginTop="5dp"
         android:orientation="horizontal">
 
-        <ImageButton
+        <com.example.superluckylotus.MyImageView
             android:id="@+id/photo"
             android:layout_width="100dp"
             android:layout_height="100dp"

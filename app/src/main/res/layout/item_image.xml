@@ -6,19 +6,19 @@
         android:orientation="horizontal"
         android:id="@+id/LinearLayout_item_image">
 
-        <ImageView
+        <com.example.superluckylotus.MyImageView
             android:id="@+id/video1"
             android:layout_width="132dp"
             android:layout_height="200dp"
             android:background="@drawable/video_frame" />
 
-        <ImageView
+        <com.example.superluckylotus.MyImageView
             android:id="@+id/video2"
             android:layout_width="132dp"
             android:layout_height="200dp"
             android:background="@drawable/video_frame" />
 
-        <ImageView
+        <com.example.superluckylotus.MyImageView
             android:id="@+id/video3"
             android:layout_width="132dp"
             android:layout_height="200dp"

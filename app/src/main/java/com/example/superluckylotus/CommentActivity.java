@@ -87,9 +87,9 @@ public class CommentActivity extends AppCompatActivity {
                         public void onSuccess(String result) throws JSONException {
                             JSONObject result_json = new JSONObject(result);
                             String reback = result_json.getString("msg");
-                            int num = result_json.getInt("num");
                             Log.v("CommentActivity", result);
                             if (reback.equals("success")) {
+                                int num = result_json.getInt("num");
                                 for (int i = 1; i < num; i++) {
                                     String username = result_json.getString("User" + i + "Name");
                                     String time = result_json.getString("Comment" + i + "Time");

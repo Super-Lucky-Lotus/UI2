@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -13,13 +14,16 @@ import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.bigkoo.pickerview.builder.OptionsPickerBuilder;
@@ -29,10 +33,16 @@ import com.facebook.imageutils.BitmapUtil;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class VideoPostActivity extends AppCompatActivity {
 
@@ -41,9 +51,13 @@ public class VideoPostActivity extends AppCompatActivity {
     ImageView mBacktocut;
     ImageView mVideoCover;
     Button mChooseVideo;
+    Spinner mChooseTag;
+    private String pic_path;
+    private String video_path;
+
+    private EditText detail_et;
 
     private Uri upload;//视频路径
-
 
 
     private List<JsonBean> options1Items = new ArrayList<>();
@@ -60,8 +74,10 @@ public class VideoPostActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_post);
+        detail_et = (EditText) findViewById(R.id.editTextTextPersonName2);
         mChoosePlace=findViewById(R.id.btn_place);
         mBacktocut=findViewById(R.id.btn_backtovideocut);
+        mChooseTag = findViewById(R.id.sp_posttype);
         mPost=findViewById(R.id.btn_post);
         mChooseVideo=findViewById(R.id.btn_choosevideo);
         mVideoCover=findViewById(R.id.iv_videocover);
@@ -227,6 +243,44 @@ public class VideoPostActivity extends AppCompatActivity {
                     }
                     break;
                 case R.id.btn_post:
+                    Phone phoneObj = (Phone) getApplication();
+                    final String phone = phoneObj.getPhone();
+                    Log.v("ChangePhotoActivity", phone);
+                    String path = "http://139.219.4.34/upload/";
+                    Map<String, String> userParams = new HashMap<String, String>();//将数据放在map里，便于取出传递
+                    userParams.put("phone", phone);
+                    userParams.put("city",mChoosePlace.getText().toString());
+                    userParams.put("desc",detail_et.getText().toString());
+                    userParams.put("label","二次元");
+                    Map<String, String> VideoParams = new HashMap<>();
+                    VideoParams.put("images", pic_path);
+                    VideoParams.put("videos",video_path);
+
+
+                    HttpServer.SuperHttpUtil.post2( path,userParams, VideoParams,new HttpServer.SuperHttpUtil.HttpCallBack() {
+                        @Override
+                        public void onSuccess(String result) throws JSONException {
+                            JSONObject result_json = new JSONObject(result);
+                            String login = result_json.getString("msg");
+                            if (login.equals("success")) {
+                                Toast.makeText(VideoPostActivity.this, "发布成功", Toast.LENGTH_SHORT).show();
+                                Intent intent = null;
+                                intent = new Intent(VideoPostActivity.this, MainActivity.class);
+                                startActivity(intent);
+                            } else {
+                                Toast.makeText(VideoPostActivity.this, "未知错误 ", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        @Override
+                        public void onError(Exception e) {
+                            Toast.makeText(VideoPostActivity.this, "服务器连接失败", Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onFinish() {
+                        }
+                    });
                     intent = new Intent(VideoPostActivity.this,MainActivity.class);
                     startActivity(intent);
                     break;
@@ -252,10 +306,10 @@ public class VideoPostActivity extends AppCompatActivity {
             Cursor cursor = this.getContentResolver().query(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, proj, null, null, null);
             while (cursor.moveToNext()) {
                 //视频地址
-                String path = cursor
+                video_path = cursor
                         .getString(cursor
                                 .getColumnIndexOrThrow(MediaStore.Video.Media.DATA));
-                Bitmap bitmap = getVideoThumbnail(path);
+                Bitmap bitmap = getVideoThumbnail(video_path);
                 mVideoCover.setImageBitmap(bitmap);
             }
             cursor.close();
@@ -281,9 +335,35 @@ public class VideoPostActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+        //saveImageToGallery(VideoPostActivity.this,b);
         return b;
     }
 
+    public void saveImageToGallery(Context context, Bitmap bmp) {
+        // 首先保存图片 创建文件夹
+        File appDir = new File(Environment.getExternalStorageDirectory(), "oasystem");
+        if (!appDir.exists()) {
+            appDir.mkdir();
+        }
+        //图片文件名称
+        String fileName = "oa_" + System.currentTimeMillis() + ".jpg";
+        File file = new File(appDir, fileName);
+        try {
+            FileOutputStream fos = new FileOutputStream(file);
+            bmp.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+            fos.flush();
+            fos.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-
+        // 其次把文件插入到系统图库
+        String path2 = file.getAbsolutePath();
+        try {
+            MediaStore.Images.Media.insertImage(context.getContentResolver(), path2, fileName, null);
+            pic_path = path2+"\\"+fileName;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }

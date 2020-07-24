@@ -105,9 +105,9 @@ public class FriendListActivity extends AppCompatActivity {
                         public void onSuccess(String result) throws JSONException {
                             JSONObject result_json = new JSONObject(result);
                             String reback = result_json.getString("msg");
-                            int num = result_json.getInt("num");
                             Log.v("FriendListActivity", result);
                             if (reback.equals("success")) {
+                                int num = result_json.getInt("num");
                                 for (int i = 1; i < num; i++) {
                                     String username = result_json.getString("Friend" + i + "Name");
                                     UserInfo user = new UserInfo(username);
@@ -245,9 +245,9 @@ public class FriendListActivity extends AppCompatActivity {
                                 public void onSuccess(String result) throws JSONException {
                                     JSONObject result_json = new JSONObject(result);
                                     String msg = result_json.getString("msg");
-                                    int num = result_json.getInt("num");
                                     Log.v("FriendListActivity", result);
                                     if (msg.equals("success")) {
+                                        int num = result_json.getInt("num");
                                         for (int i = 1; i < num; i++) {
                                             String username = result_json.getString("User" + i + "Name");
                                             UserInfo user = new UserInfo(username);

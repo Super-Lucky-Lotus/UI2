@@ -26,7 +26,12 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @version: 2.0
@@ -38,43 +43,98 @@ import java.io.FileNotFoundException;
  **/
 public class ChangePhotoActivity extends AppCompatActivity {
 
+    private String pic_url;
+    private Boolean change = false;
 
     public static final int CHOOSE_PHOTO = 2;
+    Button mSave;
     ImageButton mbacktosetting;
-    ImageView mImagePhoto;
+    MyImageView mImagePhoto;
     Button mOpenAlbum;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_photo);
         mbacktosetting=(ImageButton)findViewById(R.id.backtosettting);
-        mImagePhoto=(ImageView)findViewById(R.id.iv_photo);
+        mImagePhoto=(MyImageView)findViewById(R.id.iv_photo);
         mOpenAlbum=findViewById(R.id.btn_changephoto);
+        mSave = (Button)findViewById(R.id.btn_save);
+
+        getData();
         setListeners();
+    }
+
+    private void getData() {
+        Intent intent = getIntent();
+        pic_url = intent.getStringExtra("pic_url");
+        mImagePhoto.setImageURL(pic_url);
     }
 
     private void setListeners(){
         ChangePhotoActivity.OnClick onClick = new ChangePhotoActivity.OnClick();
         mbacktosetting.setOnClickListener(onClick);
         mOpenAlbum.setOnClickListener(onClick);
+        mSave.setOnClickListener(onClick);
     }
 
-    private class OnClick implements View.OnClickListener{
+    private class OnClick implements View.OnClickListener {
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
         @Override
-        public void onClick(View v){
+        public void onClick(View v) {
             Intent intent = null;
-            switch (v.getId()){
+            switch (v.getId()) {
                 case R.id.backtosettting:
-                    intent = new Intent(ChangePhotoActivity.this,SettingActivity.class);
+                    intent = new Intent(ChangePhotoActivity.this, SettingActivity.class);
                     startActivity(intent);
                     break;
                 case R.id.btn_changephoto:
                     //调用打开相册
                     getPhotoFromAlbum();
                     break;
-            }
+                case R.id.btn_save:
+                    if (change) {
+                        Phone phoneObj = (Phone) getApplication();
+                        final String phone = phoneObj.getPhone();
+                        Log.v("ChangePhotoActivity", phone);
+                        String path = "http://139.219.4.34/editimage/";
+                        Map<String, String> userParams = new HashMap<String, String>();//将数据放在map里，便于取出传递
+                        userParams.put("phone", phone);
+                        Map<String, String> photoParams = new HashMap<>();
+                        photoParams.put("face_image", pic_url);
 
+
+                        HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
+                            @Override
+                            public void onSuccess(String result) throws JSONException {
+                                JSONObject result_json = new JSONObject(result);
+                                String login = result_json.getString("msg");
+                                if (login.equals("success")) {
+                                    Toast.makeText(ChangePhotoActivity.this, "修改成功", Toast.LENGTH_SHORT).show();
+                                    Intent intent = null;
+                                    intent = new Intent(ChangePhotoActivity.this, SettingActivity.class);
+                                    startActivity(intent);
+                                } else {
+                                    Toast.makeText(ChangePhotoActivity.this, "未知错误 ", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+
+                            @Override
+                            public void onError(Exception e) {
+                                Toast.makeText(ChangePhotoActivity.this, "服务器连接失败", Toast.LENGTH_SHORT).show();
+                            }
+
+                            @Override
+                            public void onFinish() {
+                            }
+                        });
+                    }
+                    else{
+                        Intent intent2 = null;
+                        intent2 = new Intent(ChangePhotoActivity.this, SettingActivity.class);
+                        startActivity(intent2);
+                    }
+                    break;
+            }
         }
     }
 
@@ -140,7 +200,9 @@ public class ChangePhotoActivity extends AppCompatActivity {
             imagePath = uri.getPath();
         }
 
+        change = true;
         // 根据图片路径显示图片
+        pic_url = imagePath;
         displayImage(imagePath);
     }
 

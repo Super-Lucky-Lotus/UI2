@@ -135,7 +135,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Intent intent = new Intent(RegisterActivity.this,Reg_infoActivity.class);
                     Phone phoneObj;
                     phoneObj = ((Phone)getApplicationContext());
-                    phoneObj.setPhone(phone_number);;
+                    phoneObj.setPhone("");;
                     startActivity(intent);
                 }
             }

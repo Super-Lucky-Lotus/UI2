@@ -11,7 +11,6 @@
         android:id="@+id/sv_comment"
         android:layout_width="410dp"
         android:layout_height="300dp"
-        android:background="#514F4F"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_exit">
@@ -21,13 +20,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <include layout="@layout/comment" />
+            <ListView
+                android:id="@+id/list_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
-            <include layout="@layout/comment" />
+            </ListView>
 
-            <include layout="@layout/comment" />
-
-            <include layout="@layout/comment" />
         </LinearLayout>
     </ScrollView>
 

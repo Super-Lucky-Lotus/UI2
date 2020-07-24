@@ -89,9 +89,9 @@ public class FansListActivity extends AppCompatActivity {
                         public void onSuccess(String result) throws JSONException {
                             JSONObject result_json = new JSONObject(result);
                             String reback = result_json.getString("msg");
-                            int num = result_json.getInt("num");
                             Log.v("FansListActivity", result);
                             if (reback.equals("success")) {
+                                int num = result_json.getInt("num");
                                 for (int i = 1; i < num; i++) {
                                     String username = result_json.getString("Follower" + i + "Name");
                                     UserInfo fan = new UserInfo(username);

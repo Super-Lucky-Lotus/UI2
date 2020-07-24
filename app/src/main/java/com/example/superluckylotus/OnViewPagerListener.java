@@ -10,4 +10,5 @@ public interface OnViewPagerListener {
     void onPageSelected(boolean isButten, View position);
 
 
+    void onaddVideos(String[] a, View position, int pos);
 }

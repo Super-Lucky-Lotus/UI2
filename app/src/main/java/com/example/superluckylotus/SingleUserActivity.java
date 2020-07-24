@@ -35,47 +35,34 @@ public class SingleUserActivity extends AppCompatActivity {
     private String follows_counts = "0";
     private String friends_counts = "0";
     private String id = "";
+
     protected TextView textView1;
     protected TextView textView2;
     protected TextView textView3;
     protected TextView textView4;
     protected TextView textView5;
     protected TextView textView6;
+
     private Button single_user_back;
     private Button single_user_add_friend;
     private Button single_user_follow;
-    private ImageView su_video1_btn;
-    private ImageView su_video2_btn;
-    private ImageView su_video3_btn;
-    private ImageView su_video4_btn;
-    private ImageView su_video5_btn;
-    private ImageView su_video6_btn;
-    private ImageView su_video7_btn;
-    private ImageView su_video8_btn;
-    private ImageView su_video9_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_user);
+
         textView1 = (TextView) findViewById(R.id.single_username);
         textView2 = (TextView) findViewById(R.id.single_userID);
         textView3 = (TextView) findViewById(R.id.single_user_num_like);
         textView4 = (TextView) findViewById(R.id.single_user_num_focus);
         textView5 = (TextView) findViewById(R.id.single_user_num_fans);
         textView6 = (TextView) findViewById(R.id.single_user_num_friends);
+
         single_user_back = (Button) findViewById(R.id.single_user_back);
         single_user_add_friend = (Button) findViewById(R.id.single_user_add_friend);
         single_user_follow = (Button) findViewById(R.id.single_user_follow);
-        su_video1_btn = (ImageView) findViewById(R.id.single_user_video1);
-        su_video2_btn = (ImageView) findViewById(R.id.single_user_video2);
-        su_video3_btn = (ImageView) findViewById(R.id.single_user_video3);
-        su_video4_btn = (ImageView) findViewById(R.id.single_user_video4);
-        su_video5_btn = (ImageView) findViewById(R.id.single_user_video5);
-        su_video6_btn = (ImageView) findViewById(R.id.single_user_video6);
-        su_video7_btn = (ImageView) findViewById(R.id.single_user_video7);
-        su_video8_btn = (ImageView) findViewById(R.id.single_user_video8);
-        su_video9_btn = (ImageView) findViewById(R.id.single_user_video9);
+
         getData();
         setListeners();
     }
@@ -90,7 +77,6 @@ public class SingleUserActivity extends AppCompatActivity {
         Map<String, String> userParams = new HashMap<String, String>();//将数据放在map里，便于取出传递
         userParams.put("username", username);
         userParams.put("phone", phone);
-        Log.v("SingleUserActivity",username);
 
         HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
             @Override
@@ -146,15 +132,6 @@ public class SingleUserActivity extends AppCompatActivity {
         single_user_add_friend.setOnClickListener(onClick);
         single_user_follow.setOnClickListener(onClick);
         single_user_back.setOnClickListener(onClick);
-        su_video1_btn.setOnClickListener(onClick);
-        su_video2_btn.setOnClickListener(onClick);
-        su_video3_btn.setOnClickListener(onClick);
-        su_video4_btn.setOnClickListener(onClick);
-        su_video5_btn.setOnClickListener(onClick);
-        su_video6_btn.setOnClickListener(onClick);
-        su_video7_btn.setOnClickListener(onClick);
-        su_video8_btn.setOnClickListener(onClick);
-        su_video9_btn.setOnClickListener(onClick);
 
     }
 
@@ -294,18 +271,6 @@ public class SingleUserActivity extends AppCompatActivity {
 
                         });
                     }
-                    break;
-                case R.id.single_user_video1:
-                case R.id.single_user_video2:
-                case R.id.single_user_video3:
-                case R.id.single_user_video4:
-                case R.id.single_user_video5:
-                case R.id.single_user_video6:
-                case R.id.single_user_video7:
-                case R.id.single_user_video8:
-                case R.id.single_user_video9:
-                    intent = new Intent(SingleUserActivity.this, SingleVideoActivity.class);
-                    startActivity(intent);
                     break;
             }
         }

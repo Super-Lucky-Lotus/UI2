@@ -27,6 +27,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import static android.content.ContentValues.TAG;
 import static com.mob.tools.utils.DeviceHelper.getApplication;
 
 
@@ -77,7 +78,8 @@ public class EarthFragment extends Fragment {
     MoreDialog md;
     CommentDialog cd;
     ShareDialog sd;
-
+    String[] videos={"http://139.219.4.34/media\\video\\b31855c05f.mp4", "http://139.219.4.34/media\\video\\b31855c05f.mp4",
+            "http://139.219.4.34/media\\video\\b31855c05f.mp4", "http://139.219.4.34/media\\video\\b31855c05f.mp4"};
     private RecyclerView recyclerView;
 
     private DouYinLayoutManager douYinLayoutManager;
@@ -100,6 +102,7 @@ public class EarthFragment extends Fragment {
     private void initView() {
         douYinLayoutManager = new DouYinLayoutManager(getActivity(), OrientationHelper.VERTICAL,false);
         recyclerView.setLayoutManager(douYinLayoutManager);
+
         MyAdapter a =new MyAdapter();
         recyclerView.setAdapter(a);
         douYinLayoutManager.setOnViewPagerListener(new OnViewPagerListener() {
@@ -107,6 +110,7 @@ public class EarthFragment extends Fragment {
             public void onPageRelease(boolean isNest, View position) {
                 releaseVideo(position);
             }
+
 
             @Override
             public void onPageSelected(boolean isButten, View position) {
@@ -120,15 +124,34 @@ public class EarthFragment extends Fragment {
                 playVideo(position);
 
             }
+
+            public void onaddVideos(String[] ChangeVideos,View position,int pos) {
+                addVideos(ChangeVideos,position,pos);
+            }
         });
     }
+
+    public void addlist(String[] a){
+        String[] c= new String[a.length+videos.length];
+
+        System.arraycopy(videos, 0, c, 0, videos.length);
+        System.arraycopy(a, 0, c, videos.length, a.length);
+        videos = c;
+
+    }
+
+    public void reInit(String[] a){
+    videos = a;
+}
+
+
 
     class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
         //添加封面
 //        private int[] imgs = {R.mipmap.img_video_1,R.mipmap.img_video_2,R.mipmap.img_video_3,R.mipmap.img_video_4,R.mipmap.img_video_1,R.mipmap.img_video_2};
         //添加视频
-        private String[] videos ={"http://139.219.4.34/media\\video\\a93f4be353.mp4", "http://139.219.4.34/media\\video\\b31855c05f.mp4",
-                "http://139.219.4.34/media\\video\\ff427d5454.mp4", "http://139.219.4.34/media\\video\\543c4fa467.mp4"};
+//                ={"http://139.219.4.34/media\\video\\a93f4be353.mp4", "http://139.219.4.34/media\\video\\b31855c05f.mp4",
+//                "http://139.219.4.34/media\\video\\ff427d5454.mp4", "http://139.219.4.34/media\\video\\543c4fa467.mp4"};
 //                {R.raw.video_1,R.raw.video_2,R.raw.video_3,R.raw.video_4,R.raw.video_1,R.raw.video_2};
         public MyAdapter(){
         }
@@ -218,6 +241,7 @@ public class EarthFragment extends Fragment {
             return videos.length;
         }
 
+
         public class ViewHolder extends RecyclerView.ViewHolder{
 //            ImageView img_thumb;
             VideoView videoView;
@@ -233,6 +257,12 @@ public class EarthFragment extends Fragment {
         }
     }
 
+
+    private void addVideos(String[] ChangeVideos,View position,int pos){
+        addlist(ChangeVideos);
+        int length = videos.length;
+        recyclerView.getAdapter().notifyItemRangeChanged(pos+1,length);
+    }
 
     /**
      * 停止播放
@@ -297,7 +327,7 @@ public class EarthFragment extends Fragment {
 
     private class OnClick implements View.OnClickListener{
         @Override
-        public void onClick(View v){
+        public void onClick(final View v){
             Intent intent = new Intent();
             switch (v.getId()){
                 case R.id.turnSearchPage_btn:
@@ -305,37 +335,46 @@ public class EarthFragment extends Fragment {
                     getActivity().startActivity(intent);
                     break;
                 case R.id.rcm_btn:
-                    recyclerView.scrollToPosition(0);
-//                    String path = "http://139.219.4.34/getallmedia/";
-//                    Map<String, String> userParams = new HashMap<String, String>();//将数据放在map里，便于取出传递
-//                    HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
-//                        @Override
-//                        public void onSuccess(String result) throws JSONException {
-//                            JSONObject result_json = new JSONObject(result);
-//                            String get = result_json.getString("msg");
-//                            //int num = result_json.getInt("num");
-//                            Log.v("EarthFragment", result);
-//                            //if (get.equals("success")) {
-//                            //  for (int i = 1; i < num; i++) {
-//                            //    String username = result_json.getString("Fan" + i + "Name");
-//                            //  String time = result_json.getString("time" + i);
-//                            //Log.v("GetLikesActivity", username);
-//                            // }
-//                            //} else {
-//                            //  Log.v("CommentDialog","没有评论！");
-//                            //}
-//                        }
-//
-//                        @Override
-//                        public void onError(Exception e) {
-//                            Log.v("EarthFragment", "连接失败！");
-//                        }
-//
-//                        @Override
-//                        public void onFinish() {
-//                        }
-//
-//                    });
+                    String path = "http://139.219.4.34/getallvideo/";
+                    Map<String, String> userParams = new HashMap<String, String>();//将数据放在map里，便于取出传递
+                    userParams.put("phone","15880786698");
+                    HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
+                        @Override
+                        public void onSuccess(String result) throws JSONException {
+                            JSONObject result_json = new JSONObject(result);
+                            String get = result_json.getString("msg");
+                            //int num = result_json.getInt("num");
+                            Log.v("EarthFragment", result);
+                            if (get.equals("success")){
+                                String videoArray = result_json.getString("videos");
+                                Log.v(TAG,"123456789:"+videoArray);
+                                videoArray = videoArray.substring(1,videoArray.length()-1);
+                                String[] videos = videoArray.split(",");
+                                for (int i = 0 ;i <videos.length;i++){
+                                    videos[i]=videos[i].replaceFirst("\\\\\\\\","//");
+                                    videos[i]=videos[i].replaceFirst("\\\\\\\\","/");
+                                    videos[i]=videos[i].replaceAll("\\\\\\\\","/");
+                                    videos[i]=videos[i].substring(1,videos[i].length()-1);
+                                    Log.v(TAG,"123456789:"+videos[i]);
+                                }
+
+                                reInit(videos);
+                                recyclerView.getAdapter().notifyDataSetChanged();
+                            }
+                            recyclerView.scrollToPosition(0);
+//                            recyclerView.getAdapter()
+                        }
+
+                        @Override
+                        public void onError(Exception e) {
+                            Log.v("EarthFragment", "连接失败！");
+                        }
+
+                        @Override
+                        public void onFinish() {
+                        }
+
+                    });
                     break;
             }
         }

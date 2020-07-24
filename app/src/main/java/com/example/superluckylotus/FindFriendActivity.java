@@ -63,11 +63,12 @@ import static com.mob.tools.gui.BitmapProcessor.start;
 
 public class FindFriendActivity extends AppCompatActivity {
 
-    public static Handler uiHandler;
     private Button find_fri_back_btn;
     private TextView go_fri_list_btn;
     private EditText search_name;
     private Button search_btn;
+
+    public static Handler uiHandler;
     private ListView list_find_friend;
     public static MyAdapter adapter;
     public static List<UserInfo> Users;
@@ -105,7 +106,6 @@ public class FindFriendActivity extends AppCompatActivity {
                     startActivity(intent);
                     break;
                 case R.id.FindFri_search_btn:
-                    Users=new ArrayList<UserInfo>();
                     new Thread() {
                         @Override
                         public void run() {
@@ -126,9 +126,9 @@ public class FindFriendActivity extends AppCompatActivity {
                                 public void onSuccess(String result) throws JSONException {
                                     JSONObject result_json = new JSONObject(result);
                                     String msg = result_json.getString("msg");
-                                    int num = result_json.getInt("num");
                                     Log.v("FindFriendActivity", result);
                                     if (msg.equals("success")) {
+                                        int num = result_json.getInt("num");
                                         for (int i = 1; i < num; i++) {
                                             String username = result_json.getString("User" + i + "Name");
                                             UserInfo user = new UserInfo(username);
