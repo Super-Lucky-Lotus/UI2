@@ -69,6 +69,7 @@ import static com.mob.tools.utils.DeviceHelper.getApplication;
 public class EarthFragment extends Fragment {
 
     private Button turnSearchPage_btn;
+    private Button rcm_btn;
     private ToggleButton mLike;
     private Button mMore;
     private Button mComment;
@@ -84,11 +85,13 @@ public class EarthFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_earth,null);
         turnSearchPage_btn = (Button)view.findViewById(R.id.turnSearchPage_btn);
+        rcm_btn=(Button)view.findViewById(R.id.rcm_btn);
         md=new MoreDialog(getActivity());
         cd=new CommentDialog(getActivity());
         sd=new ShareDialog(getActivity());
         OnClick onclick=new OnClick();
         turnSearchPage_btn.setOnClickListener(onclick);
+        rcm_btn.setOnClickListener(onclick);
         recyclerView = view.findViewById(R.id.recyclerView_dy);
         initView();
         return view;
@@ -97,8 +100,8 @@ public class EarthFragment extends Fragment {
     private void initView() {
         douYinLayoutManager = new DouYinLayoutManager(getActivity(), OrientationHelper.VERTICAL,false);
         recyclerView.setLayoutManager(douYinLayoutManager);
-        recyclerView.setAdapter(new MyAdapter());
-
+        MyAdapter a =new MyAdapter();
+        recyclerView.setAdapter(a);
         douYinLayoutManager.setOnViewPagerListener(new OnViewPagerListener() {
             @Override
             public void onPageRelease(boolean isNest, View position) {
@@ -113,6 +116,7 @@ public class EarthFragment extends Fragment {
                 }else {
                     index = 1;
                 }
+
                 playVideo(position);
 
             }
@@ -121,9 +125,11 @@ public class EarthFragment extends Fragment {
 
     class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
         //添加封面
-        private int[] imgs = {R.mipmap.img_video_1,R.mipmap.img_video_2,R.mipmap.img_video_3,R.mipmap.img_video_4,R.mipmap.img_video_1,R.mipmap.img_video_2};
+//        private int[] imgs = {R.mipmap.img_video_1,R.mipmap.img_video_2,R.mipmap.img_video_3,R.mipmap.img_video_4,R.mipmap.img_video_1,R.mipmap.img_video_2};
         //添加视频
-        private int[] videos = {R.raw.video_1,R.raw.video_2,R.raw.video_3,R.raw.video_4,R.raw.video_1,R.raw.video_2};
+        private String[] videos ={"http://139.219.4.34/media\\video\\a93f4be353.mp4", "http://139.219.4.34/media\\video\\b31855c05f.mp4",
+                "http://139.219.4.34/media\\video\\ff427d5454.mp4", "http://139.219.4.34/media\\video\\543c4fa467.mp4"};
+//                {R.raw.video_1,R.raw.video_2,R.raw.video_3,R.raw.video_4,R.raw.video_1,R.raw.video_2};
         public MyAdapter(){
         }
         @Override
@@ -178,41 +184,7 @@ public class EarthFragment extends Fragment {
 
                     });
                 }
-                //Phone phoneObj = (Phone)getApplication();
-                //final String phone = phoneObj.getPhone();
-                //String path = "http://139.219.4.34/cancellike/";
-                //Map<String, String> userParams = new HashMap<String, String>();//将数据放在map里，便于取出传递
-                //    userParams.put("phone",phone);
-                //    userParams.put("video_path","media\\video\\faf0fb3837.mp4");
 
-                //  HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
-                //@Override
-                //public void onSuccess(String result) throws JSONException {
-                //   JSONObject result_json = new JSONObject(result);
-                //  String get = result_json.getString("msg");
-                //int num = result_json.getInt("num");
-                //  Log.v("EarthFragment", result);
-                //if (get.equals("success")) {
-                //  for (int i = 1; i < num; i++) {
-                //    String username = result_json.getString("Fan" + i + "Name");
-                //  String time = result_json.getString("time" + i);
-                //Log.v("GetLikesActivity", username);
-                // }
-                //} else {
-                //  Log.v("CommentDialog","没有评论！");
-                //}
-                //}
-
-                //@Override
-                //public void onError(Exception e) {
-                //  Log.v("EarthFragment", "连接失败！");
-                //}
-
-                //@Override
-                // public void onFinish() {
-                //}
-
-                //});
             });
             mMore.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -237,23 +209,23 @@ public class EarthFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
-            holder.img_thumb.setImageResource(imgs[position]);
-            holder.videoView.setVideoURI(Uri.parse("android.resource://"+getActivity().getPackageName()+"/"+ videos[position]));
+//            holder.img_thumb.setImageResource(imgs[position]);
+            holder.videoView.setVideoURI(Uri.parse(videos[position]));
         }
 
         @Override
         public int getItemCount() {
-            return 6;
+            return videos.length;
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder{
-            ImageView img_thumb;
+//            ImageView img_thumb;
             VideoView videoView;
             ImageView img_play;
             RelativeLayout rootView;
             public ViewHolder(View itemView) {
                 super(itemView);
-                img_thumb = itemView.findViewById(R.id.img_thumb);
+//                img_thumb = itemView.findViewById(R.id.img_thumb);
                 videoView = itemView.findViewById(R.id.video_view);
                 img_play = itemView.findViewById(R.id.img_play);
                 rootView = itemView.findViewById(R.id.root_view);
@@ -331,6 +303,39 @@ public class EarthFragment extends Fragment {
                 case R.id.turnSearchPage_btn:
                     intent.setClass(getActivity(),SearchActivity.class);
                     getActivity().startActivity(intent);
+                    break;
+                case R.id.rcm_btn:
+                    recyclerView.scrollToPosition(0);
+//                    String path = "http://139.219.4.34/getallmedia/";
+//                    Map<String, String> userParams = new HashMap<String, String>();//将数据放在map里，便于取出传递
+//                    HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
+//                        @Override
+//                        public void onSuccess(String result) throws JSONException {
+//                            JSONObject result_json = new JSONObject(result);
+//                            String get = result_json.getString("msg");
+//                            //int num = result_json.getInt("num");
+//                            Log.v("EarthFragment", result);
+//                            //if (get.equals("success")) {
+//                            //  for (int i = 1; i < num; i++) {
+//                            //    String username = result_json.getString("Fan" + i + "Name");
+//                            //  String time = result_json.getString("time" + i);
+//                            //Log.v("GetLikesActivity", username);
+//                            // }
+//                            //} else {
+//                            //  Log.v("CommentDialog","没有评论！");
+//                            //}
+//                        }
+//
+//                        @Override
+//                        public void onError(Exception e) {
+//                            Log.v("EarthFragment", "连接失败！");
+//                        }
+//
+//                        @Override
+//                        public void onFinish() {
+//                        }
+//
+//                    });
                     break;
             }
         }
