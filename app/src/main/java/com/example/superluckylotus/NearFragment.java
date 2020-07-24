@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.VideoView;
 
 import androidx.annotation.Nullable;
@@ -51,6 +52,7 @@ public class NearFragment extends Fragment {
     private Button mMore;
     private Button mComment;
     private  Button mShare;
+    private TextView mCity;
     MoreDialog md;
     CommentDialog cd;
     ShareDialog sd;
@@ -62,7 +64,8 @@ public class NearFragment extends Fragment {
 
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.fragment_near,null);
-
+            mCity=view.findViewById(R.id.tv_city);
+            mCity.setText(MainActivity.city);
             md=new MoreDialog(getActivity());
             cd=new CommentDialog(getActivity());
             sd=new ShareDialog(getActivity());
