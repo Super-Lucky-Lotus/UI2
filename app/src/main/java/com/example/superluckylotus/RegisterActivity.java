@@ -177,9 +177,11 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                     break;
                 case R.id.btn_register:
-                    if(judCord())
-                        SMSSDK.submitVerificationCode("86",phone_number,code_number);
-                    flag=false;
+                    intent = new Intent(RegisterActivity.this,Reg_infoActivity.class);
+                    Phone phoneObj;
+                    phoneObj = ((Phone)getApplicationContext());
+                    phoneObj.setPhone("");;
+                    startActivity(intent);
                     break;
                 case R.id.backtologin:
                     intent = new Intent(RegisterActivity.this,LoginActivity.class);

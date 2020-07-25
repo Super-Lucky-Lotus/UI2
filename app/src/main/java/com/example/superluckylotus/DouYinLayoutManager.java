@@ -106,14 +106,18 @@ public class DouYinLayoutManager extends LinearLayoutManager implements Recycler
                 if (onViewPagerListener != null){
                     if ( findLastVisibleItemPosition()==getItemCount()-1){
                         final int position = getPosition(snapView);
-                        String path = "http://139.219.4.34/getallvideo/";
+                        String path = "http://139.219.4.34/getvideobylabel/";
                         Map<String, String> userParams = new HashMap<String, String>();//将数据放在map里，便于取出传递
                         Phone phoneObj = (Phone)getApplication();
                         final String phone = phoneObj.getPhone();
                         userParams.put("phone",phone);
+                        userParams.put("label","宠物");
                         HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
                             @Override
                             public void onSuccess(String result) throws JSONException {
+                                if (result != null && result.startsWith("\ufeff")) {
+                                    result = result.substring(1);
+                                }
                                 JSONObject result_json = new JSONObject(result);
                                 String get = result_json.getString("msg");
                                 //int num = result_json.getInt("num");

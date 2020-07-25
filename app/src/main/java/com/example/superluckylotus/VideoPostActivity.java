@@ -39,6 +39,7 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -46,6 +47,7 @@ import java.util.Map;
 
 public class VideoPostActivity extends AppCompatActivity {
 
+    private static final String TAG = "VideoPostActivity";
     Button mChoosePlace;
     ImageView mPost;
     ImageView mBacktocut;
@@ -260,16 +262,17 @@ public class VideoPostActivity extends AppCompatActivity {
                     HttpServer.SuperHttpUtil.post2( path,userParams, VideoParams,new HttpServer.SuperHttpUtil.HttpCallBack() {
                         @Override
                         public void onSuccess(String result) throws JSONException {
-                            JSONObject result_json = new JSONObject(result);
-                            String login = result_json.getString("msg");
-                            if (login.equals("success")) {
-                                Toast.makeText(VideoPostActivity.this, "发布成功", Toast.LENGTH_SHORT).show();
-                                Intent intent = null;
-                                intent = new Intent(VideoPostActivity.this, MainActivity.class);
-                                startActivity(intent);
-                            } else {
-                                Toast.makeText(VideoPostActivity.this, "未知错误 ", Toast.LENGTH_SHORT).show();
-                            }
+//                            JSONObject result_json = new JSONObject(result);
+//                            String login = result_json.getString("msg");
+                            Log.v(TAG,"发布123："+result);
+//                            if (login.equals("success")) {
+//                                Toast.makeText(VideoPostActivity.this, "发布成功", Toast.LENGTH_SHORT).show();
+//                                Intent intent = null;
+//                                intent = new Intent(VideoPostActivity.this, MainActivity.class);
+//                                startActivity(intent);
+//                            } else {
+//                                Toast.makeText(VideoPostActivity.this, "未知错误 ", Toast.LENGTH_SHORT).show();
+//                            }
                         }
 
                         @Override
@@ -309,7 +312,7 @@ public class VideoPostActivity extends AppCompatActivity {
                 video_path = cursor
                         .getString(cursor
                                 .getColumnIndexOrThrow(MediaStore.Video.Media.DATA));
-                Bitmap bitmap = getVideoThumbnail(video_path);
+                Bitmap bitmap = getVideoThumbnail(this,video_path);
                 mVideoCover.setImageBitmap(bitmap);
             }
             cursor.close();
@@ -317,12 +320,13 @@ public class VideoPostActivity extends AppCompatActivity {
     }
 
     // 获取视频缩略图
-    public Bitmap getVideoThumbnail(String filePath) {
+    public Bitmap getVideoThumbnail(Context context,String filePath) {
         Bitmap b=null;
         MediaMetadataRetriever retriever = new MediaMetadataRetriever();
         try {
             retriever.setDataSource(filePath);
             b=retriever.getFrameAtTime();
+            saveImageToGallery(context,b);
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
         } catch (RuntimeException e) {
@@ -339,31 +343,72 @@ public class VideoPostActivity extends AppCompatActivity {
         return b;
     }
 
-    public void saveImageToGallery(Context context, Bitmap bmp) {
-        // 首先保存图片 创建文件夹
-        File appDir = new File(Environment.getExternalStorageDirectory(), "oasystem");
-        if (!appDir.exists()) {
-            appDir.mkdir();
-        }
-        //图片文件名称
-        String fileName = "oa_" + System.currentTimeMillis() + ".jpg";
-        File file = new File(appDir, fileName);
-        try {
-            FileOutputStream fos = new FileOutputStream(file);
-            bmp.compress(Bitmap.CompressFormat.JPEG, 100, fos);
-            fos.flush();
-            fos.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
-        // 其次把文件插入到系统图库
-        String path2 = file.getAbsolutePath();
-        try {
-            MediaStore.Images.Media.insertImage(context.getContentResolver(), path2, fileName, null);
-            pic_path = path2+"\\"+fileName;
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+    public void saveImageToGallery(Context context, Bitmap bmp) {
+        //检查有没有存储权限
+        if (!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+            Toast.makeText(this, "请至权限中心打开应用权限", Toast.LENGTH_SHORT).show();
+        } else {
+            // 新建目录appDir，并把图片存到其下
+            File appDir = new File(context.getExternalFilesDir(null).getPath()+ "BarcodeBitmap");
+            if (!appDir.exists()) {
+                appDir.mkdir();
+            }
+            String fileName = System.currentTimeMillis() + ".jpg";
+            File file = new File(appDir, fileName);
+            try {
+                FileOutputStream fos = new FileOutputStream(file);
+                bmp.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+                fos.flush();
+                fos.close();
+                pic_path = file.getPath();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            // 把file里面的图片插入到系统相册中
+            try {
+                MediaStore.Images.Media.insertImage(context.getContentResolver(),
+                        file.getAbsolutePath(), fileName, null);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+
+            Toast.makeText(this, fileName, Toast.LENGTH_LONG);
+
+            // 通知相册更新
+            context.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(file)));
         }
     }
+
+
+//    public void saveImageToGallery(Context context, Bitmap bmp) {
+//        // 首先保存图片 创建文件夹
+//        File appDir = new File(Environment.getExternalStorageDirectory(), "oasystem");
+//        if (!appDir.exists()) {
+//            appDir.mkdir();
+//        }
+//        //图片文件名称
+//        String fileName = "oa_" + System.currentTimeMillis() + ".jpg";
+//        File file = new File(appDir, fileName);
+//        try {
+//            FileOutputStream fos = new FileOutputStream(file);
+//            bmp.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+//            fos.flush();
+//            fos.close();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//
+//        // 其次把文件插入到系统图库
+//        String path2 = file.getAbsolutePath();
+//        try {
+//            MediaStore.Images.Media.insertImage(context.getContentResolver(), path2, fileName, null);
+//            pic_path = path2+"\\"+fileName;
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//    }
 }

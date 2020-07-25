@@ -484,7 +484,6 @@ public class ShootActivity extends AppCompatActivity {
 
     }
 
-
     private void initEditorUIAndExportConfig(ConfigData configData) {
         // 视频编辑UI配置
         UIConfiguration.Builder builder = new UIConfiguration.Builder()
@@ -656,8 +655,6 @@ public class ShootActivity extends AppCompatActivity {
 
     }
 
-
-
     /**
      * 保存并播放
      */
@@ -730,7 +727,6 @@ public class ShootActivity extends AppCompatActivity {
             }
         }
     };
-
 
     private ActivityResultHandler albumAlienResultHandler = new ActivityResultHandler() {
 
@@ -858,7 +854,6 @@ public class ShootActivity extends AppCompatActivity {
             }
         }
     };
-
 
     private ActivityResultHandler cameraAntiChangeResultHandler = new ActivityResultHandler() {
 

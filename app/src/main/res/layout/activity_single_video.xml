@@ -5,14 +5,15 @@
     android:layout_height="match_parent"
     tools:context=".SingleVideoActivity"
     android:orientation="vertical"
-    android:id="@+id/single_video_frame">
+    android:id="@+id/single_video_frame"
+    android:background="@drawable/bcg">
 
 
-        <VideoView
-            android:id="@+id/single_video"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#514F4F"/>
+    <VideoView
+        android:id="@+id/single_video"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true" />
 
         <Button
             android:id="@+id/close_sv"

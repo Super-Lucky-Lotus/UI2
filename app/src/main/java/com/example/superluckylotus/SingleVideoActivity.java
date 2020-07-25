@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 import android.widget.VideoView;
@@ -93,51 +94,52 @@ public class SingleVideoActivity extends AppCompatActivity {
         Map<String, String> userParams = new HashMap<String, String>();//将数据放在map里，便于取出传递
         userParams.put("cover_path", pic_url3);
         userParams.put("phone", phone);
-        single_video.setVideoURI(Uri.parse("http://139.219.4.34/media/video/543c4fa467.mp4"));
-        single_video.start();
-//        HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
-//            @Override
-//            public void onSuccess(String result) throws JSONException {
-//                JSONObject result_json = new JSONObject(result);
-//                String get = result_json.getString("msg");
-//                Log.v("SingleVideoActivity",result);
-//                if (get.equals("success")) {
-//                    String username = result_json.getString("Username");
-//                    String tab = result_json.getString("Label");
-//                    String detail = result_json.getString("Description");
-//                    String like = result_json.getString("IfLike");
-//                    video = result_json.getString("Path");
-//                    String pic_url = video.substring(19);
-//                    String path2 = "http://139.219.4.34/";
-//                    video = path2.concat(pic_url);
-//                    video = video.replaceAll("\\\\","/");
-//                    Log.v(TAG,"123456789:"+video);
-////                    single_video.setVideoURI(Uri.parse(video));
-//                    single_video.setVideoURI(Uri.parse("http://139.219.4.34/media/video/543c4fa467.mp4"));
-//                    single_video.start();
-//                    if(like.equals("true")){
-//                        tb_like.setChecked(true);
-//                    }
-//                    else{
-//                        tb_like.setChecked(false);
-//                    }
-//                    tv_username.setText(username);
-//                    tv_tab.setText(tab);
-//                    tv_detail.setText(detail);
-//                }
-//            }
-//
-//            @Override
-//            public void onError(Exception e) {
-//
-//                Log.v("SingleVideoActivity", "连接失败！");
-//            }
-//
-//            @Override
-//            public void onFinish() {
-//            }
-//
-//        });
+        //设置视频控制器
+        //single_video.setMediaController(new MediaController(this));
+
+        HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
+            @Override
+            public void onSuccess(String result) throws JSONException {
+                JSONObject result_json = new JSONObject(result);
+                String get = result_json.getString("msg");
+                Log.v("SingleVideoActivity",result);
+                if (get.equals("success")) {
+                    String username = result_json.getString("Username");
+                    String tab = result_json.getString("Label");
+                    String detail = result_json.getString("Description");
+                    String like = result_json.getString("IfLike");
+                    video = result_json.getString("Path");
+                    String pic_url = video.substring(19);
+                    String path2 = "http://139.219.4.34/";
+                    video = path2.concat(pic_url);
+                    video = video.replaceAll("\\\\","/");
+                    Log.v(TAG,"123456789:"+video);
+                    Uri uri = Uri.parse(video);
+                    single_video.setVideoURI(uri);
+                    single_video.requestFocus();
+                    single_video.start();
+                    if(like.equals("true")){
+                        tb_like.setChecked(true);
+                    }
+                    else{
+                        tb_like.setChecked(false);
+                    }
+                    tv_username.setText(username);
+                    tv_tab.setText(tab);
+                    tv_detail.setText(detail);
+                }
+            }
+
+            @Override
+            public void onError(Exception e) {
+                Log.v("SingleVideoActivity", "连接失败！");
+            }
+
+            @Override
+            public void onFinish() {
+            }
+
+        });
     }
 
     private void setListeners() {

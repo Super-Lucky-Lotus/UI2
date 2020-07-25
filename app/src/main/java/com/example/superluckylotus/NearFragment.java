@@ -66,7 +66,7 @@ public class NearFragment extends Fragment {
     MoreDialog md;
     CommentDialog cd;
     ShareDialog sd;
-    String[] videos;
+    private int[] videos;
     private RecyclerView recyclerView;
 
     private DouYinLayoutManager douYinLayoutManager;
@@ -74,43 +74,44 @@ public class NearFragment extends Fragment {
 
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
-            videos = new String[]{"http://139.219.4.34/media\\video\\b31855c05f.mp4", "http://139.219.4.34/media\\video\\b31855c05f.mp4",
-                    "http://139.219.4.34/media\\video\\b31855c05f.mp4", "http://139.219.4.34/media\\video\\b31855c05f.mp4"};
+//            videos = new String[]{"http://139.219.4.34/media\\video\\b31855c05f.mp4", "http://139.219.4.34/media\\video\\b31855c05f.mp4",
+//                    "http://139.219.4.34/media\\video\\b31855c05f.mp4", "http://139.219.4.34/media\\video\\b31855c05f.mp4"};
+            videos = new int[]{R.raw.video_8, R.raw.video_7, R.raw.video_5, R.raw.video_2, R.raw.video_1, R.raw.video_3};
             String path = "http://139.219.4.34/getfollowvideo/";
             Map<String, String> userParams = new HashMap<String, String>();//将数据放在map里，便于取出传递
             Phone phoneObj = (Phone)getApplication();
             final String phone = phoneObj.getPhone();
             userParams.put("phone",phone);
-            HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
-                @Override
-                public void onSuccess(String result) throws JSONException {
-                    JSONObject result_json = new JSONObject(result);
-                    String get = result_json.getString("msg");
-                    //int num = result_json.getInt("num");
-                    Log.v("EarthFragment", result);
-                    if (get.equals("success")){
-                        String videoArray = result_json.getString("videos");
-                        Log.v(TAG,"123456789:"+videoArray);
-                        videoArray = videoArray.substring(1,videoArray.length()-1);
-                        String[] loaclvideos = videoArray.split(",");
-                        for (int i = 0 ;i <loaclvideos.length;i++){
-                            loaclvideos[i]=loaclvideos[i].replaceFirst("\\\\\\\\","//");
-                            loaclvideos[i]=loaclvideos[i].replaceFirst("\\\\\\\\","/");
-                            loaclvideos[i]=loaclvideos[i].replaceAll("\\\\\\\\","/");
-                            loaclvideos[i]=loaclvideos[i].substring(1,loaclvideos[i].length()-1);
-                            Log.v(TAG,"123456789:"+loaclvideos[i]);
-                        }
-                        videos = loaclvideos;
-                    }
-                }
-                @Override
-                public void onError(Exception e) {
-                    Log.v("EarthFragment", "连接失败！");
-                }
-                @Override
-                public void onFinish() {
-                }
-            });
+//            HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
+//                @Override
+//                public void onSuccess(String result) throws JSONException {
+//                    JSONObject result_json = new JSONObject(result);
+//                    String get = result_json.getString("msg");
+//                    //int num = result_json.getInt("num");
+//                    Log.v("EarthFragment", result);
+//                    if (get.equals("success")){
+//                        String videoArray = result_json.getString("videos");
+//                        Log.v(TAG,"123456789:"+videoArray);
+//                        videoArray = videoArray.substring(1,videoArray.length()-1);
+//                        String[] loaclvideos = videoArray.split(",");
+//                        for (int i = 0 ;i <loaclvideos.length;i++){
+//                            loaclvideos[i]=loaclvideos[i].replaceFirst("\\\\\\\\","//");
+//                            loaclvideos[i]=loaclvideos[i].replaceFirst("\\\\\\\\","/");
+//                            loaclvideos[i]=loaclvideos[i].replaceAll("\\\\\\\\","/");
+//                            loaclvideos[i]=loaclvideos[i].substring(1,loaclvideos[i].length()-1);
+//                            Log.v(TAG,"123456789:"+loaclvideos[i]);
+//                        }
+//                        videos = loaclvideos;
+//                    }
+//                }
+//                @Override
+//                public void onError(Exception e) {
+//                    Log.v("EarthFragment", "连接失败！");
+//                }
+//                @Override
+//                public void onFinish() {
+//                }
+//            });
 
             View view = inflater.inflate(R.layout.fragment_near,null);
             mCity=view.findViewById(R.id.tv_city);
@@ -163,12 +164,12 @@ public class NearFragment extends Fragment {
 
         System.arraycopy(videos, 0, c, 0, videos.length);
         System.arraycopy(a, 0, c, videos.length, a.length);
-        videos = c;
+//        videos = c;
 
     }
 
     public void reInit(String[] a){
-        videos = a;
+//        videos = a;
     }
 
 
@@ -207,7 +208,7 @@ public class NearFragment extends Fragment {
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
 
-            holder.videoView.setVideoURI(Uri.parse(videos[position]));
+            holder.videoView.setVideoURI(Uri.parse("android.resource://"+getActivity().getPackageName()+"/"+ videos[position]));
         }
 
 

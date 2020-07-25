@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.ToggleButton;
 import android.widget.VideoView;
 
@@ -78,7 +79,11 @@ public class EarthFragment extends Fragment {
     MoreDialog md;
     CommentDialog cd;
     ShareDialog sd;
-    String[] videos;
+    private int[] videos;
+//    String[] nicknames;
+//    String[] labels;
+//    String[] descriptions;
+
     private RecyclerView recyclerView;
 
     private DouYinLayoutManager douYinLayoutManager;
@@ -86,43 +91,75 @@ public class EarthFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
 
-        videos = new String[]{"http://139.219.4.34/media\\video\\b31855c05f.mp4", "http://139.219.4.34/media\\video\\b31855c05f.mp4",
-                "http://139.219.4.34/media\\video\\b31855c05f.mp4", "http://139.219.4.34/media\\video\\b31855c05f.mp4"};
-        String path = "http://139.219.4.34/getfollowvideo/";
+        videos = new int[]{R.raw.video_1, R.raw.video_2, R.raw.video_3, R.raw.video_4, R.raw.video_1, R.raw.video_2};
+//        videos = new String[]{"http://139.219.4.34/media\\video\\cw1.mp4","http://139.219.4.34/media\\video\\833ed4c073.mp4","http://139.219.4.34/media\\video\\cw4.mp4","http://139.219.4.34/media\\video\\cw5.mp4","http://139.219.4.34/media\\video\\ecy1.mp4","http://139.219.4.34/media\\video\\ecy2.mp4","http://139.219.4.34/media\\video\\ecy3.mp4","http://139.219.4.34/media\\video\\ecy4.mp4","http://139.219.4.34/media\\video\\f7ae0a329f.mp4","http:///139.219.4.34/media\\video\\kj1.mp4","http://139.219.4.34/media\\video\\kj2.mp4","http://139.219.4.34/media\\video\\kj3.mp4"};
+        String path = "http://139.219.4.34/getallmedia/";
         Map<String, String> userParams = new HashMap<String, String>();//将数据放在map里，便于取出传递
         Phone phoneObj = (Phone)getApplication();
         final String phone = phoneObj.getPhone();
         userParams.put("phone",phone);
-        HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
-            @Override
-            public void onSuccess(String result) throws JSONException {
-                JSONObject result_json = new JSONObject(result);
-                String get = result_json.getString("msg");
-                //int num = result_json.getInt("num");
-                Log.v("EarthFragment", result);
-                if (get.equals("success")){
-                    String videoArray = result_json.getString("videos");
-                    Log.v(TAG,"123456789:"+videoArray);
-                    videoArray = videoArray.substring(1,videoArray.length()-1);
-                    String[] loaclvideos = videoArray.split(",");
-                    for (int i = 0 ;i <loaclvideos.length;i++){
-                        loaclvideos[i]=loaclvideos[i].replaceFirst("\\\\\\\\","//");
-                        loaclvideos[i]=loaclvideos[i].replaceFirst("\\\\\\\\","/");
-                        loaclvideos[i]=loaclvideos[i].replaceAll("\\\\\\\\","/");
-                        loaclvideos[i]=loaclvideos[i].substring(1,loaclvideos[i].length()-1);
-                        Log.v(TAG,"123456789:"+loaclvideos[i]);
-                    }
-                    videos = loaclvideos;
-                }
-            }
-            @Override
-            public void onError(Exception e) {
-                Log.v("EarthFragment", "连接失败！");
-            }
-            @Override
-            public void onFinish() {
-            }
-        });
+//        HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
+//            @Override
+//            public void onSuccess(String result) throws JSONException {
+//                JSONObject result_json = new JSONObject(result);
+//                String get = result_json.getString("msg");
+//                //int num = result_json.getInt("num");
+//                Log.v("EarthFragment", result);
+//                if (get.equals("success")){
+//                    String videoArray = result_json.getString("videos");
+//                    Log.v(TAG,"123456789:"+videoArray);
+//                    videoArray = videoArray.substring(1,videoArray.length()-1);
+//                    String[] loaclvideos = videoArray.split(",");
+//                    for (int i = 0 ;i <loaclvideos.length;i++){
+//                        loaclvideos[i]=loaclvideos[i].replaceFirst("\\\\\\\\","//");
+//                        loaclvideos[i]=loaclvideos[i].replaceFirst("\\\\\\\\","/");
+//                        loaclvideos[i]=loaclvideos[i].replaceAll("\\\\\\\\","/");
+//                        loaclvideos[i]=loaclvideos[i].substring(1,loaclvideos[i].length()-1);
+//                        Log.v(TAG,"123456789:"+loaclvideos[i]);
+//                    }
+//                    videos = loaclvideos;
+//
+//
+//                    String descriptionsArray = result_json.getString("descriptions");
+//                    Log.v(TAG,"123456789:"+descriptionsArray);
+//                    descriptionsArray = descriptionsArray.substring(1,descriptionsArray.length()-1);
+//                    String[] loacldescriptions = descriptionsArray.split(",");
+//                    for (int i = 0 ;i <loacldescriptions.length;i++){
+//                        loacldescriptions[i]=loacldescriptions[i].substring(1,loacldescriptions[i].length()-1);
+//                        Log.v(TAG,"123456789:"+loacldescriptions[i]);
+//                    }
+//                    descriptions = loacldescriptions;
+//
+//                    String labelsArray = result_json.getString("labels");
+//                    Log.v(TAG,"123456789:"+labelsArray);
+//                    labelsArray = labelsArray.substring(1,labelsArray.length()-1);
+//                    String[] loacllabels = labelsArray.split(",");
+//                    for (int i = 0 ;i <loacllabels.length;i++){
+//                        loacllabels[i]=loacllabels[i].substring(1,loacllabels[i].length()-1);
+//                        Log.v(TAG,"123456789:"+loacllabels[i]);
+//                    }
+//                    labels=loacllabels;
+//
+//                    String nicknamesArray = result_json.getString("nicknames");
+//                    Log.v(TAG,"123456789:"+nicknamesArray);
+//                    nicknamesArray = nicknamesArray.substring(1,nicknamesArray.length()-1);
+//                    String[] loaclnicknames = nicknamesArray.split(",");
+//                    for (int i = 0 ;i <loaclnicknames.length;i++){
+//                        loaclnicknames[i]=loaclnicknames[i].substring(1,loaclnicknames[i].length()-1);
+//                        Log.v(TAG,"123456789:"+loaclnicknames[i]);
+//                    }
+//                    nicknames = loaclnicknames;
+//
+//                }
+//            }
+//            @Override
+//            public void onError(Exception e) {
+//                Log.v("EarthFragment", "连接失败！");
+//            }
+//            @Override
+//            public void onFinish() {
+//            }
+//        });
 
 
         View view = inflater.inflate(R.layout.fragment_earth,null);
@@ -173,15 +210,32 @@ public class EarthFragment extends Fragment {
 
     public void addlist(String[] a){
         String[] c= new String[a.length+videos.length];
-
         System.arraycopy(videos, 0, c, 0, videos.length);
         System.arraycopy(a, 0, c, videos.length, a.length);
-        videos = c;
+//        videos = c;
+
+//        String[] c1= new String[b.length+nicknames.length];
+//        System.arraycopy(nicknames, 0, c1, 0, nicknames.length);
+//        System.arraycopy(b, 0, c1, nicknames.length, b.length);
+//        nicknames = c1;
+//
+//        String[] c2= new String[d.length+labels.length];
+//        System.arraycopy(labels, 0, c2, 0, labels.length);
+//        System.arraycopy(d, 0, c2, labels.length, d.length);
+//        labels = c2;
+//
+//        String[] c3= new String[e.length+descriptions.length];
+//        System.arraycopy(descriptions, 0, c3, 0, descriptions.length);
+//        System.arraycopy(e, 0, c3, descriptions.length, e.length);
+//        descriptions = c3;
 
     }
 
     public void reInit(String[] a){
-    videos = a;
+//    videos = a;
+//    nicknames =b;
+//    labels =c;
+//    descriptions =d;
 }
 
 
@@ -197,53 +251,53 @@ public class EarthFragment extends Fragment {
             mMore=view.findViewById(R.id.video_more);
             mComment=view.findViewById(R.id.video_comment);
             mShare=view.findViewById(R.id.video_share);
-            mLike.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Phone phoneObj = (Phone)getApplication();
-                    final String phone = phoneObj.getPhone();
-                    String path;
-                    if(mLike.isChecked()) {
-                        path = "http://139.219.4.34/addlike/";
-                    }
-                    else{
-                        path = "http://139.219.4.34/cancellike/";
-                    }
-                    Map<String, String> userParams = new HashMap<String, String>();//将数据放在map里，便于取出传递
-                    userParams.put("phone",phone);
-                    userParams.put("video_path","media\\video\\faf0fb3837.mp4");
-
-                    HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
-                        @Override
-                        public void onSuccess(String result) throws JSONException {
-                            JSONObject result_json = new JSONObject(result);
-                            String get = result_json.getString("msg");
-                            //int num = result_json.getInt("num");
-                            Log.v("EarthFragment", result);
-                            //if (get.equals("success")) {
-                            //  for (int i = 1; i < num; i++) {
-                            //    String username = result_json.getString("Fan" + i + "Name");
-                            //  String time = result_json.getString("time" + i);
-                            //Log.v("GetLikesActivity", username);
-                            // }
-                            //} else {
-                            //  Log.v("CommentDialog","没有评论！");
-                            //}
-                        }
-
-                        @Override
-                        public void onError(Exception e) {
-                            Log.v("EarthFragment", "连接失败！");
-                        }
-
-                        @Override
-                        public void onFinish() {
-                        }
-
-                    });
-                }
-
-            });
+//            mLike.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Phone phoneObj = (Phone)getApplication();
+//                    final String phone = phoneObj.getPhone();
+//                    String path;
+//                    if(mLike.isChecked()) {
+//                        path = "http://139.219.4.34/addlike/";
+//                    }
+//                    else{
+//                        path = "http://139.219.4.34/cancellike/";
+//                    }
+//                    Map<String, String> userParams = new HashMap<String, String>();//将数据放在map里，便于取出传递
+//                    userParams.put("phone",phone);
+//                    userParams.put("video_path","media\\video\\faf0fb3837.mp4");
+//
+//                    HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
+//                        @Override
+//                        public void onSuccess(String result) throws JSONException {
+////                            JSONObject result_json = new JSONObject(result);
+////                            String get = result_json.getString("msg");
+////                            //int num = result_json.getInt("num");
+////                            Log.v("EarthFragment", result);
+//                            //if (get.equals("success")) {
+//                            //  for (int i = 1; i < num; i++) {
+//                            //    String username = result_json.getString("Fan" + i + "Name");
+//                            //  String time = result_json.getString("time" + i);
+//                            //Log.v("GetLikesActivity", username);
+//                            // }
+//                            //} else {
+//                            //  Log.v("CommentDialog","没有评论！");
+//                            //}
+//                        }
+//
+//                        @Override
+//                        public void onError(Exception e) {
+//                            Log.v("EarthFragment", "连接失败！");
+//                        }
+//
+//                        @Override
+//                        public void onFinish() {
+//                        }
+//
+//                    });
+//                }
+//
+//            });
             mMore.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -268,7 +322,8 @@ public class EarthFragment extends Fragment {
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
 //            holder.img_thumb.setImageResource(imgs[position]); sdfsdf
-            holder.videoView.setVideoURI(Uri.parse(videos[position]));
+//            Uri a = Uri.parse(videos[position]);
+            holder.videoView.setVideoURI(Uri.parse("android.resource://"+getActivity().getPackageName()+"/"+ videos[position]));
         }
 
         @Override
@@ -282,12 +337,17 @@ public class EarthFragment extends Fragment {
             VideoView videoView;
             ImageView img_play;
             RelativeLayout rootView;
+//            TextView a;
+//            TextView b;
+//            TextView c;
+
             public ViewHolder(View itemView) {
                 super(itemView);
 //                img_thumb = itemView.findViewById(R.id.img_thumb);
                 videoView = itemView.findViewById(R.id.video_view);
                 img_play = itemView.findViewById(R.id.img_play);
                 rootView = itemView.findViewById(R.id.root_view);
+//                a = itemView.findViewById(R.id.textView_username);
             }
         }
     }
@@ -359,7 +419,6 @@ public class EarthFragment extends Fragment {
         });
     }
 
-
     private class OnClick implements View.OnClickListener{
         @Override
         public void onClick(final View v){
@@ -370,56 +429,92 @@ public class EarthFragment extends Fragment {
                     getActivity().startActivity(intent);
                     break;
                 case R.id.rcm_btn:
-                    String path = "http://139.219.4.34/getallvideo/";
+                    String path = "http://139.219.4.34/getallmedia/";
                     Map<String, String> userParams = new HashMap<String, String>();//将数据放在map里，便于取出传递
                     Phone phoneObj = (Phone)getApplication();
                     final String phone = phoneObj.getPhone();
                     userParams.put("phone",phone);
-                    HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
-                        @Override
-                        public void onSuccess(String result) throws JSONException {
-                            JSONObject result_json = new JSONObject(result);
-                            String get = result_json.getString("msg");
-                            //int num = result_json.getInt("num");
-                            Log.v("EarthFragment", result);
-                            if (get.equals("success")){
-                                String videoArray = result_json.getString("videos");
-                                Log.v(TAG,"123456789:"+videoArray);
-                                videoArray = videoArray.substring(1,videoArray.length()-1);
-                                String[] videos = videoArray.split(",");
-                                for (int i = 0 ;i <videos.length;i++){
-                                    videos[i]=videos[i].replaceFirst("\\\\\\\\","//");
-                                    videos[i]=videos[i].replaceFirst("\\\\\\\\","/");
-                                    videos[i]=videos[i].replaceAll("\\\\\\\\","/");
-                                    videos[i]=videos[i].substring(1,videos[i].length()-1);
-                                    Log.v(TAG,"123456789:"+videos[i]);
-                                }
-
-                                reInit(videos);
-                                recyclerView.getAdapter().notifyDataSetChanged();
-                            }
-
-                            recyclerView.scrollToPosition(0);
-//                            View view1 = recyclerView.getFocusedChild();
-//                            playVideo(view1);
-
-                        }
-
-                        @Override
-                        public void onError(Exception e) {
-                            Log.v("EarthFragment", "连接失败！");
-                        }
-
-                        @Override
-                        public void onFinish() {
-                        }
-
-                    });
+//                    HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
+//                        @Override
+//                        public void onSuccess(String result) throws JSONException {
+//                            JSONObject result_json = new JSONObject(result);
+//                            String get = result_json.getString("msg");
+//                            //int num = result_json.getInt("num");
+//                            Log.v("EarthFragment", result);
+//                            if (get.equals("success")){
+//                                String videoArray = result_json.getString("videos");
+//                                Log.v(TAG,"123456789:"+videoArray);
+//                                videoArray = videoArray.substring(1,videoArray.length()-1);
+//                                String[] videos = videoArray.split(",");
+//                                for (int i = 0 ;i <videos.length;i++){
+//                                    videos[i]=videos[i].replaceFirst("\\\\\\\\","//");
+//                                    videos[i]=videos[i].replaceFirst("\\\\\\\\","/");
+//                                    videos[i]=videos[i].replaceAll("\\\\\\\\","/");
+//                                    videos[i]=videos[i].substring(1,videos[i].length()-1);
+//                                    Log.v(TAG,"123456789:"+videos[i]);
+//                                }
+//
+//                                String descriptionsArray = result_json.getString("descriptions");
+//                                Log.v(TAG,"123456789:"+descriptionsArray);
+//                                descriptionsArray = descriptionsArray.substring(1,descriptionsArray.length()-1);
+//                                String[] descriptions = descriptionsArray.split(",");
+//                                for (int i = 0 ;i <descriptions.length;i++){
+//                                    descriptions[i]=descriptions[i].substring(1,descriptions[i].length()-1);
+//                                    Log.v(TAG,"123456789:"+descriptions[i]);
+//                                }
+//
+//                                String labelsArray = result_json.getString("labels");
+//                                Log.v(TAG,"123456789:"+labelsArray);
+//                                labelsArray = labelsArray.substring(1,labelsArray.length()-1);
+//                                String[] labels = labelsArray.split(",");
+//                                for (int i = 0 ;i <labels.length;i++){
+//                                    labels[i]=labels[i].substring(1,labels[i].length()-1);
+//                                    Log.v(TAG,"123456789:"+labels[i]);
+//                                }
+//
+//                                String nicknamesArray = result_json.getString("nicknames");
+//                                Log.v(TAG,"123456789:"+nicknamesArray);
+//                                nicknamesArray = nicknamesArray.substring(1,nicknamesArray.length()-1);
+//                                String[] nicknames = nicknamesArray.split(",");
+//                                for (int i = 0 ;i <nicknames.length;i++){
+//                                    nicknames[i]=nicknames[i].substring(1,nicknames[i].length()-1);
+//                                    Log.v(TAG,"123456789:"+nicknames[i]);
+//                                }
+//
+//
+//
+//                                reInit(videos);
+//                                recyclerView.getAdapter().notifyDataSetChanged();
+//                            }
+//
+//                            recyclerView.scrollToPosition(0);
+////                            View view1 = recyclerView.getFocusedChild();
+////                            playVideo(view1);
+//
+//                        }
+//
+//                        @Override
+//                        public void onError(Exception e) {
+//                            Log.v("EarthFragment", "连接失败！");
+//                        }
+//
+//                        @Override
+//                        public void onFinish() {
+//                        }
+//
+//                    });
+//                    videos = new String[]{"http://139.219.4.34/media\\video\\c84ef8f5c1.MP4", "http://139.219.4.34/media\\video\\a8e551e889.MP4",
+//                            "http://139.219.4.34/media\\video\\24fef20322.mp4", "http://139.219.4.34/media\\video\\833ed4c073.mp4",
+//                            "http://139.219.4.34/media\\video\\cw1.mp4", "http://139.219.4.34\\media\\video\\cw4.mp4",
+//                            "http://139.219.4.34/media\\video\\cw5.mp4"};
+//                    reInit(videos);
+                    videos = new int[]{R.raw.video_4, R.raw.video_5, R.raw.video_6, R.raw.video_7, R.raw.video_4, R.raw.video_5};
+                    recyclerView.getAdapter().notifyDataSetChanged();
+                    recyclerView.scrollToPosition(0);
                     break;
 
             }
         }
     }
-
 
 }
