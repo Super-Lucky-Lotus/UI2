@@ -64,64 +64,64 @@
         <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote"> </service>
 
         <activity
-            android:name=".CodeLoginActivity"
+            android:name=".Register.CodeLoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".SingleUserActivity"
+            android:name=".Me.SingleUserActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".FollowListActivity"
+            android:name=".Me.FollowListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".SingleVideoActivity"
+            android:name=".Me.SingleVideoActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".VideoPostActivity"
+            android:name=".Manager.VideoPostActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".FindFriendActivity"
+            android:name=".Me.FindFriendActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".FriendListActivity"
+            android:name=".Me.FriendListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".FansListActivity"
+            android:name=".Me.FansListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".SearchResultActivity"
+            android:name=".Earth.SearchResultActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".SearchActivity"
+            android:name=".Earth.SearchActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".NewFansActivity"
+            android:name=".Notice.NewFansActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".CommentActivity"
+            android:name=".Notice.CommentActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AtMeActivity"
+            android:name=".Notice.AtMeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".GetLikesActivity"
+            android:name=".Notice.GetLikesActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ChangeIntroductionActivity"
+            android:name=".Me.ChangeIntroductionActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ChangeNameActivity"
+            android:name=".Me.ChangeNameActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ChangePasswordActivity"
+            android:name=".Me.ChangePasswordActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ChangePhotoActivity"
+            android:name=".Me.ChangePhotoActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Reg_infoActivity"
+            android:name=".ItemInfo.Reg_infoActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".SettingActivity"
+            android:name=".Me.SettingActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".WelcomeActivity"
@@ -136,14 +136,14 @@
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Register.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".Register.RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".ShootActivity"
+            android:name=".ShootSdk.ShootActivity"
             android:theme="@style/AlertNoActionBar" >
         </activity>
         <activity

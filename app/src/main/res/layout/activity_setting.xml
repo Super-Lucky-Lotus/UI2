@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff7a2"
-    tools:context=".SettingActivity">
+    tools:context=".Me.SettingActivity">
 
     <LinearLayout
         android:id="@+id/changebirthday"
@@ -182,7 +182,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.example.superluckylotus.MyImageView
+    <com.example.superluckylotus.Manager.MyImageView
         android:id="@+id/changephoto"
         android:layout_width="150dp"
         android:layout_height="150dp"

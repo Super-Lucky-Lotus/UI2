@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 import java.util.Timer;
 import  android.content.Intent;
+
+import com.example.superluckylotus.Register.LoginActivity;
+
 import java.util.TimerTask;
 
 /**
@@ -44,7 +47,7 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void run() {
                 //从闪屏界面跳转到首界面
-                Intent intent=new Intent(WelcomeActivity.this,LoginActivity.class);
+                Intent intent=new Intent(WelcomeActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }

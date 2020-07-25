@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff7a2"
-    tools:context=".Reg_infoActivity">
+    tools:context=".ItemInfo.Reg_infoActivity">
 
     <EditText
         android:id="@+id/editTextTextPersonName6"

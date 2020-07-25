@@ -10,13 +10,12 @@ import android.util.SparseArray;
 
 import androidx.annotation.NonNull;
 
-import com.example.superluckylotus.ShootActivity;
 import com.vecore.exception.InvalidArgumentException;
 import com.veuisdk.SdkEntry;
 
 import java.util.ArrayList;
 
-import static com.example.superluckylotus.ShootActivity.EDIT_REQUEST_CODE;
+import static com.example.superluckylotus.ShootSdk.ShootActivity.EDIT_REQUEST_CODE;
 
 /**
  * 因MainActivity已经有太多回调，现把部分功能的回调拆分到此界面

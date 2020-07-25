@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#514F4F"
-    tools:context=".ChangePhotoActivity">
+    tools:context=".Me.ChangePhotoActivity">
 
     <TextView
         android:id="@+id/textView27"
@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/left" />
 
-    <com.example.superluckylotus.MyImageView
+    <com.example.superluckylotus.Manager.MyImageView
         android:id="@+id/iv_photo"
         android:layout_width="400dp"
         android:layout_height="400dp"

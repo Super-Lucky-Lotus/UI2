@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#fff7a2 "
     android:orientation="vertical"
-    tools:context=".MeFragment">
+    tools:context=".Me.MeFragment">
 
     <ImageView
         android:id="@+id/Mybcg"
@@ -22,7 +22,7 @@
         android:layout_marginTop="5dp"
         android:orientation="horizontal">
 
-        <com.example.superluckylotus.MyImageView
+        <com.example.superluckylotus.Manager.MyImageView
             android:id="@+id/photo"
             android:layout_width="100dp"
             android:layout_height="100dp"

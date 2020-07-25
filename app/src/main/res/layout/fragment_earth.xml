@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#fff7a2"
     android:orientation="vertical"
-    tools:context=".EarthFragment">
+    tools:context=".Earth.EarthFragment">
 
     <include layout="@layout/earth_upbutton" />
 

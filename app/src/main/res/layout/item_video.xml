@@ -47,7 +47,6 @@
             android:id="@+id/textView_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="\@username"
             android:textColor="#ffcd74"
             android:textSize="20sp" />
 
@@ -55,7 +54,6 @@
             android:id="@+id/textView_tab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="#tab"
             android:textColor="#ffcd74"
             android:textSize="18sp" />
 
@@ -63,7 +61,6 @@
             android:id="@+id/textView_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="describe detail"
             android:textColor="#ffcd74"
             android:textSize="15sp" />
 
@@ -71,7 +68,6 @@
             android:id="@+id/textView_bgm"
             android:layout_width="match_parent"
             android:layout_height="33dp"
-            android:text="🎵BGM"
             android:textColor="#ffcd74"
             android:textSize="15sp" />
     </LinearLayout>

@@ -4,74 +4,29 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.Manifest;
-import android.annotation.SuppressLint;
-import android.app.AlertDialog;
-import android.app.FragmentManager;
-
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.graphics.Color;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 
-import android.os.Environment;
-import android.text.TextUtils;
-import android.util.Log;
-import android.util.SparseArray;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.BDAbstractLocationListener;
 import com.baidu.location.BDLocation;
 import com.baidu.location.LocationClientOption;
 
 
-import com.example.superluckylotus.ShootSdk.CameraWatermarkBuilder;
-import com.example.superluckylotus.ShootSdk.authpack;
-import com.example.superluckylotus.ShootSdk.dialog.AudioConfigDialog;
-import com.example.superluckylotus.ShootSdk.dialog.ConfigData;
-import com.example.superluckylotus.ShootSdk.utils.SDKUtils;
-import com.vecore.VirtualVideo;
-import com.vecore.base.lib.utils.CoreUtils;
-import com.vecore.exception.InvalidArgumentException;
-import com.vecore.listener.ExportListener;
-import com.vecore.models.Trailer;
-import com.vecore.models.VideoConfig;
-import com.vecore.models.Watermark;
-import com.veuisdk.SdkEntry;
-import com.veuisdk.SdkService;
-import com.veuisdk.manager.CameraConfiguration;
-import com.veuisdk.manager.ChangeLanguageHelper;
-import com.veuisdk.manager.EditObject;
-import com.veuisdk.manager.ExportConfiguration;
-import com.veuisdk.manager.FaceuInfo;
-import com.veuisdk.manager.TrimConfiguration;
-import com.veuisdk.manager.UIConfiguration;
-import com.veuisdk.manager.VEOSDBuilder;
-import com.veuisdk.manager.VideoMetadataRetriever;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.example.superluckylotus.Earth.EarthFragment;
+import com.example.superluckylotus.Me.MeFragment;
+import com.example.superluckylotus.Near.NearFragment;
+import com.example.superluckylotus.Notice.NoticeFragment;
+import com.example.superluckylotus.ShootSdk.ShootActivity;
 
 import static com.veuisdk.SdkEntry.editMedia;
-import static com.veuisdk.SdkEntry.getSdkService;
-import static com.veuisdk.SdkEntry.trimVideo;
-import static com.veuisdk.manager.CameraConfiguration.SQUARE_SCREEN_CAN_CHANGE;
 
 /**
  * @version: 1.0
@@ -146,7 +101,7 @@ public class MainActivity extends AppCompatActivity  {
             public void onClick(View view) {
 //                sd.popupWindowDialog(view);
                 Intent intent = null;
-                intent = new Intent(MainActivity.this,ShootActivity.class);
+                intent = new Intent(MainActivity.this, ShootActivity.class);
                 startActivity(intent);
 //                mContext.startActivity(intent);
             }

@@ -69,7 +69,7 @@
 
         </LinearLayout>
 
-        <com.example.superluckylotus.MyImageView
+        <com.example.superluckylotus.Manager.MyImageView
             android:id="@+id/search_video"
             android:layout_width="200dp"
             android:layout_height="230dp"

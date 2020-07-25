@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#fff7a2"
     android:orientation="vertical"
-    tools:context=".CommentActivity">
+    tools:context=".Notice.CommentActivity">
 
     <LinearLayout
         android:id="@+id/comment_title"
