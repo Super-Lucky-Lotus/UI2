@@ -20,13 +20,264 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ListView
-                android:id="@+id/list_comment"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_height="match_parent"
+                android:background="#fff7a2">
 
-            </ListView>
+                <ImageView
+                    android:id="@+id/imageView62"
+                    android:layout_width="115dp"
+                    android:layout_height="115dp"
+                    android:layout_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/photo" />
+
+                <TextView
+                    android:id="@+id/tv_name2"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginLeft="28dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:text="hsw"
+                    android:textColor="#cca266 "
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView62"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_comment2"
+                    android:layout_width="192dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="32dp"
+                    android:background="@drawable/text"
+                    android:paddingLeft="10dp"
+                    android:text="好喜欢~"
+                    app:layout_constraintStart_toEndOf="@+id/imageView62"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_name2" />
+
+                <TextView
+                    android:id="@+id/tv_commenttime2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="75dp"
+                    android:text="2020-7-22 \n20：43"
+                    android:textColor="#cca266 "
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.769"
+                    app:layout_constraintStart_toEndOf="@+id/tv_comment2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView72"
+                    android:layout_width="415dp"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="8dp"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_comment2"
+                    app:srcCompat="@drawable/line" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fff7a2">
+
+                <ImageView
+                    android:id="@+id/imageView61"
+                    android:layout_width="115dp"
+                    android:layout_height="115dp"
+                    android:layout_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/photo" />
+
+                <TextView
+                    android:id="@+id/tv_name1"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginLeft="28dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:text="Hk"
+                    android:textColor="#cca266 "
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView61"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_comment1"
+                    android:layout_width="192dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/text"
+                    android:paddingLeft="10dp"
+                    android:text="好可爱！"
+                    app:layout_constraintStart_toEndOf="@+id/imageView61"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_name1" />
+
+                <TextView
+                    android:id="@+id/tv_commenttime1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="75dp"
+                    android:text="2020-7-23 \n16：32"
+                    android:textColor="#cca266 "
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.769"
+                    app:layout_constraintStart_toEndOf="@+id/tv_comment1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView71"
+                    android:layout_width="415dp"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="8dp"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_comment1"
+                    app:srcCompat="@drawable/line" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fff7a2">
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="115dp"
+                    android:layout_height="115dp"
+                    android:layout_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/photo" />
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginLeft="28dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:text="SJR"
+                    android:textColor="#cca266 "
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView6"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_comment"
+                    android:layout_width="192dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="32dp"
+                    android:background="@drawable/text"
+                    android:paddingLeft="10dp"
+                    android:text="哈哈哈哈哈哈哈"
+                    app:layout_constraintStart_toEndOf="@+id/imageView6"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+                <TextView
+                    android:id="@+id/tv_commenttime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="75dp"
+                    android:text="2020-7-24 \n7：34"
+                    android:textColor="#cca266 "
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.769"
+                    app:layout_constraintStart_toEndOf="@+id/tv_comment"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="415dp"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="8dp"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_comment"
+                    app:srcCompat="@drawable/line" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fff7a2">
+
+                <ImageView
+                    android:id="@+id/imageView63"
+                    android:layout_width="115dp"
+                    android:layout_height="115dp"
+                    android:layout_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/photo" />
+
+                <TextView
+                    android:id="@+id/tv_name3"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginLeft="28dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:text="Sid"
+                    android:textColor="#cca266 "
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView63"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_comment3"
+                    android:layout_width="192dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="32dp"
+                    android:background="@drawable/text"
+                    android:paddingLeft="10dp"
+                    android:text="可爱可爱！"
+                    app:layout_constraintStart_toEndOf="@+id/imageView63"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_name3" />
+
+                <TextView
+                    android:id="@+id/tv_commenttime3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="75dp"
+                    android:text="2020-7-25 \n17：03"
+                    android:textColor="#cca266 "
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.769"
+                    app:layout_constraintStart_toEndOf="@+id/tv_comment3"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView73"
+                    android:layout_width="415dp"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="8dp"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_comment3"
+                    app:srcCompat="@drawable/line" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
     </ScrollView>
