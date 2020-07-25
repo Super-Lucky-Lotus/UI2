@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity  {
     private RadioGroup mTabRadioGroup;
     private MeFragment meFragment;
     private EarthFragment earthFragment;
-//    private NearFragment nearFragment;
+    private NearFragment nearFragment;
     private NoticeFragment noticeFragment;
     private final String TAG = "MainActivity";
 //    private ShootDialog sd;
@@ -170,16 +170,16 @@ public class MainActivity extends AppCompatActivity  {
         });
 
         near_Btn = (Button)findViewById(R.id.near_tab);
-//        near_Btn.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v){
-//                if(nearFragment == null)
-//                {
-//                    nearFragment = new NearFragment();
-//                }
-//                getFragmentManager().beginTransaction().replace(R.id.fragment_container,nearFragment).commitAllowingStateLoss();
-//            }
-//        });
+        near_Btn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                if(nearFragment == null)
+                {
+                    nearFragment = new NearFragment();
+                }
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container,nearFragment).commitAllowingStateLoss();
+            }
+        });
 
         notice_Btn = (Button)findViewById(R.id.notice_tab);
         notice_Btn.setOnClickListener(new View.OnClickListener(){
