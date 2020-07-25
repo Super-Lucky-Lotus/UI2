@@ -1,12 +1,22 @@
 package com.example.superluckylotus;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static android.content.ContentValues.TAG;
+import static com.mob.tools.utils.DeviceHelper.getApplication;
 
 public class DouYinLayoutManager extends LinearLayoutManager implements RecyclerView.OnChildAttachStateChangeListener{
 
@@ -92,13 +102,48 @@ public class DouYinLayoutManager extends LinearLayoutManager implements Recycler
         switch (state){
             case RecyclerView.SCROLL_STATE_IDLE:
                 //当前显示的item
-                View snapView = pagerSnapHelper.findSnapView(this);
+                final View snapView = pagerSnapHelper.findSnapView(this);
                 if (onViewPagerListener != null){
                     if ( findLastVisibleItemPosition()==getItemCount()-1){
-                        int position = getPosition(snapView);
-                        String[] a ={"http://139.219.4.34/media\\video\\543c4fa467.mp4", "http://139.219.4.34/media\\video\\543c4fa467.mp4",
-                                "http://139.219.4.34/media\\video\\543c4fa467.mp4", "http://139.219.4.34/media\\video\\543c4fa467.mp4"};
-                        onViewPagerListener.onaddVideos(a,snapView,position);
+                        final int position = getPosition(snapView);
+                        String path = "http://139.219.4.34/getallvideo/";
+                        Map<String, String> userParams = new HashMap<String, String>();//将数据放在map里，便于取出传递
+                        Phone phoneObj = (Phone)getApplication();
+                        final String phone = phoneObj.getPhone();
+                        userParams.put("phone",phone);
+                        HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
+                            @Override
+                            public void onSuccess(String result) throws JSONException {
+                                JSONObject result_json = new JSONObject(result);
+                                String get = result_json.getString("msg");
+                                //int num = result_json.getInt("num");
+                                Log.v("EarthFragment", result);
+                                if (get.equals("success")){
+                                    String videoArray = result_json.getString("videos");
+                                    Log.v(TAG,"123456789:"+videoArray);
+                                    videoArray = videoArray.substring(1,videoArray.length()-1);
+                                    String[] videos = videoArray.split(",");
+                                    for (int i = 0 ;i <videos.length;i++){
+                                        videos[i]=videos[i].replaceFirst("\\\\\\\\","//");
+                                        videos[i]=videos[i].replaceFirst("\\\\\\\\","/");
+                                        videos[i]=videos[i].replaceAll("\\\\\\\\","/");
+                                        videos[i]=videos[i].substring(1,videos[i].length()-1);
+                                        Log.v(TAG,"123456789:"+videos[i]);
+                                    }
+//                                    String[] a ={"http://139.219.4.34/media\\video\\543c4fa467.mp4", "http://139.219.4.34/media\\video\\543c4fa467.mp4",
+//                                            "http://139.219.4.34/media\\video\\543c4fa467.mp4", "http://139.219.4.34/media\\video\\543c4fa467.mp4"};
+                                    onViewPagerListener.onaddVideos(videos,snapView,position);
+                                }
+                            }
+                            @Override
+                            public void onError(Exception e) {
+                                Log.v("EarthFragment", "连接失败！");
+                            }
+                            @Override
+                            public void onFinish() {
+                            }
+                        });
+
                     }
                     onViewPagerListener.onPageSelected(false,snapView);
                 }

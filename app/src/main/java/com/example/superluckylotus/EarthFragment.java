@@ -78,13 +78,53 @@ public class EarthFragment extends Fragment {
     MoreDialog md;
     CommentDialog cd;
     ShareDialog sd;
-    String[] videos={"http://139.219.4.34/media\\video\\b31855c05f.mp4", "http://139.219.4.34/media\\video\\b31855c05f.mp4",
-            "http://139.219.4.34/media\\video\\b31855c05f.mp4", "http://139.219.4.34/media\\video\\b31855c05f.mp4"};
+    String[] videos;
     private RecyclerView recyclerView;
 
     private DouYinLayoutManager douYinLayoutManager;
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+
+
+        videos = new String[]{"http://139.219.4.34/media\\video\\b31855c05f.mp4", "http://139.219.4.34/media\\video\\b31855c05f.mp4",
+                "http://139.219.4.34/media\\video\\b31855c05f.mp4", "http://139.219.4.34/media\\video\\b31855c05f.mp4"};
+        String path = "http://139.219.4.34/getfollowvideo/";
+        Map<String, String> userParams = new HashMap<String, String>();//将数据放在map里，便于取出传递
+        Phone phoneObj = (Phone)getApplication();
+        final String phone = phoneObj.getPhone();
+        userParams.put("phone",phone);
+        HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
+            @Override
+            public void onSuccess(String result) throws JSONException {
+                JSONObject result_json = new JSONObject(result);
+                String get = result_json.getString("msg");
+                //int num = result_json.getInt("num");
+                Log.v("EarthFragment", result);
+                if (get.equals("success")){
+                    String videoArray = result_json.getString("videos");
+                    Log.v(TAG,"123456789:"+videoArray);
+                    videoArray = videoArray.substring(1,videoArray.length()-1);
+                    String[] loaclvideos = videoArray.split(",");
+                    for (int i = 0 ;i <loaclvideos.length;i++){
+                        loaclvideos[i]=loaclvideos[i].replaceFirst("\\\\\\\\","//");
+                        loaclvideos[i]=loaclvideos[i].replaceFirst("\\\\\\\\","/");
+                        loaclvideos[i]=loaclvideos[i].replaceAll("\\\\\\\\","/");
+                        loaclvideos[i]=loaclvideos[i].substring(1,loaclvideos[i].length()-1);
+                        Log.v(TAG,"123456789:"+loaclvideos[i]);
+                    }
+                    videos = loaclvideos;
+                }
+            }
+            @Override
+            public void onError(Exception e) {
+                Log.v("EarthFragment", "连接失败！");
+            }
+            @Override
+            public void onFinish() {
+            }
+        });
+
+
         View view = inflater.inflate(R.layout.fragment_earth,null);
         turnSearchPage_btn = (Button)view.findViewById(R.id.turnSearchPage_btn);
         rcm_btn=(Button)view.findViewById(R.id.rcm_btn);
@@ -147,12 +187,7 @@ public class EarthFragment extends Fragment {
 
 
     class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
-        //添加封面
-//        private int[] imgs = {R.mipmap.img_video_1,R.mipmap.img_video_2,R.mipmap.img_video_3,R.mipmap.img_video_4,R.mipmap.img_video_1,R.mipmap.img_video_2};
-        //添加视频
-//                ={"http://139.219.4.34/media\\video\\a93f4be353.mp4", "http://139.219.4.34/media\\video\\b31855c05f.mp4",
-//                "http://139.219.4.34/media\\video\\ff427d5454.mp4", "http://139.219.4.34/media\\video\\543c4fa467.mp4"};
-//                {R.raw.video_1,R.raw.video_2,R.raw.video_3,R.raw.video_4,R.raw.video_1,R.raw.video_2};
+
         public MyAdapter(){
         }
         @Override
@@ -337,7 +372,9 @@ public class EarthFragment extends Fragment {
                 case R.id.rcm_btn:
                     String path = "http://139.219.4.34/getallvideo/";
                     Map<String, String> userParams = new HashMap<String, String>();//将数据放在map里，便于取出传递
-                    userParams.put("phone","15880786698");
+                    Phone phoneObj = (Phone)getApplication();
+                    final String phone = phoneObj.getPhone();
+                    userParams.put("phone",phone);
                     HttpServer.SuperHttpUtil.post(userParams, path, new HttpServer.SuperHttpUtil.HttpCallBack() {
                         @Override
                         public void onSuccess(String result) throws JSONException {
@@ -361,8 +398,11 @@ public class EarthFragment extends Fragment {
                                 reInit(videos);
                                 recyclerView.getAdapter().notifyDataSetChanged();
                             }
+
                             recyclerView.scrollToPosition(0);
-//                            recyclerView.getAdapter()
+//                            View view1 = recyclerView.getFocusedChild();
+//                            playVideo(view1);
+
                         }
 
                         @Override
@@ -376,6 +416,7 @@ public class EarthFragment extends Fragment {
 
                     });
                     break;
+
             }
         }
     }

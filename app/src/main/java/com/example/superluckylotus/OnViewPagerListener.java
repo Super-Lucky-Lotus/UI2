@@ -9,6 +9,6 @@ public interface OnViewPagerListener {
     //播放的监听
     void onPageSelected(boolean isButten, View position);
 
-
+    //加载监听
     void onaddVideos(String[] a, View position, int pos);
 }
