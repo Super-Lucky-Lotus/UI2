@@ -232,7 +232,7 @@ public class EarthFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
-//            holder.img_thumb.setImageResource(imgs[position]);
+//            holder.img_thumb.setImageResource(imgs[position]); sdfsdf
             holder.videoView.setVideoURI(Uri.parse(videos[position]));
         }
 
