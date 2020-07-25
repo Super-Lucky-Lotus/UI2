@@ -23,7 +23,7 @@
         android:layout_marginLeft="28dp"
         android:layout_marginTop="16dp"
         android:layout_weight="1"
-        android:text="用户名"
+        android:text="Sid"
         android:textColor="#cca266 "
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
@@ -38,7 +38,7 @@
         android:layout_marginTop="32dp"
         android:background="@drawable/text"
         android:paddingLeft="10dp"
-        android:text="评论内容"
+        android:text="哈哈哈哈哈哈哈"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
         app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
@@ -46,8 +46,8 @@
         android:id="@+id/tv_commenttime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
-        android:text="·评论时间"
+        android:layout_marginTop="75dp"
+        android:text="2020-7-24 \n7：34"
         android:textColor="#cca266 "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.769"
